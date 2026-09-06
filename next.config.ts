@@ -20,8 +20,8 @@ const nextConfig: NextConfig = {
    * In local dev (NODE_ENV !== "production") we leave these unset so
    * `http://localhost:3000` continues to work normally.
    */
-  basePath: isProd ? "/SPEAR-2" : "",
-  assetPrefix: isProd ? "/SPEAR-2/" : "",
+  basePath: isProd ? "/SPEAR" : "",
+  assetPrefix: isProd ? "/SPEAR/" : "",
 
   /*
    * Trailing slash — GitHub Pages resolves /about → /about/index.html,
@@ -49,7 +49,7 @@ const nextConfig: NextConfig = {
    * On localhost this is empty string — no prefix needed.
    */
   env: {
-    NEXT_PUBLIC_BASE_PATH: isProd ? "/SPEAR-2" : "",
+    NEXT_PUBLIC_BASE_PATH: isProd ? "/SPEAR" : "",
   },
 };
 

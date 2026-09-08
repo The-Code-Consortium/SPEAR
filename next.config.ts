@@ -1,55 +1,33 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
 const nextConfig: NextConfig = {
   /*
    * Static export — required for GitHub Pages (no Node.js server).
-   * All pages in this site are already statically generated, so this
-   * is a zero-cost change: it just tells Next.js to write out plain
-   * HTML/CSS/JS files into the `out/` directory on `next build`.
+   * Generates pure HTML/CSS/JS files into the `out/` directory.
    */
   output: "export",
 
   /*
-   * basePath + assetPrefix — required because the site is served from
-   * a sub-path on GitHub Pages:
-   *   https://manukayashan.github.io/SPEAR-2/
-   * Without this, all asset URLs (/fonts, /_next/static/…) would 404.
-   *
-   * In local dev (NODE_ENV !== "production") we leave these unset so
-   * `http://localhost:3000` continues to work normally.
+   * Custom subdomain hosting (spear.thecodeconsortium.com) serves from root,
+   * so basePath and assetPrefix are not needed.
    */
-  basePath: isProd ? "/SPEAR" : "",
-  assetPrefix: isProd ? "/SPEAR/" : "",
+  basePath: "",
+  assetPrefix: "",
 
   /*
-   * Trailing slash — GitHub Pages resolves /about → /about/index.html,
-   * not /about.html, so trailingSlash:true matches that expectation.
+   * Trailing slash — GitHub Pages resolves routes correctly as /about/index.html
    */
   trailingSlash: true,
 
   images: {
-    /*
-     * next/image's default Image Optimization API requires a server.
-     * Static export mode needs unoptimized:true (raw <img> tags).
-     * Images on this site are all SVGs or generated from lucide-react,
-     * so no quality loss occurs.
-     */
     unoptimized: true,
     formats: ["image/avif", "image/webp"],
   },
 
   experimental: {},
 
-  /*
-   * Expose basePath as an env var so components can prefix public-folder
-   * asset paths (e.g. images) correctly. next/image with unoptimized:true
-   * does NOT auto-prepend basePath to the src, so we do it manually.
-   * On localhost this is empty string — no prefix needed.
-   */
   env: {
-    NEXT_PUBLIC_BASE_PATH: isProd ? "/SPEAR" : "",
+    NEXT_PUBLIC_BASE_PATH: "",
   },
 };
 

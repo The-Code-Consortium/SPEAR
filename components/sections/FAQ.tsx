@@ -61,7 +61,7 @@ export default function FAQ() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerContainer}
-          style={{ textAlign: "center", marginBottom: "4rem" }}
+          className="flex flex-col gap-8"
         >
           <motion.h2
             variants={fadeUpVariant}
@@ -72,18 +72,29 @@ export default function FAQ() {
               color: "#221B16",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
+              textAlign: "center",
             }}
           >
             Frequently Asked Questions
           </motion.h2>
-        </motion.div>
 
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-        >
+          {/* Divider — centred */}
+          <motion.div
+            variants={fadeUpVariant}
+            style={{
+              width: 48,
+              height: 2,
+              background: "#C79A45",
+              borderRadius: 1,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          />
+
+          <motion.div
+            variants={fadeUpVariant}
+            style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "1.5rem" }}
+          >
           {FAQS.map((faq, index) => (
             <motion.details
               key={index}
@@ -126,6 +137,7 @@ export default function FAQ() {
               </p>
             </motion.details>
           ))}
+          </motion.div>
         </motion.div>
       </div>
 

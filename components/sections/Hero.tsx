@@ -119,13 +119,6 @@ export default function Hero() {
           All-in-One Hospitality Management Software: Hotel PMS & Restaurant POS
         </h1>
         
-        {/* The tagline */}
-        <p
-          style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
-          className="italic text-lg md:text-xl text-[#F3ECE0]/90 mt-3"
-        >
-          One unified platform for every reservation, every table, every guest.
-        </p>
       </div>
 
       {/* Scroll cue — reappears when user scrolls back to top */}

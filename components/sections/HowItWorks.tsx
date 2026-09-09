@@ -41,42 +41,59 @@ export default function HowItWorks() {
       style={{ padding: "6rem 2rem" }}
     >
       <div style={{ maxWidth: 1152, margin: "0 auto", width: "100%" }}>
-        {/* Heading */}
+        {/* Header Block (Label, Heading, Divider) */}
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="flex flex-col gap-8 mb-12"
         >
-          <motion.span
+          <div>
+            <motion.span
+              variants={fadeUpVariant}
+              style={{
+                display: "block",
+                fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                fontSize: "0.7rem",
+                fontWeight: 700,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#C79A45",
+                marginBottom: "0.75rem",
+                textAlign: "center",
+              }}
+            >
+              Getting Started
+            </motion.span>
+            <motion.h2
+              variants={fadeUpVariant}
+              id="how-it-works-heading"
+              style={{
+                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+                fontWeight: 700,
+                color: "#221B16",
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
+                textAlign: "center",
+              }}
+            >
+              How SPEAR Streamlines Hotel & Restaurant Operations
+            </motion.h2>
+          </div>
+
+          {/* Divider — centred */}
+          <motion.div
             variants={fadeUpVariant}
             style={{
-              display: "block",
-              fontFamily: "var(--font-manrope), system-ui, sans-serif",
-              fontSize: "0.7rem",
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "#C79A45",
-              marginBottom: "0.75rem",
+              width: 48,
+              height: 2,
+              background: "#C79A45",
+              borderRadius: 1,
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
-          >
-            Getting Started
-          </motion.span>
-          <motion.h2
-            variants={fadeUpVariant}
-            id="how-it-works-heading"
-            style={{
-              fontFamily: "var(--font-fraunces), Georgia, serif",
-              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-              fontWeight: 700,
-              color: "#221B16",
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            How SPEAR Streamlines Hotel & Restaurant Operations
-          </motion.h2>
+          />
         </motion.div>
 
         {/* Steps grid — Bug 5 fix: explicit CSS grid, 3 equal 1fr cols, align-items stretch */}

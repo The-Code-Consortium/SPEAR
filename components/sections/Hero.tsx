@@ -87,12 +87,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <motion.div
-        className="relative z-10 flex flex-col items-center gap-6"
-        variants={staggerContainer}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="relative z-10 flex flex-col items-center gap-6 animate-fade-in-up">
         {/*
           Real SPEAR logo PNG — replaces the SVG arrow mark + text wordmark + sub-tagline.
           The image already contains the full wordmark, spear-through-letters graphic,
@@ -100,10 +95,10 @@ export default function Hero() {
           so those three separate elements have been removed.
           Transparent background reads directly against the dark hero (#1E1712).
         */}
-        <motion.div variants={fadeInVariant}>
+        <div>
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/spear-logo.png.png`}
-            alt="SPEAR — Smart Platform for Every Accommodation & Restaurant"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/spear-hero-logo.png`}
+            alt="SPEAR — Hotel PMS and Restaurant POS Software Platform"
             width={600}
             height={300}
             priority
@@ -114,25 +109,24 @@ export default function Hero() {
               objectFit: "contain",
             }}
           />
-        </motion.div>
+        </div>
 
-        {/* Tagline — the page's single <h1>. Unchanged position and styling. */}
-        <motion.h1
-          variants={fadeUpVariant}
-          className="max-w-2xl"
-          style={{
-            fontFamily: "var(--font-fraunces), Georgia, serif",
-            fontSize: "clamp(1.15rem, 2.8vw, 1.65rem)",
-            fontWeight: 400,
-            fontStyle: "italic",
-            color: "#F3ECE0",
-            lineHeight: 1.5,
-            letterSpacing: "-0.01em",
-          }}
+        {/* The SEO-optimized H1 */}
+        <h1
+          style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+          className="text-3xl md:text-5xl font-bold text-[#F3ECE0] max-w-3xl leading-tight"
         >
-          One platform for every reservation, every table, every guest.
-        </motion.h1>
-      </motion.div>
+          All-in-One Hospitality Management Software: Hotel PMS & Restaurant POS
+        </h1>
+        
+        {/* The tagline */}
+        <p
+          style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+          className="italic text-lg md:text-xl text-[#F3ECE0]/90 mt-3"
+        >
+          One unified platform for every reservation, every table, every guest.
+        </p>
+      </div>
 
       {/* Scroll cue — reappears when user scrolls back to top */}
       <AnimatePresence>

@@ -149,7 +149,7 @@ export default function BookADemo() {
               id="book-demo-heading"
               style={{
                 fontFamily: "var(--font-fraunces), Georgia, serif",
-                fontSize: "clamp(2rem, 4vw, 2.75rem)",
+                fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                 fontWeight: 700,
                 color: "#221B16",
                 lineHeight: 1.15,
@@ -157,7 +157,7 @@ export default function BookADemo() {
                 marginBottom: "0.75rem",
               }}
             >
-              Book a Demo
+              Schedule a Live Walkthrough & Interactive Demo
             </motion.h2>
             <motion.p
               variants={fadeUpVariant}

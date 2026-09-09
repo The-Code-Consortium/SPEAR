@@ -68,14 +68,14 @@ export default function HowItWorks() {
             id="how-it-works-heading"
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
               color: "#221B16",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
             }}
           >
-            How It Works
+            How SPEAR Streamlines Hotel & Restaurant Operations
           </motion.h2>
         </motion.div>
 

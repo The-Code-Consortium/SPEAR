@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
-import Script from "next/script";
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 /* ============================================================
@@ -27,24 +27,23 @@ const manrope = Manrope({
    (per-page metadata in each page.tsx overrides these)
    ============================================================ */
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://spearplatform.com"
-  ),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   title: {
-    default: "SPEAR — Smart Platform for Every Accommodation & Restaurant",
+    default: "SPEAR | All-in-One Hotel PMS, Restaurant POS & Channel Manager",
     template: "%s | SPEAR",
   },
   description:
-    "SPEAR is a B2B hospitality SaaS platform unifying hotel booking, restaurant table management, POS, kitchen inventory, and channel management into one system.",
+    "Unify hotel direct booking, PMS, restaurant POS, table management, kitchen inventory, and channel distribution in one platform. Book a live demo today.",
   keywords: [
-    "hospitality software",
-    "hotel management system",
-    "restaurant POS",
-    "channel manager",
-    "property management system",
+    "hotel PMS",
+    "restaurant POS software",
+    "hospitality management platform",
     "hotel booking engine",
-    "restaurant reservation software",
-    "kitchen inventory management",
+    "channel manager 2-way sync",
+    "kitchen inventory software",
   ],
   authors: [{ name: "SPEAR" }],
   creator: "SPEAR",
@@ -54,23 +53,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "SPEAR",
-    title: "SPEAR — Smart Platform for Every Accommodation & Restaurant",
+    title: "SPEAR | All-in-One Hotel PMS, Restaurant POS & Channel Manager",
     description:
-      "One platform for every reservation, every table, every guest. SPEAR unifies hotel booking, restaurant management, POS, and channel distribution.",
+      "Unify hotel direct booking, PMS, restaurant POS, table management, kitchen inventory, and channel distribution in one platform. Book a live demo today.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SPEAR — Smart Platform for Every Accommodation & Restaurant",
+        alt: "SPEAR — Hospitality Management Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SPEAR — Smart Platform for Every Accommodation & Restaurant",
+    title: "SPEAR | All-in-One Hotel PMS, Restaurant POS & Channel Manager",
     description:
-      "One platform for every reservation, every table, every guest.",
+      "Unify hotel direct booking, PMS, restaurant POS, table management, kitchen inventory, and channel distribution in one platform. Book a live demo today.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -94,11 +93,11 @@ const organizationSchema = {
   "@type": "Organization",
   name: "SPEAR",
   description:
-    "Smart Platform for Every Accommodation & Restaurant — B2B hospitality SaaS platform unifying hotel booking, restaurant management, POS, and channel distribution.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://spearplatform.com",
+    "All-in-One Hospitality Management Software: Hotel PMS, Restaurant POS, and Channel Manager.",
+  url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://spearplatform.com"}/og-image.jpg`,
+    url: `${SITE_URL}/og-image.jpg`,
   },
   contactPoint: {
     "@type": "ContactPoint",

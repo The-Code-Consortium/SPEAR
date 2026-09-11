@@ -240,7 +240,7 @@ export default function LeadPopup() {
                   Book a personalized walkthrough to see how SPEAR can unify your bookings, tables, and inventory into one platform.
                 </p>
 
-                <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {status === "error" && (
                     <div style={{
                       padding: "0.75rem",
@@ -268,7 +268,7 @@ export default function LeadPopup() {
 
                   <button
                     type="submit"
-                    disabled={status === "submitting" || !email}
+                    disabled={status === "submitting"}
                     className="btn-brass"
                     style={{
                       width: "100%",

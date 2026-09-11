@@ -214,7 +214,6 @@ export default function BookADemo() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                noValidate
                 style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}
                 aria-label="Book a demo request form"
               >
@@ -345,14 +344,14 @@ export default function BookADemo() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  disabled={status === "submitting" || !isFormValid}
+                  disabled={status === "submitting"}
                   className="btn-brass"
                   style={{
                     width: "100%",
                     justifyContent: "center",
                     marginTop: "0.5rem",
-                    opacity: (status === "submitting" || !isFormValid) ? 0.7 : 1,
-                    cursor: (status === "submitting" || !isFormValid) ? "not-allowed" : "pointer",
+                    opacity: status === "submitting" ? 0.7 : 1,
+                    cursor: status === "submitting" ? "not-allowed" : "pointer",
                   }}
                   aria-label="Submit demo request"
                 >

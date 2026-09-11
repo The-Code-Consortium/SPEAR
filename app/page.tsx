@@ -3,9 +3,11 @@ import NavBar from "@/components/ui/NavBar";
 import Footer from "@/components/ui/Footer";
 import Hero from "@/components/sections/Hero";
 import HorizontalModuleStory from "@/components/sections/HorizontalModuleStory";
+import PlatformModules from "@/components/sections/PlatformModules";
 import HowItWorks from "@/components/sections/HowItWorks";
 import WhyWeBuilt from "@/components/sections/WhyWeBuilt";
 import Pricing from "@/components/sections/Pricing";
+import FAQ from "@/components/sections/FAQ";
 import BookADemo from "@/components/sections/BookADemo";
 import LeadPopup from "@/components/ui/LeadPopup";
 
@@ -106,12 +108,15 @@ export default function HomePage() {
          * SECTION 3+: Normal vertical scroll (Mode B — parchment background)
          */}
         <div id="product">
+          <PlatformModules />
           <HowItWorks />
         </div>
 
         <WhyWeBuilt />
 
         <Pricing />
+
+        <FAQ />
 
         <BookADemo />
       </main>

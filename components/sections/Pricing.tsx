@@ -101,7 +101,7 @@ export default function Pricing() {
             id="pricing-heading"
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
               color: "#221B16",
               lineHeight: 1.15,
@@ -109,7 +109,7 @@ export default function Pricing() {
               marginBottom: "1rem",
             }}
           >
-            One platform. Three tiers.
+            Transparent Pricing for Independent Hotels & Restaurants
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}

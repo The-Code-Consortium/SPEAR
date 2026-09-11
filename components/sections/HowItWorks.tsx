@@ -41,12 +41,11 @@ export default function HowItWorks() {
       style={{ padding: "6rem 2rem" }}
     >
       <div style={{ maxWidth: 1152, margin: "0 auto", width: "100%" }}>
-        {/* Heading */}
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="flex flex-col gap-8"
         >
           <motion.span
             variants={fadeUpVariant}
@@ -58,40 +57,53 @@ export default function HowItWorks() {
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "#C79A45",
-              marginBottom: "0.75rem",
+              textAlign: "center",
             }}
           >
             Getting Started
           </motion.span>
+          
           <motion.h2
             variants={fadeUpVariant}
             id="how-it-works-heading"
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
               color: "#221B16",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
+              textAlign: "center",
             }}
           >
-            How It Works
+            How SPEAR Streamlines Hotel & Restaurant Operations
           </motion.h2>
-        </motion.div>
 
-        {/* Steps grid — Bug 5 fix: explicit CSS grid, 3 equal 1fr cols, align-items stretch */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1.5rem",
-            alignItems: "stretch",
-          }}
-          className="how-it-works-grid"
-        >
+          {/* Divider — centred */}
+          <motion.div
+            variants={fadeUpVariant}
+            style={{
+              width: 48,
+              height: 2,
+              background: "#C79A45",
+              borderRadius: 1,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          />
+
+          {/* Steps grid — Bug 5 fix: explicit CSS grid, 3 equal 1fr cols, align-items stretch */}
+          <motion.div
+            variants={fadeUpVariant}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1.5rem",
+              alignItems: "stretch",
+              marginTop: "1.5rem",
+            }}
+            className="how-it-works-grid"
+          >
           {STEPS.map((step, i) => (
             <motion.div
               key={step.number}
@@ -186,6 +198,7 @@ export default function HowItWorks() {
               )}
             </motion.div>
           ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>

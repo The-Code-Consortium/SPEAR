@@ -83,8 +83,8 @@ export default function Footer() {
             aria-label="SPEAR homepage — scroll to top"
           >
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/nav%20logo.png`}
-              alt="SPEAR"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/nav-logo.png`}
+              alt="SPEAR Hospitality Software Logo"
               width={140}
               height={56}
               style={{ height: 36, width: "auto", objectFit: "contain" }}
@@ -131,7 +131,7 @@ export default function Footer() {
         {/* Sitemap link columns — each occupies 1 grid track */}
         {Object.entries(FOOTER_LINKS).map(([section, links]) => (
           <div key={section} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <h3
+            <p
               style={{
                 fontFamily: "var(--font-manrope), system-ui, sans-serif",
                 fontSize: "0.68rem",
@@ -143,7 +143,7 @@ export default function Footer() {
               }}
             >
               {section}
-            </h3>
+            </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.65rem" }}>
               {links.map(({ label, href }) => (
                 <li key={href}>

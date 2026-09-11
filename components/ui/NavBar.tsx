@@ -115,8 +115,8 @@ export default function NavBar() {
           aria-label="SPEAR — go to top of page"
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/nav%20logo.png`}
-            alt="SPEAR"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/nav-logo.png`}
+            alt="SPEAR Hospitality Software Logo"
             width={160}
             height={60}
             priority

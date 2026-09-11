@@ -93,6 +93,8 @@ export default function BookADemo() {
     marginBottom: "0.4rem",
   };
 
+  const isFormValid = Object.values(form).every((val) => val.trim() !== "");
+
   return (
     <section
       ref={ref}
@@ -320,18 +322,16 @@ export default function BookADemo() {
                   </select>
                 </div>
 
-                {/* Phone (optional) */}
+                {/* Phone */}
                 <div>
                   <label htmlFor="demo-phone" style={labelStyle}>
-                    Phone{" "}
-                    <span style={{ fontWeight: 400, color: "#8B7A6E", textTransform: "none", letterSpacing: 0, fontSize: "0.7rem" }}>
-                      (optional)
-                    </span>
+                    Phone <span aria-hidden="true" style={{ color: "#8B3A3A" }}>*</span>
                   </label>
                   <input
                     id="demo-phone"
                     name="phone"
                     type="tel"
+                    required
                     autoComplete="tel"
                     value={form.phone}
                     onChange={handleChange}
@@ -345,14 +345,14 @@ export default function BookADemo() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  disabled={status === "submitting"}
+                  disabled={status === "submitting" || !isFormValid}
                   className="btn-brass"
                   style={{
                     width: "100%",
                     justifyContent: "center",
                     marginTop: "0.5rem",
-                    opacity: status === "submitting" ? 0.7 : 1,
-                    cursor: status === "submitting" ? "not-allowed" : "pointer",
+                    opacity: (status === "submitting" || !isFormValid) ? 0.7 : 1,
+                    cursor: (status === "submitting" || !isFormValid) ? "not-allowed" : "pointer",
                   }}
                   aria-label="Submit demo request"
                 >

@@ -118,7 +118,7 @@ export default function Hero() {
         >
           All-in-One Hospitality Management Software: Hotel PMS & Restaurant POS
         </h1>
-        
+
       </div>
 
       {/* Scroll cue — reappears when user scrolls back to top */}

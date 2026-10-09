@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { X, Globe, Share2 } from "lucide-react";
 
 
 const FOOTER_LINKS = {
   Product: [
-    { label: "Hotel PMS Core", href: "#hotel-pms" },
+    { label: "Hotel PMS Core", href: "/modules/hotel-pms" },
     { label: "Direct Bookings & OTAs", href: "#direct-booking" },
     { label: "Hospitality POS & KDS", href: "#point-of-sale" },
     { label: "Dining Floor & QR Ordering", href: "#restaurant-floor" },
@@ -20,15 +21,15 @@ const FOOTER_LINKS = {
     { label: "Book a Demo", href: "#book-a-demo" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
   ],
 };
 
 const SOCIAL_LINKS = [
-  { icon: X, label: "SPEAR on X (Twitter)", href: "https://twitter.com/spearplatform" },
-  { icon: Globe, label: "SPEAR on LinkedIn", href: "https://linkedin.com/company/spearplatform" },
-  { icon: Share2, label: "SPEAR on Instagram", href: "https://instagram.com/spearplatform" },
+  { icon: X, label: "SPEAR on X (Twitter)" },
+  { icon: Globe, label: "SPEAR Website" },
+  { icon: Share2, label: "SPEAR on Instagram" },
 ];
 
 const linkHoverStyle: React.CSSProperties = { color: "#F3ECE0" };
@@ -37,6 +38,8 @@ const socialHoverStyle: React.CSSProperties = { color: "#C79A45" };
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
     <footer
@@ -54,11 +57,6 @@ export default function Footer() {
           maxWidth: 1280,
           margin: "0 auto",
           padding: "4rem 2.5rem 3rem",
-          /*
-           * Bug 2 fix: explicit CSS grid with named tracks.
-           * Brand column: 2.5fr (wide) | 3 link columns: each 1fr.
-           * At ≤768px the media-query class (footer-cols-1) stacks them.
-           */
           display: "grid",
           gridTemplateColumns: "2.5fr 1fr 1fr 1fr",
           gap: "3rem 4rem",
@@ -71,8 +69,14 @@ export default function Footer() {
           <Link
             href="/"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              if (isHome) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                if (typeof window !== "undefined") {
+                  sessionStorage.setItem("spear_disable_popup", "true");
+                }
+              }
             }}
             style={{
               display: "inline-flex",
@@ -80,7 +84,7 @@ export default function Footer() {
               gap: "0.6rem",
               textDecoration: "none",
             }}
-            aria-label="SPEAR homepage — scroll to top"
+            aria-label="SPEAR homepage"
           >
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo/nav-logo.png`}
@@ -105,14 +109,14 @@ export default function Footer() {
             One system for every reservation, every table, every guest.
           </p>
 
-          {/* Social links */}
+          {/* Social links — unlinked as requested */}
           <div style={{ display: "flex", gap: "1rem", marginTop: "0.5rem" }}>
-            {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
+            {SOCIAL_LINKS.map(({ icon: Icon, label }) => (
               <a
-                key={href}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                key={label}
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                role="button"
                 aria-label={label}
                 style={linkBaseStyle}
                 onMouseEnter={(e) =>
@@ -145,28 +149,58 @@ export default function Footer() {
               {section}
             </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-              {links.map(({ label, href }) => (
-                <li key={href}>
-                  <a
-                    href={href}
-                    style={{
-                      ...linkBaseStyle,
-                      fontSize: "0.85rem",
-                      textDecoration: "none",
-                      transition: "color 0.18s ease",
-                      display: "block",
-                    }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.color = linkHoverStyle.color as string)
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.color = linkBaseStyle.color as string)
-                    }
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
+              {links.map(({ label, href }) => {
+                const isHash = href.startsWith("#");
+                const targetHref = isHash ? (isHome ? href : `/${href}`) : href;
+                const isDummy = href === "#";
+
+                return (
+                  <li key={label}>
+                    <Link
+                      href={targetHref}
+                      onClick={(e) => {
+                        if (isDummy) {
+                          e.preventDefault();
+                          return;
+                        }
+                        if (href === "/modules/hotel-pms" && pathname === "/modules/hotel-pms") {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          return;
+                        }
+                        if (isHash) {
+                          if (typeof window !== "undefined") {
+                            sessionStorage.setItem("spear_disable_popup", "true");
+                          }
+                          if (isHome) {
+                            e.preventDefault();
+                            const id = href.replace(/^#/, "");
+                            const el = document.getElementById(id);
+                            if (el) {
+                              el.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }
+                        }
+                      }}
+                      style={{
+                        ...linkBaseStyle,
+                        fontSize: "0.85rem",
+                        textDecoration: "none",
+                        transition: "color 0.18s ease",
+                        display: "block",
+                      }}
+                      onMouseEnter={(e) =>
+                        ((e.currentTarget as HTMLElement).style.color = linkHoverStyle.color as string)
+                      }
+                      onMouseLeave={(e) =>
+                        ((e.currentTarget as HTMLElement).style.color = linkBaseStyle.color as string)
+                      }
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}

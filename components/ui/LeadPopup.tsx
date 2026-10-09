@@ -12,8 +12,33 @@ export default function LeadPopup() {
   const hasTriggeredRef = useRef(false);
 
   useEffect(() => {
+    // Check if user navigated from a module page or has popup suppressed
+    if (typeof window !== "undefined") {
+      const isSuppressed =
+        sessionStorage.getItem("spear_disable_popup") === "true" ||
+        document.referrer.includes("/modules/") ||
+        window.location.hash.includes("product") ||
+        window.location.hash.includes("pillars");
+
+      if (isSuppressed) {
+        hasTriggeredRef.current = true;
+        return;
+      }
+    }
+
     const checkShouldShow = () => {
       if (hasTriggeredRef.current) return;
+
+      if (typeof window !== "undefined") {
+        if (
+          sessionStorage.getItem("spear_disable_popup") === "true" ||
+          document.referrer.includes("/modules/") ||
+          window.location.hash.includes("product")
+        ) {
+          hasTriggeredRef.current = true;
+          return;
+        }
+      }
 
       // Check if inside module-story section
       const hSection = document.getElementById("module-story");
@@ -38,6 +63,17 @@ export default function LeadPopup() {
 
     const triggerPopup = () => {
       if (hasTriggeredRef.current) return;
+
+      if (typeof window !== "undefined") {
+        if (
+          sessionStorage.getItem("spear_disable_popup") === "true" ||
+          document.referrer.includes("/modules/") ||
+          window.location.hash.includes("product")
+        ) {
+          hasTriggeredRef.current = true;
+          return;
+        }
+      }
 
       // Double check we're not in the horizontal section before finally opening
       const hSection = document.getElementById("module-story");

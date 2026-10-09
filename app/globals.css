@@ -396,22 +396,73 @@ h6 {
 #about,
 #book-a-demo,
 #how-it-works,
-#module-story {
-  scroll-margin-top: 72px;
+#module-story,
+#hotel-pms,
+#direct-booking,
+#point-of-sale,
+#restaurant-floor,
+#kitchen-inventory,
+#guest-experience {
+  scroll-margin-top: 80px;
 }
 
 /*
-  NavBar responsive: hide links and CTA on small screens.
-  The CTA stays visible on sm+ (≥640px), links only on lg+ (≥1024px).
+  NavBar responsive styles
 */
+.nav-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .nav-container {
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 1023px) {
   .nav-links {
     display: none !important;
   }
 }
-@media (max-width: 639px) {
-  .nav-cta {
+
+.nav-desktop-login {
+  display: inline-flex !important;
+}
+@media (max-width: 767px) {
+  .nav-desktop-login {
     display: none !important;
+  }
+}
+
+.nav-mobile-toggle {
+  display: none !important;
+}
+@media (max-width: 1023px) {
+  .nav-mobile-toggle {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .nav-logo-img {
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-book-cta {
+    padding: 0 0.85rem !important;
+    font-size: 0.72rem !important;
+    height: 35px !important;
+  }
+  .nav-mobile-toggle {
+    width: 35px !important;
+    height: 35px !important;
   }
 }
 

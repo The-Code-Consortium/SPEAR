@@ -14,6 +14,7 @@ export interface ModuleData {
   isLast?: boolean; // marks the final panel
   chips: string[]; // Nested sub-features
   actionLink?: string;
+  actionHref?: string;
 }
 
 export const modules: ModuleData[] = [
@@ -26,6 +27,7 @@ export const modules: ModuleData[] = [
     body: "Extend stays, reassign rooms, and manage your full property without double-booking risk. Controls the hotel master state, dispatches housekeeping work orders automatically on checkout, and consolidates room charges and restaurant tabs onto one unified folio.",
     layout: "text-left",
     actionLink: "Explore PMS Architecture",
+    actionHref: "/modules/hotel-pms",
     chips: [
       "Master Tape Chart",
       "Consolidated Folio Billing",

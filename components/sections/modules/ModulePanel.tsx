@@ -4,6 +4,7 @@
  * Last panel (06) has a "That's SPEAR." closing cue.
  */
 
+import Link from "next/link";
 import DeviceFrame from "./DeviceFrame";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
@@ -30,6 +31,7 @@ interface ModulePanelProps {
   body: string;
   chips?: string[];
   actionLink?: string;
+  actionHref?: string;
   layout: "text-left" | "text-right";
   isLast?: boolean;
 }
@@ -43,6 +45,7 @@ export default function ModulePanel({
   body,
   chips,
   actionLink,
+  actionHref,
   layout,
   isLast = false,
 }: ModulePanelProps) {
@@ -202,8 +205,8 @@ export default function ModulePanel({
           {/* Action Link — matching Image 2 */}
           {actionLink && (
             <div style={{ marginTop: "0.5rem" }}>
-              <a
-                href="#book-a-demo"
+              <Link
+                href={actionHref || "#book-a-demo"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -224,7 +227,7 @@ export default function ModulePanel({
               >
                 <span>{actionLink}</span>
                 <span>→</span>
-              </a>
+              </Link>
             </div>
           )}
 

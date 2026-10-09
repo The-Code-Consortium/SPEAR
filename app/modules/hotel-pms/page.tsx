@@ -701,10 +701,10 @@ export default function HotelPmsModulePage() {
             }}
           />
 
-          <div style={{ maxWidth: 1360, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              {/* Left Column (Sticky Header & Explanation) */}
-              <div className="lg:col-span-5 lg:sticky lg:top-28">
+          <div style={{ maxWidth: 1320, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* LEFT COLUMN: TITLE & VALUE PROPOSITION */}
+              <div className="lg:col-span-5 lg:sticky lg:top-24">
                 <span
                   style={{
                     display: "inline-block",
@@ -718,7 +718,7 @@ export default function HotelPmsModulePage() {
                     border: "1px solid rgba(199,154,69,0.25)",
                     padding: "0.35rem 0.9rem",
                     borderRadius: 20,
-                    marginBottom: "1rem",
+                    marginBottom: "1.25rem",
                   }}
                 >
                   Zero Downtime Guarantee
@@ -730,9 +730,9 @@ export default function HotelPmsModulePage() {
                     fontSize: "clamp(2rem, 3.2vw, 2.85rem)",
                     fontWeight: 700,
                     color: "#F7F4EE",
-                    lineHeight: 1.15,
+                    lineHeight: 1.18,
                     letterSpacing: "-0.02em",
-                    marginBottom: "1.25rem",
+                    marginBottom: "1.5rem",
                   }}
                 >
                   Offline-First Reliability:{" "}
@@ -756,7 +756,7 @@ export default function HotelPmsModulePage() {
                   syncs back to the cloud automatically when Wi-Fi returns.
                 </p>
 
-                {/* Key Benefits List */}
+                {/* 3 Quick Hotel Staff Pillars */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "2rem" }}>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                     <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
@@ -800,7 +800,7 @@ export default function HotelPmsModulePage() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.6rem",
-                    padding: "0.6rem 1rem",
+                    padding: "0.55rem 0.95rem",
                     borderRadius: 8,
                     background: "rgba(199,154,69,0.08)",
                     border: "1px solid rgba(199,154,69,0.2)",
@@ -814,863 +814,396 @@ export default function HotelPmsModulePage() {
                 </div>
               </div>
 
-              {/* Right Column (Zigzag 4-Phase Architecture Canvas) */}
+              {/* RIGHT COLUMN: FRAMED ARCHITECTURE SVG CANVAS */}
               <div className="lg:col-span-7">
                 <div
                   style={{
-                    background: "linear-gradient(180deg, rgba(26,21,17,0.7) 0%, rgba(18,15,12,0.85) 100%)",
-                    borderRadius: 20,
-                    border: "1.5px solid rgba(212,163,89,0.22)",
-                    boxShadow: "0 24px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)",
-                    padding: "2rem 1.25rem",
+                    background: "linear-gradient(180deg, #1A1512 0%, #14110E 100%)",
+                    borderRadius: 18,
+                    border: "1.5px solid rgba(212,163,89,0.3)",
+                    boxShadow: "0 24px 60px rgba(0,0,0,0.65), 0 0 35px rgba(212,163,89,0.08)",
+                    padding: "2rem 1.75rem",
                     position: "relative",
                   }}
                 >
-                  {/* ----------------------------------------------------------
-                      PHASE 01: TERMINAL VIEW (LEFT BOX)
-                      ---------------------------------------------------------- */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 40, x: -25 }}
-                    whileInView={{ opacity: 1, y: 0, x: 0 }}
-                    viewport={{ amount: 0.25, once: false }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    whileHover={{ y: -5, transition: { duration: 0.25 } }}
+                  {/* Top Canvas Bar */}
+                  <div
                     style={{
-                      width: "100%",
-                      maxWidth: "520px",
-                      marginRight: "auto",
-                      marginLeft: 0,
-                      transition: "box-shadow 0.3s ease",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      borderBottom: "1px solid rgba(212,163,89,0.15)",
+                      paddingBottom: "0.85rem",
+                      marginBottom: "1.75rem",
                     }}
                   >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(212,163,89,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(212,163,89,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
-                      style={{
-                        background: "rgba(199,154,69,0.18)",
-                        color: "#F2BE71",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 01 // FRONT DESK &amp; STAFF DEVICES
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#10B981",
-                      }}
-                    >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                      INSTANT LOCAL CHECK-IN
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 8px #10B981" }} />
+                      <span style={{ fontFamily: "monospace", fontSize: "0.75rem", color: "#F2BE71", fontWeight: 700, letterSpacing: "0.08em" }}>
+                        EDGE ARCHITECTURE FLOW
+                      </span>
+                    </div>
+                    <span style={{ fontSize: "0.72rem", color: "#A89C8F", fontFamily: "var(--font-manrope), sans-serif" }}>
+                      Continuous Offline Resilience
                     </span>
                   </div>
 
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    Front Desk Station (Zero Internet Lag)
-                  </h3>
+                  {/* Serpentine 4-Phase SVG Flow */}
+                  <div style={{ position: "relative" }}>
 
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    Your reception computers and waiter tablets work directly on the device.
-                    Every check-in, keycard creation, and dining charge registers instantly on screen—guests never
-                    stand waiting in line for a slow cloud page to reload.
-                  </p>
-
-                  {/* HIGH-FIDELITY RECEPTION STATION VIEW */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(212,163,89,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      fontFamily: "var(--font-manrope), sans-serif",
-                    }}
-                  >
-                    {/* Window Header Bar */}
-                    <div
+                    {/* --------------------------------------------------------
+                        BOX 01: FRONT DESK & POS TERMINAL (TOP-LEFT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                       style={{
-                        background: "#161310",
-                        padding: "0.5rem 0.75rem",
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginRight: "auto",
+                        marginLeft: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(212,163,89,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "space-between",
-                        borderBottom: "1px solid rgba(255,255,255,0.06)",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
                       }}
                     >
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                        <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#EF4444", display: "inline-block" }} />
-                        <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#F59E0B", display: "inline-block" }} />
-                        <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#10B981", display: "inline-block" }} />
-                        <span style={{ color: "#9C8F7F", fontSize: "0.75rem", marginLeft: "0.5rem", fontWeight: 600 }}>
-                          Front Desk Terminal 01 • Main Reception
+                      {/* POS Screen & Card Reader SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <rect x="6" y="4" width="38" height="26" rx="3" fill="#15120F" stroke="#D4A359" strokeWidth="1.5" />
+                          <rect x="10" y="8" width="30" height="18" rx="1.5" fill="#25201A" />
+                          <line x1="14" y1="13" x2="26" y2="13" stroke="#D4A359" strokeWidth="1.5" strokeLinecap="round" />
+                          <line x1="14" y1="17" x2="34" y2="17" stroke="#10B981" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="14" y1="21" x2="22" y2="21" stroke="#F2BE71" strokeWidth="1.2" strokeLinecap="round" />
+                          <path d="M25 30 L25 37 M18 37 L32 37" stroke="#D4A359" strokeWidth="1.5" strokeLinecap="round" />
+                          <rect x="47" y="14" width="13" height="22" rx="2" fill="#15120F" stroke="#10B981" strokeWidth="1.5" />
+                          <rect x="50" y="17" width="7" height="4" rx="0.5" fill="#10B981" opacity="0.6" />
+                          <line x1="49" y1="25" x2="58" y2="25" stroke="#D4A359" strokeWidth="1" />
+                          <circle cx="53.5" cy="31" r="1.5" fill="#10B981" />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#C79A45", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          01 • POS &amp; TERMINALS
                         </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          Front Desk Stations
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Check-in, guest folios &amp; key encoding execute locally on device with zero lag.
+                        </p>
                       </div>
-                      <span style={{ fontSize: "0.68rem", color: "#10B981", fontWeight: 700 }}>
-                        ● STATION READY (OFFLINE PROTECTED)
-                      </span>
-                    </div>
+                    </motion.div>
 
-                    {/* Console Body */}
-                    <div style={{ padding: "1rem", fontSize: "0.82rem", lineHeight: 1.6 }}>
-                      <div style={{ color: "#D4A359", fontWeight: 600 }}>
-                        Guest Check-In: Room 402 • Elena Vance
-                      </div>
-                      <div style={{ color: "#10B981", marginTop: "0.25rem" }}>
-                        ✔ Room Folio created and saved safely on front desk computer
-                      </div>
-                      <div style={{ color: "#10B981" }}>
-                        ✔ Room Key card encoded and handed to guest immediately
-                      </div>
-                      <div style={{ color: "#F2BE71" }}>
-                        ➜ Saved to on-site hotel hub (Ready to sync when Wi-Fi connects)
-                      </div>
-                      <div style={{ color: "#7A6E62", marginTop: "0.25rem", fontSize: "0.76rem" }}>
-                        Guest Wait Time: 0 Seconds • Zero Cloud Delays
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Front Desk Immunity:</strong> Staff can check in arrivals and print guest registration cards with zero internet.</span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Keycard Machines Keep Working:</strong> Local card encoders work over local cables, so guests always get working keys.</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ----------------------------------------------------------
-                  CURVED ARROW 1: DESKTOP SWOOPING DOWN-RIGHT (↘)
-                  Connecting Left Card 1 to Right Card 2
-                  ---------------------------------------------------------- */}
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: false }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  width: "100%",
-                  height: "100px",
-                  position: "relative",
-                  margin: "0.5rem 0",
-                }}
-              >
-                <svg
-                  viewBox="0 0 1000 100"
-                  fill="none"
-                  style={{ width: "100%", height: "100%", overflow: "visible" }}
-                >
-                  <defs>
-                    <linearGradient id="goldCurveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#C79A45" />
-                      <stop offset="50%" stopColor="#F2BE71" />
-                      <stop offset="100%" stopColor="#C79A45" />
-                    </linearGradient>
-                    <marker id="arrowhead-down-right" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L0,6 L8,3 z" fill="#F2BE71" />
-                    </marker>
-                  </defs>
-
-                  {/* Ambient Glow Trail */}
-                  <path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="rgba(242,190,113,0.22)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Animated Dashed Vector Line on Scroll */}
-                  <motion.path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="url(#goldCurveGrad1)"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 6"
-                    initial={{ pathLength: 0.15, opacity: 0.35 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ amount: 0.3, once: false }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    markerEnd="url(#arrowhead-down-right)"
-                  />
-                </svg>
-
-                {/* Floating Badge in Middle of Swoop */}
-                <motion.div
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ amount: 0.4, once: false }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  style={{
-                    position: "absolute",
-                    top: "40%",
-                    left: "52%",
-                    transform: "translate(-50%, -50%)",
-                    background: "#161310",
-                    border: "1px solid rgba(212,163,89,0.4)",
-                    borderRadius: 20,
-                    padding: "0.3rem 0.9rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    color: "#F2BE71",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981" }} />
-                  <span>Connects over Hotel Internal Wi-Fi</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Mobile Vertical Fallback Connector */}
-              <div
-                className="flex md:hidden items-center justify-center my-3"
-                style={{ gap: "0.5rem", color: "#F2BE71", fontSize: "0.75rem", fontWeight: 700 }}
-              >
-                <div style={{ width: 2, height: 26, background: "linear-gradient(to bottom, #C79A45, #F2BE71)" }} />
-                <span>Internal Network ↘</span>
-              </div>
-
-              {/* ----------------------------------------------------------
-                  PHASE 02: SERVER RUNNING STATUS (RIGHT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: 25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "520px",
-                  marginLeft: "auto",
-                  marginRight: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(212,163,89,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(212,163,89,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
-                      style={{
-                        background: "rgba(199,154,69,0.18)",
-                        color: "#F2BE71",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 02 // ON-SITE HOTEL HUB
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#10B981",
-                      }}
-                    >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                      HOTEL NETWORK ACTIVE
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    All Hotel Departments Stay Connected Locally
-                  </h3>
-
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    An on-site hotel hub keeps all departments talking. If a guest orders dinner at your restaurant
-                    or drinks by the pool, the charge appears immediately on their front desk bill over your hotel&apos;s
-                    internal Wi-Fi without leaving the premises.
-                  </p>
-
-                  {/* HIGH-FIDELITY SERVER RUNNING STATUS */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(212,163,89,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      padding: "1rem",
-                    }}
-                  >
-                    {/* Visual Server Chassis with Flashing LEDs */}
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <Server size={18} color="#D4A359" />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.82rem", fontWeight: 700, color: "#F7F4EE" }}>
-                          HOTEL-LOCAL-HUB-01
-                        </span>
-                      </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#10B981", fontWeight: 700 }}>
-                          RUNNING SMOOTHLY
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Server Metrics Visual Grid */}
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem", fontFamily: "var(--font-manrope), sans-serif", fontSize: "0.74rem", marginBottom: "0.75rem" }}>
-                      <div style={{ background: "#161310", padding: "0.45rem", borderRadius: 4, border: "1px solid rgba(255,255,255,0.04)" }}>
-                        <div style={{ color: "#7A6E62", fontSize: "0.68rem" }}>HOTEL NETWORK</div>
-                        <div style={{ color: "#10B981", fontWeight: 700 }}>Active &amp; Fast</div>
-                      </div>
-                      <div style={{ background: "#161310", padding: "0.45rem", borderRadius: 4, border: "1px solid rgba(255,255,255,0.04)" }}>
-                        <div style={{ color: "#7A6E62", fontSize: "0.68rem" }}>ROOM 402</div>
-                        <div style={{ color: "#F2BE71", fontWeight: 700 }}>Locked &amp; Assigned</div>
-                      </div>
-                      <div style={{ background: "#161310", padding: "0.45rem", borderRadius: 4, border: "1px solid rgba(255,255,255,0.04)" }}>
-                        <div style={{ color: "#7A6E62", fontSize: "0.68rem" }}>OFFLINE BUFFER</div>
-                        <div style={{ color: "#D4A359", fontWeight: 700 }}>Safely Backed Up</div>
-                      </div>
-                    </div>
-
-                    <div style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "0.78rem", color: "#A89C8F" }}>
-                      ➜ Restaurant orders, bar drinks, and room keys connect across departments with 0 delay.
-                    </div>
-                  </div>
-
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Zero Double-Booking Protection:</strong> The local hub prevents two receptionists from ever assigning the same room twice.</span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Instant Restaurant-to-Room Billing:</strong> Restaurant checks and bar tabs transfer to guest room folios across local Wi-Fi.</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ----------------------------------------------------------
-                  CURVED ARROW 2: DESKTOP SWOOPING DOWN-LEFT (↙)
-                  Connecting Right Card 2 back to Left Card 3
-                  ---------------------------------------------------------- */}
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: false }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  width: "100%",
-                  height: "100px",
-                  position: "relative",
-                  margin: "0.5rem 0",
-                }}
-              >
-                <svg
-                  viewBox="0 0 1000 100"
-                  fill="none"
-                  style={{ width: "100%", height: "100%", overflow: "visible" }}
-                >
-                  <defs>
-                    <linearGradient id="goldCurveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#C79A45" />
-                      <stop offset="50%" stopColor="#F59E0B" />
-                      <stop offset="100%" stopColor="#EF4444" />
-                    </linearGradient>
-                    <marker id="arrowhead-down-left" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B" />
-                    </marker>
-                  </defs>
-
-                  {/* Ambient Glow Trail */}
-                  <path
-                    d="M 750,10 C 750,75 280,25 280,90"
-                    stroke="rgba(245,158,11,0.22)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Animated Dashed Vector Line on Scroll */}
-                  <motion.path
-                    d="M 750,10 C 750,75 280,25 280,90"
-                    stroke="url(#goldCurveGrad2)"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 6"
-                    initial={{ pathLength: 0.15, opacity: 0.35 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ amount: 0.3, once: false }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    markerEnd="url(#arrowhead-down-left)"
-                  />
-                </svg>
-
-                {/* Floating Badge in Middle of Swoop */}
-                <motion.div
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ amount: 0.4, once: false }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  style={{
-                    position: "absolute",
-                    top: "40%",
-                    left: "48%",
-                    transform: "translate(-50%, -50%)",
-                    background: "#161310",
-                    border: "1px solid rgba(239,68,68,0.4)",
-                    borderRadius: 20,
-                    padding: "0.3rem 0.9rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    color: "#F59E0B",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444" }} />
-                  <span>If Internet Drops • Front Desk Keeps Working Normally</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Mobile Vertical Fallback Connector */}
-              <div
-                className="flex md:hidden items-center justify-center my-3"
-                style={{ gap: "0.5rem", color: "#F59E0B", fontSize: "0.75rem", fontWeight: 700 }}
-              >
-                <div style={{ width: 2, height: 26, background: "linear-gradient(to bottom, #F2BE71, #EF4444)" }} />
-                <span>If Internet Drops ↙</span>
-              </div>
-
-              {/* ----------------------------------------------------------
-                  PHASE 03: CLOUD LINK DOWN (LEFT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: -25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "520px",
-                  marginRight: "auto",
-                  marginLeft: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(245,158,11,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(245,158,11,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
-                      style={{
-                        background: "rgba(239,68,68,0.18)",
-                        color: "#F59E0B",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 03 // ZERO INTERNET NEEDED
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#F59E0B",
-                      }}
-                    >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#F59E0B", boxShadow: "0 0 6px #F59E0B" }} />
-                      100% UNINTERRUPTED FRONT DESK
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    Internet Drops? Your Hotel Never Stops Running
-                  </h3>
-
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    When storms hit or local internet providers go down, other cloud hotel systems freeze and strand your arriving guests. With SPEAR, <strong>your staff keeps checking in guests, issuing room keys, and taking payments</strong> without a single pause.
-                  </p>
-
-                  {/* HIGH-FIDELITY CLOUD LINK DOWN STATUS SVG */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(245,158,11,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      padding: "1rem",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <WifiOff size={18} color="#EF4444" />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.82rem", fontWeight: 700, color: "#EF4444" }}>
-                          INTERNET: OFFLINE (NO CONNECTION)
-                        </span>
-                      </div>
-                      <span
+                    {/* --------------------------------------------------------
+                        SWOOPING ARROW 1 (↘ DOWN-RIGHT TO SERVER)
+                        -------------------------------------------------------- */}
+                    <div style={{ width: "100%", height: "65px", position: "relative", margin: "0.25rem 0" }}>
+                      <svg viewBox="0 0 500 65" fill="none" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                          <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#C79A45" />
+                            <stop offset="100%" stopColor="#F2BE71" />
+                          </linearGradient>
+                          <marker id="arrowHead1" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L8,3 z" fill="#F2BE71" />
+                          </marker>
+                        </defs>
+                        <path d="M 155,10 C 155,50 345,15 345,55" stroke="rgba(242,190,113,0.18)" strokeWidth="6" strokeLinecap="round" />
+                        <motion.path
+                          d="M 155,10 C 155,50 345,15 345,55"
+                          stroke="url(#flowGrad1)"
+                          strokeWidth="2.5"
+                          strokeDasharray="5 5"
+                          initial={{ pathLength: 0.2, opacity: 0.4 }}
+                          whileInView={{ pathLength: 1, opacity: 1 }}
+                          viewport={{ amount: 0.3, once: false }}
+                          transition={{ duration: 0.8 }}
+                          markerEnd="url(#arrowHead1)"
+                        />
+                      </svg>
+                      <div
                         style={{
-                          background: "rgba(16,185,129,0.15)",
-                          border: "1px solid rgba(16,185,129,0.3)",
-                          color: "#10B981",
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: 4,
-                          fontSize: "0.7rem",
-                          fontFamily: "monospace",
+                          position: "absolute",
+                          top: "45%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          background: "#161310",
+                          border: "1px solid rgba(212,163,89,0.35)",
+                          borderRadius: 14,
+                          padding: "0.2rem 0.65rem",
+                          fontSize: "0.68rem",
                           fontWeight: 700,
+                          color: "#F2BE71",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        OFFLINE SAFEGUARD ACTIVE
-                      </span>
-                    </div>
-
-                    <div style={{ fontFamily: "monospace", fontSize: "0.78rem", lineHeight: 1.6 }}>
-                      <div style={{ color: "#EF4444" }}>
-                        [STATUS] Internet disconnected. Local hotel mode automatically active.
-                      </div>
-                      <div style={{ color: "#10B981", marginTop: "0.25rem" }}>
-                        ✔ All Stations Active: Check-In, Room Keys, Tape Chart, Restaurant POS &amp; Housekeeping
-                      </div>
-                      <div style={{ color: "#F2BE71" }}>
-                        ➜ Safe Local Memory: 48 check-ins &amp; restaurant charges saved safely on hotel server
-                      </div>
-                      <div style={{ color: "#7A6E62", marginTop: "0.25rem" }}>
-                        Guest Check-in Delay: 0 seconds • No lobby lines
+                        Internal Wi-Fi Network ↘
                       </div>
                     </div>
-                  </div>
 
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>No Frozen Screens:</strong> Reception staff never see spinning wheels, loading errors, or "page disconnected" popups.</span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Smooth Night Audits:</strong> Close the day, balance cashier shifts, and print guest receipts on time regardless of internet status.</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ----------------------------------------------------------
-                  CURVED ARROW 3: DESKTOP SWOOPING DOWN-RIGHT (↘)
-                  Connecting Left Card 3 to Right Card 4
-                  ---------------------------------------------------------- */}
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: false }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  width: "100%",
-                  height: "100px",
-                  position: "relative",
-                  margin: "0.5rem 0",
-                }}
-              >
-                <svg
-                  viewBox="0 0 1000 100"
-                  fill="none"
-                  style={{ width: "100%", height: "100%", overflow: "visible" }}
-                >
-                  <defs>
-                    <linearGradient id="goldCurveGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#F59E0B" />
-                      <stop offset="50%" stopColor="#10B981" />
-                      <stop offset="100%" stopColor="#F2BE71" />
-                    </linearGradient>
-                    <marker id="arrowhead-down-right-sync" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L0,6 L8,3 z" fill="#10B981" />
-                    </marker>
-                  </defs>
-
-                  {/* Ambient Glow Trail */}
-                  <path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="rgba(16,185,129,0.22)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Animated Dashed Vector Line on Scroll */}
-                  <motion.path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="url(#goldCurveGrad3)"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 6"
-                    initial={{ pathLength: 0.15, opacity: 0.35 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ amount: 0.3, once: false }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    markerEnd="url(#arrowhead-down-right-sync)"
-                  />
-                </svg>
-
-                {/* Floating Badge in Middle of Swoop */}
-                <motion.div
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ amount: 0.4, once: false }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  style={{
-                    position: "absolute",
-                    top: "40%",
-                    left: "52%",
-                    transform: "translate(-50%, -50%)",
-                    background: "#161310",
-                    border: "1px solid rgba(16,185,129,0.4)",
-                    borderRadius: 20,
-                    padding: "0.3rem 0.9rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    color: "#10B981",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981" }} />
-                  <span>Internet Returns • Automatic Cloud Sync in Seconds</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Mobile Vertical Fallback Connector */}
-              <div
-                className="flex md:hidden items-center justify-center my-3"
-                style={{ gap: "0.5rem", color: "#10B981", fontSize: "0.75rem", fontWeight: 700 }}
-              >
-                <div style={{ width: 2, height: 26, background: "linear-gradient(to bottom, #EF4444, #10B981)" }} />
-                <span>Internet Restored ↘</span>
-              </div>
-
-              {/* ----------------------------------------------------------
-                  PHASE 04: CLOUD UP & RAPID DELTA SYNC (RIGHT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: 25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "520px",
-                  marginLeft: "auto",
-                  marginRight: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(16,185,129,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(16,185,129,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
+                    {/* --------------------------------------------------------
+                        BOX 02: ON-SITE LOCAL HOTEL HUB (MIDDLE-RIGHT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                       style={{
-                        background: "rgba(16,185,129,0.18)",
-                        color: "#10B981",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 04 // INTERNET RESTORED &amp; FAST SYNC
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginLeft: "auto",
+                        marginRight: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(212,163,89,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
+                        display: "flex",
                         alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#10B981",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
                       }}
                     >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                      ALL HOTEL RECORDS UP TO DATE
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    Internet Restored: Everything Syncs in Seconds
-                  </h3>
-
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    The moment your internet comes back online, SPEAR quietly pushes all saved check-ins, room cleans, and guest charges to the cloud. <strong>Zero duplicate records, zero lost payments</strong>, and no manual work required.
-                  </p>
-
-                  {/* HIGH-FIDELITY CLOUD UP & SYNC REPLAY SVG */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(16,185,129,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      padding: "1rem",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <Wifi size={18} color="#10B981" />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.82rem", fontWeight: 700, color: "#10B981" }}>
-                          INTERNET: RESTORED &amp; ONLINE
-                        </span>
+                      {/* Server Rack & Wi-Fi SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <rect x="8" y="6" width="34" height="34" rx="3" fill="#15120F" stroke="#D4A359" strokeWidth="1.5" />
+                          <rect x="12" y="10" width="26" height="7" rx="1.5" fill="#25201A" stroke="rgba(212,163,89,0.3)" strokeWidth="1" />
+                          <circle cx="16" cy="13.5" r="1.5" fill="#10B981" />
+                          <circle cx="21" cy="13.5" r="1.5" fill="#10B981" />
+                          <line x1="26" y1="13.5" x2="34" y2="13.5" stroke="#C79A45" strokeWidth="1" strokeLinecap="round" />
+                          <rect x="12" y="19" width="26" height="7" rx="1.5" fill="#25201A" stroke="rgba(212,163,89,0.3)" strokeWidth="1" />
+                          <circle cx="16" cy="22.5" r="1.5" fill="#10B981" />
+                          <circle cx="21" cy="22.5" r="1.5" fill="#F59E0B" />
+                          <line x1="26" y1="22.5" x2="34" y2="22.5" stroke="#C79A45" strokeWidth="1" strokeLinecap="round" />
+                          <rect x="12" y="28" width="26" height="7" rx="1.5" fill="#25201A" stroke="rgba(212,163,89,0.3)" strokeWidth="1" />
+                          <circle cx="16" cy="31.5" r="1.5" fill="#10B981" />
+                          <circle cx="21" cy="31.5" r="1.5" fill="#10B981" />
+                          <path d="M47 18 A12 12 0 0 1 57 28" stroke="#D4A359" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                          <path d="M47 23 A6 6 0 0 1 52 28" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                          <circle cx="47" cy="28" r="2" fill="#F2BE71" />
+                        </svg>
                       </div>
-                      <span
+
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#C79A45", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          02 • ON-SITE HUB
+                        </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          On-Site Hotel Server
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Syncs restaurant dining bills and housekeeping updates across property over internal Wi-Fi.
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    {/* --------------------------------------------------------
+                        SWOOPING ARROW 2 (↙ DOWN-LEFT TO INTERNET CUT)
+                        -------------------------------------------------------- */}
+                    <div style={{ width: "100%", height: "65px", position: "relative", margin: "0.25rem 0" }}>
+                      <svg viewBox="0 0 500 65" fill="none" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                          <linearGradient id="flowGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#F2BE71" />
+                            <stop offset="100%" stopColor="#EF4444" />
+                          </linearGradient>
+                          <marker id="arrowHead2" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L8,3 z" fill="#EF4444" />
+                          </marker>
+                        </defs>
+                        <path d="M 345,10 C 345,50 155,15 155,55" stroke="rgba(239,68,68,0.18)" strokeWidth="6" strokeLinecap="round" />
+                        <motion.path
+                          d="M 345,10 C 345,50 155,15 155,55"
+                          stroke="url(#flowGrad2)"
+                          strokeWidth="2.5"
+                          strokeDasharray="5 5"
+                          initial={{ pathLength: 0.2, opacity: 0.4 }}
+                          whileInView={{ pathLength: 1, opacity: 1 }}
+                          viewport={{ amount: 0.3, once: false }}
+                          transition={{ duration: 0.8 }}
+                          markerEnd="url(#arrowHead2)"
+                        />
+                      </svg>
+                      <div
                         style={{
-                          background: "rgba(16,185,129,0.18)",
-                          color: "#10B981",
-                          fontSize: "0.7rem",
-                          fontFamily: "monospace",
+                          position: "absolute",
+                          top: "45%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          background: "#161310",
+                          border: "1px solid rgba(239,68,68,0.4)",
+                          borderRadius: 14,
+                          padding: "0.2rem 0.65rem",
+                          fontSize: "0.68rem",
                           fontWeight: 700,
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: 4,
+                          color: "#EF4444",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        100% SYNCED
-                      </span>
+                        Internet Drops (Link Down) ↙
+                      </div>
                     </div>
 
-                    <div style={{ fontFamily: "monospace", fontSize: "0.78rem", lineHeight: 1.6 }}>
-                      <div style={{ color: "#F2BE71" }}>
-                        ➜ Secure hotel cloud backup connected instantly
+                    {/* --------------------------------------------------------
+                        BOX 03: CLOUD LINK DOWN / OFFLINE SAFEGUARD (MIDDLE-LEFT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                      style={{
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginRight: "auto",
+                        marginLeft: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(239,68,68,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                      }}
+                    >
+                      {/* Cloud Cut & Glowing Shield SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <path d="M12 28a7 7 0 0 1 2-13.7A11 11 0 0 1 35 17a6 6 0 0 1 5 11z" fill="#15120F" stroke="#EF4444" strokeWidth="1.5" />
+                          <line x1="10" y1="12" x2="38" y2="34" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
+                          <path d="M42 16 L54 12 L54 26 C54 32 48 37 42 39 C36 37 30 32 30 26 L30 12 Z" fill="#18271E" stroke="#10B981" strokeWidth="1.5" />
+                          <path d="M37 25 L40 28 L47 20" stroke="#10B981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        </svg>
                       </div>
-                      <div style={{ color: "#10B981", marginTop: "0.25rem" }}>
-                        ✔ 48 offline check-ins &amp; restaurant charges synced in under 1 second
-                      </div>
-                      <div style={{ color: "#10B981" }}>
-                        ✔ Smart Conflict Prevention: Zero double bookings, zero billing errors
-                      </div>
-                      <div style={{ color: "#D4A359", marginTop: "0.25rem" }}>
-                        ✔ Online Channels (Booking.com, Expedia, Airbnb) updated with live availability
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Instant Background Sync:</strong> Hours of offline front desk and billing work sync quietly in seconds without slowing your team down.</span>
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#F59E0B", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          03 • OFFLINE SAFEGUARD
+                        </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          Zero Internet Needed
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Zero frozen screens. All new check-ins and payments buffer safely on hotel storage.
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    {/* --------------------------------------------------------
+                        SWOOPING ARROW 3 (↘ DOWN-RIGHT TO CLOUD RESTORED)
+                        -------------------------------------------------------- */}
+                    <div style={{ width: "100%", height: "65px", position: "relative", margin: "0.25rem 0" }}>
+                      <svg viewBox="0 0 500 65" fill="none" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                          <linearGradient id="flowGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#EF4444" />
+                            <stop offset="50%" stopColor="#10B981" />
+                            <stop offset="100%" stopColor="#10B981" />
+                          </linearGradient>
+                          <marker id="arrowHead3" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L8,3 z" fill="#10B981" />
+                          </marker>
+                        </defs>
+                        <path d="M 155,10 C 155,50 345,15 345,55" stroke="rgba(16,185,129,0.18)" strokeWidth="6" strokeLinecap="round" />
+                        <motion.path
+                          d="M 155,10 C 155,50 345,15 345,55"
+                          stroke="url(#flowGrad3)"
+                          strokeWidth="2.5"
+                          strokeDasharray="5 5"
+                          initial={{ pathLength: 0.2, opacity: 0.4 }}
+                          whileInView={{ pathLength: 1, opacity: 1 }}
+                          viewport={{ amount: 0.3, once: false }}
+                          transition={{ duration: 0.8 }}
+                          markerEnd="url(#arrowHead3)"
+                        />
+                      </svg>
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "45%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          background: "#161310",
+                          border: "1px solid rgba(16,185,129,0.4)",
+                          borderRadius: 14,
+                          padding: "0.2rem 0.65rem",
+                          fontSize: "0.68rem",
+                          fontWeight: 700,
+                          color: "#10B981",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Internet Restored &amp; Sync ↘
+                      </div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Accurate Room Availability:</strong> Online travel channels immediately reflect actual occupied rooms to completely protect you from overbookings.</span>
-                    </div>
+
+                    {/* --------------------------------------------------------
+                        BOX 04: CLOUD RESTORED & RAPID SYNC (BOTTOM-RIGHT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                      style={{
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginLeft: "auto",
+                        marginRight: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(16,185,129,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                      }}
+                    >
+                      {/* Cloud Sync Replay SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <path d="M10 30a7 7 0 0 1 2-13.7A11 11 0 0 1 33 19a6 6 0 0 1 5 11z" fill="#15120F" stroke="#10B981" strokeWidth="1.5" />
+                          <path d="M23 27 L23 17 M19 21 L23 17 L27 21" stroke="#10B981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                          <circle cx="48" cy="24" r="11" fill="#15120F" stroke="#D4A359" strokeWidth="1.5" />
+                          <path d="M44 24 L47 27 L53 20" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#10B981", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          04 • CLOUD UP &amp; SYNC
+                        </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          Instant Cloud Re-Sync
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Queued data uploads in seconds. Live room availability refreshes on Booking.com &amp; Airbnb.
+                        </p>
+                      </div>
+                    </motion.div>
+
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
         <section
           id="architecture-specs"
           style={{

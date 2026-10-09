@@ -114,10 +114,8 @@ export default function HomePage() {
         {/*
          * SECTION 3+: Normal vertical scroll (Mode B — parchment background)
          */}
-        <div id="product">
-          <PlatformModules />
-          <HowItWorks />
-        </div>
+        <PlatformModules />
+        <HowItWorks />
 
         <WhyWeBuilt />
 

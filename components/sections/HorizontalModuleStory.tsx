@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { modules } from "@/lib/modules-data";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -294,6 +295,7 @@ function DesktopHorizontalScroll() {
                 body={mod.body}
                 chips={mod.chips}
                 actionLink={mod.actionLink}
+                actionHref={mod.actionHref}
                 layout={mod.layout}
                 isLast={mod.isLast}
               />
@@ -533,8 +535,8 @@ function MobileCarousel() {
                 {/* Action Link */}
                 {mod.actionLink && (
                   <div style={{ marginBottom: "1.5rem" }}>
-                    <a
-                      href="#book-a-demo"
+                    <Link
+                      href={mod.actionHref || "#book-a-demo"}
                       style={{
                         display: "inline-flex",
                         alignItems: "center",
@@ -548,7 +550,7 @@ function MobileCarousel() {
                     >
                       <span>{mod.actionLink}</span>
                       <span>→</span>
-                    </a>
+                    </Link>
                   </div>
                 )}
 
@@ -718,8 +720,8 @@ function ReducedMotionFallback() {
               )}
               {mod.actionLink && (
                 <div style={{ marginTop: "0.5rem" }}>
-                  <a
-                    href="#book-a-demo"
+                  <Link
+                    href={mod.actionHref || "#book-a-demo"}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -733,7 +735,7 @@ function ReducedMotionFallback() {
                   >
                     <span>{mod.actionLink}</span>
                     <span>→</span>
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>

@@ -701,85 +701,148 @@ export default function HotelPmsModulePage() {
             }}
           />
 
-          <div style={{ maxWidth: 1152, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
-            {/* Header */}
-            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <span
-                style={{
-                  display: "inline-block",
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "#C79A45",
-                  background: "rgba(199,154,69,0.12)",
-                  border: "1px solid rgba(199,154,69,0.25)",
-                  padding: "0.35rem 0.9rem",
-                  borderRadius: 20,
-                  marginBottom: "1rem",
-                }}
-              >
-                Zero Downtime Guarantee
-              </span>
+          <div style={{ maxWidth: 1360, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+              {/* Left Column (Sticky Header & Explanation) */}
+              <div className="lg:col-span-5 lg:sticky lg:top-28">
+                <span
+                  style={{
+                    display: "inline-block",
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    color: "#C79A45",
+                    background: "rgba(199,154,69,0.12)",
+                    border: "1px solid rgba(199,154,69,0.25)",
+                    padding: "0.35rem 0.9rem",
+                    borderRadius: 20,
+                    marginBottom: "1rem",
+                  }}
+                >
+                  Zero Downtime Guarantee
+                </span>
 
-              <h2
-                style={{
-                  fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
-                  fontWeight: 700,
-                  color: "#F7F4EE",
-                  lineHeight: 1.15,
-                  letterSpacing: "-0.02em",
-                  marginBottom: "1.25rem",
-                }}
-              >
-                Offline-First Reliability:{" "}
-                <span className="italic font-normal gold-gradient-text">Your Front Desk Never Freezes</span>
-              </h2>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(2rem, 3.2vw, 2.85rem)",
+                    fontWeight: 700,
+                    color: "#F7F4EE",
+                    lineHeight: 1.15,
+                    letterSpacing: "-0.02em",
+                    marginBottom: "1.25rem",
+                  }}
+                >
+                  Offline-First Reliability:{" "}
+                  <span className="italic font-normal gold-gradient-text block mt-1">
+                    Your Front Desk Never Freezes
+                  </span>
+                </h2>
 
-              <p
-                style={{
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: "1.05rem",
-                  color: "#D3C4B3",
-                  maxWidth: "72ch",
-                  margin: "0 auto",
-                  lineHeight: 1.7,
-                }}
-              >
-                When bad weather or construction cuts your property&apos;s internet, ordinary hotel software
-                stops working and leaves guests waiting in the lobby. With SPEAR, your front desk can check in
-                arrivals, create door keys, post restaurant tabs, and print bills 100% offline—and everything
-                syncs back to the cloud automatically when Wi-Fi returns.
-              </p>
-            </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: "1.02rem",
+                    color: "#D3C4B3",
+                    lineHeight: 1.75,
+                    marginBottom: "2rem",
+                  }}
+                >
+                  When bad weather or construction cuts your property&apos;s internet, ordinary hotel software
+                  stops working and leaves guests waiting in the lobby. With SPEAR, your front desk can check in
+                  arrivals, create door keys, post restaurant tabs, and print bills 100% offline—and everything
+                  syncs back to the cloud automatically when Wi-Fi returns.
+                </p>
 
-            {/* ============================================================
-                THE SERPENTINE / S-CURVE FLOW (SCROLL-DRIVEN ARCHITECTURE)
-                Matching Hand-Drawn Reference Diagram:
-                [Card 1 (Left)] -> Swooping Arrow (↘) -> [Card 2 (Right)]
-                -> Swooping Arrow (↙) -> [Card 3 (Left)] -> Swooping Arrow (↘) -> [Card 4 (Right)]
-                ============================================================ */}
-            <div style={{ position: "relative", marginTop: "2rem" }}>
+                {/* Key Benefits List */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "2rem" }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>100% On-Site Independence</strong>
+                      <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
+                        Front desk computers, key encoders, and kitchen printers continue running without a hiccup.
+                      </span>
+                    </div>
+                  </div>
 
-              {/* ----------------------------------------------------------
-                  PHASE 01: TERMINAL VIEW (LEFT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: -25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "620px",
-                  marginRight: "auto",
-                  marginLeft: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>Zero Lobby Queues</strong>
+                      <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
+                        Check in arriving guests in under 60 seconds with active room keys—no loading spinners.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>Automatic Background Cloud Sync</strong>
+                      <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
+                        Once internet returns, all bills, room cleanings, and check-ins sync quietly in seconds.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.6rem",
+                    padding: "0.6rem 1rem",
+                    borderRadius: 8,
+                    background: "rgba(199,154,69,0.08)",
+                    border: "1px solid rgba(199,154,69,0.2)",
+                    fontSize: "0.8rem",
+                    color: "#D4A359",
+                    fontWeight: 600,
+                  }}
+                >
+                  <ShieldCheck size={16} color="#D4A359" />
+                  <span>Tested for 72+ continuous offline operating hours</span>
+                </div>
+              </div>
+
+              {/* Right Column (Zigzag 4-Phase Architecture Canvas) */}
+              <div className="lg:col-span-7">
+                <div
+                  style={{
+                    background: "linear-gradient(180deg, rgba(26,21,17,0.7) 0%, rgba(18,15,12,0.85) 100%)",
+                    borderRadius: 20,
+                    border: "1.5px solid rgba(212,163,89,0.22)",
+                    boxShadow: "0 24px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)",
+                    padding: "2rem 1.25rem",
+                    position: "relative",
+                  }}
+                >
+                  {/* ----------------------------------------------------------
+                      PHASE 01: TERMINAL VIEW (LEFT BOX)
+                      ---------------------------------------------------------- */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 40, x: -25 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    viewport={{ amount: 0.25, once: false }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -5, transition: { duration: 0.25 } }}
+                    style={{
+                      width: "100%",
+                      maxWidth: "520px",
+                      marginRight: "auto",
+                      marginLeft: 0,
+                      transition: "box-shadow 0.3s ease",
+                    }}
+                  >
                 <div
                   style={{
                     background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
@@ -1013,7 +1076,7 @@ export default function HotelPmsModulePage() {
                 whileHover={{ y: -5, transition: { duration: 0.25 } }}
                 style={{
                   width: "100%",
-                  maxWidth: "620px",
+                  maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: 0,
                   transition: "box-shadow 0.3s ease",
@@ -1245,7 +1308,7 @@ export default function HotelPmsModulePage() {
                 whileHover={{ y: -5, transition: { duration: 0.25 } }}
                 style={{
                   width: "100%",
-                  maxWidth: "620px",
+                  maxWidth: "520px",
                   marginRight: "auto",
                   marginLeft: 0,
                   transition: "box-shadow 0.3s ease",
@@ -1477,7 +1540,7 @@ export default function HotelPmsModulePage() {
                 whileHover={{ y: -5, transition: { duration: 0.25 } }}
                 style={{
                   width: "100%",
-                  maxWidth: "620px",
+                  maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: 0,
                   transition: "box-shadow 0.3s ease",
@@ -1605,7 +1668,9 @@ export default function HotelPmsModulePage() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
         <section
           id="architecture-specs"
           style={{

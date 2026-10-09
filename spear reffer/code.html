@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SPEAR — All-in-One Hospitality Management Software: Hotel PMS &amp; Restaurant POS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#f0bf6d",
+            "surface-variant": "#383430",
+            "surface-container-low": "#1e1b18",
+            "on-tertiary-container": "#563a00",
+            "on-surface": "#e9e1dc",
+            "outline": "#9c8f7f",
+            "primary": "#f2be71",
+            "error": "#ffb4ab",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffdeac",
+            "secondary-fixed": "#e5e2dc",
+            "on-primary": "#442b00",
+            "secondary-container": "#474743",
+            "surface-bright": "#3c3835",
+            "on-secondary-container": "#b7b5af",
+            "inverse-on-surface": "#33302c",
+            "surface": "#161310",
+            "primary-container": "#d4a359",
+            "error-container": "#93000a",
+            "tertiary-container": "#d2a455",
+            "on-primary-container": "#583a00",
+            "on-secondary": "#31312d",
+            "background": "#161310",
+            "on-tertiary": "#422c00",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#474743",
+            "on-tertiary-fixed": "#281900",
+            "secondary": "#c9c6c1",
+            "surface-container": "#221f1c",
+            "surface-dim": "#161310",
+            "on-secondary-fixed": "#1c1c18",
+            "primary-fixed-dim": "#f2be71",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "surface-tint": "#f2be71",
+            "on-primary-fixed-variant": "#614000",
+            "tertiary-fixed-dim": "#f0bf6c",
+            "surface-container-high": "#2d2926",
+            "outline-variant": "#4f4538",
+            "surface-container-lowest": "#100e0b",
+            "inverse-surface": "#e9e1dc",
+            "inverse-primary": "#7e5713",
+            "on-surface-variant": "#d3c4b3",
+            "primary-fixed": "#ffddb1",
+            "surface-container-highest": "#383430",
+            "secondary-fixed-dim": "#c9c6c1",
+            "on-background": "#e9e1dc",
+            "on-primary-fixed": "#291800"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Playfair Display"],
+            "headline-2xl-mobile": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-xl": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-2xl": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-2xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-2xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .spear-glow {
+      box-shadow: 0 0 45px -4px rgba(212, 163, 89, 0.16);
+    }
+    .spear-gold-border {
+      border: 1px solid rgba(212, 163, 89, 0.22);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F2BE71 0%, #D4A359 50%, #C5984A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container antialiased font-body-md overflow-x-hidden">
+<!-- ========================================================================= -->
+<!-- 1. TOP NAVIGATION BAR (Shared Components Exact Execution) -->
+<!-- ========================================================================= -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 md:px-12 max-w-[1360px] mx-auto h-20">
+<!-- Logo Spear Heritage Brandmark -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="flex items-center">
+<!-- Spear Icon & Wordmark SVG Graphic -->
+<svg class="h-6 w-auto text-primary transition-transform duration-200 group-hover:scale-105" fill="none" viewbox="0 0 160 28" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#D4A359" stroke-linecap="round" stroke-width="1.2" x1="2" x2="158" y1="14" y2="14"></line>
+<path d="M142 9L158 14L142 19L146 14L142 9Z" fill="#D4A359"></path>
+<circle cx="8" cy="14" fill="#D4A359" r="2.5"></circle>
+</svg>
+<span class="ml-3 text-headline-md font-headline-md tracking-wider uppercase text-on-surface dark:text-on-surface font-semibold">
+            SPEAR
+          </span>
+</div>
+</a>
+<!-- Desktop Links (Shared Component Array) -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-primary dark:text-primary font-semibold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="#modules">Modules</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium transition-colors hover:text-primary dark:hover:text-primary text-label-lg font-label-lg" href="#pillars">Platform Pillars</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium transition-colors hover:text-primary dark:hover:text-primary text-label-lg font-label-lg" href="#spotlight">Hardware &amp; POS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium transition-colors hover:text-primary dark:hover:text-primary text-label-lg font-label-lg" href="#pricing">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium transition-colors hover:text-primary dark:hover:text-primary text-label-lg font-label-lg" href="#story">Story</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium transition-colors hover:text-primary dark:hover:text-primary text-label-lg font-label-lg" href="#faq">FAQ</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-4">
+<a class="hidden sm:inline-flex items-center text-label-lg font-label-lg text-on-surface-variant hover:text-primary transition-colors duration-150 py-2.5 px-4 rounded-lg" href="#signin">
+          Client Sign In
+        </a>
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary-container text-label-lg font-label-lg font-semibold px-6 py-2.5 rounded-lg hover:bg-primary transition-all duration-150 active:scale-95 shadow-sm hover:shadow-[0_4px_16px_rgba(212,163,89,0.3)]" href="#demo">
+          Book a Demo
+        </a>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 2. HERO SECTION: Editorial Luxury Title + Live Architecture Canvas -->
+<!-- ========================================================================= -->
+<section class="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden border-b border-outline-variant/20">
+<!-- Atmospheric Ambient Glows -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[360px] bg-primary/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute top-0 right-10 w-[420px] h-[300px] bg-tertiary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-[1360px] mx-auto px-6 md:px-12 relative z-10">
+<!-- Centered Header Stack -->
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+<!-- Heritage Brand Glyph & Spear Graphic -->
+<div class="w-full max-w-sm mb-6 flex flex-col items-center opacity-90">
+<svg class="w-full h-8" fill="none" viewbox="0 0 340 32" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#D4A359" stroke-dasharray="2 3" stroke-width="1.2" x1="8" x2="332" y1="16" y2="16"></line>
+<polygon fill="#D4A359" points="314,9 336,16 314,23 318,16"></polygon>
+<polygon fill="#D4A359" points="26,9 4,16 26,23 22,16"></polygon>
+<circle cx="170" cy="16" fill="#D4A359" r="3.5"></circle>
+</svg>
+<span class="font-body-md text-label-sm font-label-sm tracking-[0.22em] uppercase text-primary/80 mt-1">
+            Smart Platform for Every Accommodation &amp; Restaurant
+          </span>
+</div>
+<!-- Overline Pill Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm tracking-[0.12em] uppercase mb-8">
+<span class="text-primary font-bold">✦</span>
+          UNIFIED HOSPITALITY OPERATING SYSTEM
+          <span class="text-primary font-bold">✦</span>
+</div>
+<!-- Master Title (Exact prompt string) -->
+<h1 class="text-headline-2xl md:text-[54px] md:leading-[62px] font-headline-2xl text-on-surface mb-8 tracking-tight">
+          All-in-One Hospitality <br class="hidden sm:inline"/>
+          Management Software: <span class="italic font-normal gold-gradient-text">Hotel PMS &amp; Restaurant POS</span>
+</h1>
+<!-- High-conviction Body Subtitle -->
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl text-center mb-10 leading-relaxed">
+          Purpose-built for properties that run both lodging and dining. Eliminate fragmented tools with seamless room-folio dining tab billing, offline POS reliability, and real-time OTA synchronization.
+        </p>
+<!-- CTA Buttons & Verified Operator Badge -->
+<div class="flex flex-col sm:flex-row items-center gap-4 mb-8">
+<a class="w-full sm:w-auto px-8 py-3.5 bg-primary-container text-on-primary-container rounded-lg font-label-lg text-label-lg font-semibold hover:bg-primary transition-all duration-150 active:scale-95 shadow-[0_4px_24px_rgba(212,163,89,0.35)] flex items-center justify-center gap-2" href="#demo">
+<span>Schedule Private Demo</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-primary/40 text-on-surface hover:bg-primary/10 hover:border-primary rounded-lg font-label-lg text-label-lg font-semibold transition-all duration-150 flex items-center justify-center gap-2" href="#live-preview">
+<span class="material-symbols-outlined text-primary text-[20px]">play_circle</span>
+<span>Explore Interactive Demo</span>
+</a>
+</div>
+<!-- Social Proof Micro-Bar -->
+<div class="flex items-center gap-3 text-body-sm font-body-sm text-outline">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-on-surface-variant font-medium">Rated 4.9/5 by 340+ boutique hotel, lodge &amp; Michelin dining operators</span>
+</div>
+</div>
+<!-- Simulated macOS SPEAR OS Live Canvas -->
+<div class="mt-16 rounded-xl border border-primary/25 bg-surface-container-low shadow-[0_24px_64px_-16px_rgba(0,0,0,0.85)] overflow-hidden spear-glow" id="live-preview">
+<!-- Window Chrome / Header Bar -->
+<div class="bg-surface-container-high px-6 py-3.5 border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-error/70 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary/80 inline-block"></span>
+<span class="ml-4 font-label-sm text-label-sm uppercase tracking-widest text-outline">SPEAR OS Enterprise — The Grand Belvedere Estate &amp; Grill (Live Sync)</span>
+</div>
+<div class="flex items-center gap-4 text-label-sm font-label-sm">
+<span class="inline-flex items-center gap-1.5 text-primary bg-primary/10 px-2.5 py-1 rounded border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              TAURI ENGINE: REAL-TIME FOSTER LINK ACTIVE
+            </span>
+<span class="text-outline">Latency: 14ms</span>
+</div>
+</div>
+<!-- Dashboard UI Split Surface -->
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/25">
+<!-- Left: Hotel PMS Master Tape Chart & Room Management (7 Cols) -->
+<div class="lg:col-span-7 p-6 bg-surface-container/60">
+<div class="flex items-center justify-between mb-5">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary font-bold">Property Master Record</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Live Tape Chart &amp; Room Folios</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-highest rounded text-label-md font-label-md text-on-surface-variant">Today: Oct 12, 2026</span>
+<span class="px-2.5 py-1 bg-primary/15 text-primary border border-primary/30 rounded text-label-md font-label-md font-semibold">Occupancy: 94.2%</span>
+</div>
+</div>
+<!-- Tape Chart Visual Grid -->
+<div class="space-y-2.5 font-label-md text-label-md">
+<!-- Room 401 -->
+<div class="flex items-center bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/30">
+<div class="w-28 flex-shrink-0">
+<div class="font-bold text-on-surface">Suite 401</div>
+<div class="text-[10px] text-outline">Penthouse King</div>
+</div>
+<div class="flex-1 ml-2 grid grid-cols-4 gap-1.5">
+<div class="bg-[#2A241F] border-l-2 border-primary p-1.5 rounded text-[11px] col-span-3 text-on-surface">
+<span class="font-semibold text-primary">Lord H. Montgomery</span>
+<span class="text-outline text-[10px] block">Check-out Oct 15 • VIP Concierge</span>
+</div>
+<div class="bg-surface-container-high/60 p-1.5 rounded text-[10px] text-center text-outline flex items-center justify-center">Cleaning Set</div>
+</div>
+</div>
+<!-- Room 402 - Active Focus -->
+<div class="flex items-center bg-surface-container-low p-2.5 rounded-lg border-2 border-primary/60 shadow-[0_0_20px_rgba(212,163,89,0.15)] relative">
+<div class="w-28 flex-shrink-0">
+<div class="font-bold text-primary flex items-center gap-1">
+<span>Suite 402</span>
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</div>
+<div class="text-[10px] text-outline">Executive Terrace</div>
+</div>
+<div class="flex-1 ml-2 grid grid-cols-4 gap-1.5">
+<div class="bg-surface-container-high border-l-2 border-primary p-2 rounded text-[11px] col-span-3 text-on-surface flex justify-between items-center">
+<div>
+<span class="font-bold text-on-surface">Dr. Evelyn Vance</span>
+<span class="text-primary/90 text-[10px] block">Folio Balance: $1,428.50 (Synced)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary text-[10px] font-bold">ACTIVE CHARGE</span>
+</div>
+<div class="bg-surface-container-high/60 p-1 rounded text-[10px] text-center text-outline flex items-center justify-center">Oct 14</div>
+</div>
+</div>
+<!-- Room 403 -->
+<div class="flex items-center bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/30">
+<div class="w-28 flex-shrink-0">
+<div class="font-bold text-on-surface">Room 403</div>
+<div class="text-[10px] text-outline">Garden Deluxe</div>
+</div>
+<div class="flex-1 ml-2 grid grid-cols-4 gap-1.5">
+<div class="bg-surface-container-high/40 p-1.5 rounded text-[11px] col-span-2 text-outline">
+<span>OTA: Booking.com</span>
+<span class="text-[10px] block text-outline">Arriving 16:00</span>
+</div>
+<div class="bg-[#2F382A] border-l-2 border-green-500/60 p-1.5 rounded text-[10px] text-on-surface col-span-2">
+<span class="font-semibold text-green-300">Room Ready</span>
+<span class="text-outline text-[9px] block">Inspected by Marie C.</span>
+</div>
+</div>
+</div>
+<!-- Instant Dining Cross-Post Banner Highlight -->
+<div class="mt-4 p-3.5 rounded-lg bg-surface-container-high border border-primary/40 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">Dining Tab #8841 Posted to Room 402 Folio</div>
+<div class="text-body-sm font-body-sm text-outline">Table 12 • 2x Wagyu Ribeye, 1x 2018 Barolo • Total $284.00</div>
+</div>
+</div>
+<span class="px-2.5 py-1 bg-primary text-on-primary rounded text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  SETTLED
+                </span>
+</div>
+</div>
+</div>
+<!-- Right: F&B Kitchen Display (KDS) & Floor Plan Operations (5 Cols) -->
+<div class="lg:col-span-5 p-6 bg-surface-container-low/80 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-5">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary font-bold">Offline Restaurant POS</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Kitchen Station KDS Pacing</h3>
+</div>
+<span class="px-2 py-1 rounded bg-[#2F382A] text-green-300 text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                  Thermal HW Online
+                </span>
+</div>
+<!-- Ticket Queue Cards -->
+<div class="space-y-3">
+<!-- Order Card 1: Fired Table 12 -->
+<div class="p-3.5 rounded-lg bg-surface-container border border-outline-variant/40">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface text-label-lg font-label-lg">T-12 (Terrace)</span>
+<span class="text-label-sm font-label-sm bg-primary/10 text-primary px-2 py-0.5 rounded">GUEST: Vance (Rm 402)</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-mono bg-surface-container-high px-2 py-0.5 rounded">11m 42s</span>
+</div>
+<ul class="text-body-sm font-body-sm space-y-1 text-on-surface-variant">
+<li class="flex justify-between"><span>1x Truffle Risotto (No chives)</span><span class="text-primary font-bold">READY</span></li>
+<li class="flex justify-between"><span>2x A5 Miyazaki Wagyu (Medium-Rare)</span><span class="text-tertiary">FIRING</span></li>
+</ul>
+</div>
+<!-- Order Card 2: Bar Ticket -->
+<div class="p-3.5 rounded-lg bg-surface-container border border-outline-variant/40">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface text-label-lg font-label-lg">Bar Stool 04</span>
+<span class="text-label-sm font-label-sm bg-surface-variant text-secondary px-2 py-0.5 rounded">WALK-IN</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline font-mono">03m 15s</span>
+</div>
+<ul class="text-body-sm font-body-sm space-y-1 text-on-surface-variant">
+<li class="flex justify-between"><span>2x Smoked Old Fashioned</span><span class="text-green-400 font-bold">SERVED</span></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Tauri Ledger Status Footer -->
+<div class="mt-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">security</span>
+                Local Tamper-Proof SQLite Ledger
+              </span>
+<span class="text-on-surface-variant font-medium">Auto-Sync on LAN</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. THE PROBLEM & VISION ("Why We Built This") -->
+<!-- ========================================================================= -->
+<section class="py-24 max-w-[1360px] mx-auto px-6 md:px-12 border-b border-outline-variant/20" id="story">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Narrative Left Column -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 text-label-sm font-label-sm tracking-widest text-primary uppercase font-bold">
+<span class="material-symbols-outlined text-[16px]">sync_problem</span>
+          THE COST OF FRAGMENTATION
+        </div>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-on-surface leading-tight">
+          Why We Built SPEAR: <br/>
+<span class="italic font-normal gold-gradient-text">Ending the 5-Vendor Operational Nightmare.</span>
+</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+          For decades, prestigious boutique hotels and luxury estates were forced to stitch together a disparate patchwork of systems: an outdated PMS for rooms, a separate cloud POS for the restaurant, third-party channel managers for OTAs, an independent table booking widget, and manual spreadsheet accounting.
+        </p>
+<p class="text-body-md font-body-md text-outline leading-relaxed">
+          When the internet dropped, dining rooms went dark and servers couldn't print tickets. When a guest at dinner wanted their $300 bill transferred to Room 304, reception had to manually re-enter receipts into a midnight ledger. SPEAR was engineered from the ground up on modern native architectures to eliminate this friction forever.
+        </p>
+<!-- Value Bullet Points -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+<div class="p-4 rounded-lg bg-surface-container border border-outline-variant/30">
+<div class="text-primary font-bold text-label-lg font-label-lg mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">link_off</span>
+              No More Lost Tabs
+            </div>
+<div class="text-body-sm font-body-sm text-outline">One-touch dining settlement transfers food, beverage, and tip directly to the guest's master hotel reservation.</div>
+</div>
+<div class="p-4 rounded-lg bg-surface-container border border-outline-variant/30">
+<div class="text-primary font-bold text-label-lg font-label-lg mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">wifi_off</span>
+              Offline Zero-Downtime
+            </div>
+<div class="text-body-sm font-body-sm text-outline">Our Tauri desktop engine runs 100% offline with local network printer queues, keeping dinner service completely uninterrupted.</div>
+</div>
+</div>
+</div>
+<!-- Stat Callout Cards Right Column -->
+<div class="lg:col-span-5 space-y-5">
+<!-- Stat Tile 1 -->
+<div class="p-8 rounded-xl bg-surface-container-high border border-primary/25 relative overflow-hidden group hover:border-primary transition-all duration-300">
+<div class="text-primary font-headline-2xl text-[48px] font-bold tracking-tight mb-2">0%</div>
+<div class="text-label-lg font-label-lg text-on-surface font-semibold mb-1">Commission on Direct Reservations</div>
+<p class="text-body-sm font-body-sm text-outline">Eliminate predatory 18-25% OTA fees with our branded, high-conversion guest reservation engine.</p>
+<div class="absolute -right-6 -bottom-6 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary">percent</span>
+</div>
+</div>
+<!-- Stat Tile 2 -->
+<div class="p-8 rounded-xl bg-surface-container-high border border-primary/25 relative overflow-hidden group hover:border-primary transition-all duration-300">
+<div class="text-primary font-headline-2xl text-[48px] font-bold tracking-tight mb-2">100%</div>
+<div class="text-label-lg font-label-lg text-on-surface font-semibold mb-1">Offline POS Hardware Resilience</div>
+<p class="text-body-sm font-body-sm text-outline">Keep punching orders, printing kitchen chits, and executing credit pre-authorizations even during complete ISP blackout.</p>
+<div class="absolute -right-6 -bottom-6 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary">signal_wifi_off</span>
+</div>
+</div>
+<!-- Stat Tile 3 -->
+<div class="p-8 rounded-xl bg-surface-container-high border border-primary/25 relative overflow-hidden group hover:border-primary transition-all duration-300">
+<div class="text-primary font-headline-2xl text-[48px] font-bold tracking-tight mb-2">&lt; 1.8s</div>
+<div class="text-label-lg font-label-lg text-on-surface font-semibold mb-1">Folio Dining Tab Reconciliation</div>
+<p class="text-body-sm font-body-sm text-outline">Instantly sync dining tabs to room folios with biometric staff signature audit trails and tamper-proof ledgering.</p>
+<div class="absolute -right-6 -bottom-6 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary">speed</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. THE 6 PILLARS OF THE SPEAR ECOSYSTEM (20 Integrated Modules) -->
+<!-- ========================================================================= -->
+<section class="py-24 bg-surface-container-low/50 border-b border-outline-variant/20" id="pillars">
+<div class="max-w-[1360px] mx-auto px-6 md:px-12">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 text-label-sm font-label-sm tracking-widest text-primary uppercase font-bold mb-3">
+          UNIFIED OPERATING SYSTEM
+        </div>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-on-surface mb-4">
+          The 6 Pillars of the SPEAR Ecosystem
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+          20 integrated modules organized into 6 master operating pillars. Everything your accommodation and restaurant team needs to run in complete harmony.
+        </p>
+</div>
+<!-- 6 Pillars Cards Grid (3x2 Desktop Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Pillar 01: Hotel PMS & Room Operations -->
+<div class="p-8 rounded-xl bg-[#EFECE4] text-[#181512] shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-bold tracking-[0.14em] text-[#C5984A] uppercase">PILLAR 01</span>
+<span class="material-symbols-outlined text-[28px] text-[#C5984A]">hotel</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-[#181512] mb-3">
+              Hotel PMS &amp; Room Operations
+            </h3>
+<p class="text-body-md font-body-md text-[#5E574E] mb-6 leading-relaxed">
+              Central master record controlling room assignments, tape chart scheduling, automated housekeeping task dispatch, and combined folio billing.
+            </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-[#181512]/10">
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Master Tape Chart</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Housekeeping Dispatch</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Consolidated Folio Billing</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Biometric Staff Clock-In</span>
+</div>
+</div>
+<!-- Pillar 02: Direct Bookings & Channel Manager -->
+<div class="p-8 rounded-xl bg-[#EFECE4] text-[#181512] shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-bold tracking-[0.14em] text-[#C5984A] uppercase">PILLAR 02</span>
+<span class="material-symbols-outlined text-[28px] text-[#C5984A]">calendar_month</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-[#181512] mb-3">
+              Direct Bookings &amp; Channel Manager
+            </h3>
+<p class="text-body-md font-body-md text-[#5E574E] mb-6 leading-relaxed">
+              Commission-free website engine with deposit holds, real-time 2-way OTA synchronization, and occupancy-based dynamic RMS surge pricing.
+            </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-[#181512]/10">
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Direct Booking Engine</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">2-Way OTA Sync</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Dynamic RMS Pricing</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Branded Storefronts</span>
+</div>
+</div>
+<!-- Pillar 03: Offline Tauri POS & Kitchen Display -->
+<div class="p-8 rounded-xl bg-[#EFECE4] text-[#181512] shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-bold tracking-[0.14em] text-[#C5984A] uppercase">PILLAR 03</span>
+<span class="material-symbols-outlined text-[28px] text-[#C5984A]">point_of_sale</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-[#181512] mb-3">
+              Offline Tauri POS &amp; Kitchen Display
+            </h3>
+<p class="text-body-md font-body-md text-[#5E574E] mb-6 leading-relaxed">
+              Desktop application with local hardware printer drivers that operates 100% offline, paired with digital kitchen KDS station pacing.
+            </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-[#181512]/10">
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">100% Offline Tauri POS</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Kitchen Display (KDS)</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Single-Tap Room Charge</span>
+<span class="px-2.5 py-1 rounded bg-[#181512]/5 text-[#181512] font-label-sm text-label-sm font-semibold border border-[#181512]/10">Tamper-Proof Ledger</span>
+</div>
+</div>
+<!-- Pillar 04: Unified Dining Folio & Room Tab Sync -->
+<div class="p-8 rounded-xl bg-surface-container border border-primary/25 shadow-md flex flex-col justify-between hover:border-primary transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-bold tracking-[0.14em] text-primary uppercase">PILLAR 04</span>
+<span class="material-symbols-outlined text-[28px] text-primary">receipt</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">
+              Unified Dining Folio &amp; Room Tab Sync
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Proprietary cross-department routing engine that permits restaurant guests to instantly transfer checks, tips, and service gratuities to room folios.
+            </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/30">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">Cross-Dept Charge Router</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">Tip Distribution Pool</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">QR Guest Folio Approval</span>
+</div>
+</div>
+<!-- Pillar 05: Inventory, Recipe Costing & Stock Flow -->
+<div class="p-8 rounded-xl bg-surface-container border border-primary/25 shadow-md flex flex-col justify-between hover:border-primary transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-bold tracking-[0.14em] text-primary uppercase">PILLAR 05</span>
+<span class="material-symbols-outlined text-[28px] text-primary">inventory_2</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">
+              Inventory, Recipe Costing &amp; Stock Flow
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Real-time ingredient depletion triggered on every POS ring. Automated supplier purchase orders, cellar bottle tracking, and theoretical variance logs.
+            </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/30">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">POS Ring Depletion</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">Automated PO Generator</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">Beverage Cellar Audits</span>
+</div>
+</div>
+<!-- Pillar 06: Banqueting & Event Sales (BEO) -->
+<div class="p-8 rounded-xl bg-surface-container border border-primary/25 shadow-md flex flex-col justify-between hover:border-primary transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-bold tracking-[0.14em] text-primary uppercase">PILLAR 06</span>
+<span class="material-symbols-outlined text-[28px] text-primary">celebration</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">
+              Banqueting &amp; Event Sales (BEO)
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Full Banquet Event Order (BEO) contract workflow. Seamless cross-module locks ensure banquet rooms, chefs, and sleeping blocks are never double-booked.
+            </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/30">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">BEO Management</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">Cross-Module Resource Locking</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/30">Seating &amp; Stage Charts</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. DEEP-DIVE SPOTLIGHT: Offline Tauri POS & Kitchen Display (03 / 06) -->
+<!-- ========================================================================= -->
+<section class="py-24 bg-surface relative overflow-hidden border-b border-outline-variant/20" id="spotlight">
+<!-- Atmospheric glow underlay -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+<div class="max-w-[1360px] mx-auto px-6 md:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Feature Left Content (Exact strings from image 2) -->
+<div class="lg:col-span-5 space-y-6">
+<div class="text-label-sm font-label-sm font-bold tracking-[0.18em] text-primary uppercase">
+            03 / 06
+          </div>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-on-surface leading-tight">
+            Offline Tauri POS &amp;<br/>
+<span class="italic font-normal gold-gradient-text">Kitchen Display</span>
+</h2>
+<p class="text-headline-sm font-headline-sm italic text-primary/90">
+            High-speed, hardware-integrated POS that works even when WiFi drops.
+          </p>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+            Built as an offline-first Tauri desktop app with local printer drivers and tamper-proof ledger accounting. Automatically routes orders to kitchen KDS screens with Green/Yellow/Red pacing and posts dining tabs directly to hotel room folios.
+          </p>
+<!-- Badges cluster exactly matching the original image -->
+<div class="flex flex-wrap gap-2.5 pt-2">
+<span class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40 text-label-md font-label-md">100% Offline Desktop Tauri POS</span>
+<span class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40 text-label-md font-label-md">Station KDS &amp; Ticket Routing</span>
+<span class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40 text-label-md font-label-md">One-Tap Room Folio Posting</span>
+<span class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40 text-label-md font-label-md">Anti-Fraud Append-Only Ledger</span>
+</div>
+<!-- Action Arrow Link -->
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-primary hover:text-tertiary text-label-lg font-label-lg font-semibold group" href="#demo">
+<span>View Hardware Compatibility Matrix</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Interactive Visual Terminal Frame Right -->
+<div class="lg:col-span-7">
+<div class="p-6 md:p-8 rounded-2xl bg-surface-container-low border border-primary/30 spear-glow relative">
+<!-- Terminal Header -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error/80"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary/80"></span>
+<span class="w-3 h-3 rounded-full bg-primary/80"></span>
+<span class="ml-3 font-mono text-body-sm text-outline">POS-TERMINAL-01 (LAN: 192.168.1.104)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#2F382A] text-green-300 text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                  LAN ESC/POS DRIVER ACTIVE
+                </span>
+</div>
+</div>
+<!-- Simulated KDS Interactive Pacing Display -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Hot Kitchen Station (Pacing: Green) -->
+<div class="p-4 rounded-xl bg-surface-container border-l-4 border-green-500 border border-outline-variant/20">
+<div class="flex items-center justify-between mb-3">
+<span class="font-bold text-on-surface text-label-md">TICKET #042 — Table 8</span>
+<span class="text-green-400 font-mono text-label-sm font-bold bg-[#2F382A] px-2 py-0.5 rounded">06m 12s (NORMAL)</span>
+</div>
+<div class="space-y-2 text-body-sm text-on-surface-variant mb-4">
+<div class="flex justify-between items-center">
+<span>1x Dry-Aged Ribeye 14oz</span>
+<span class="text-outline text-label-sm">MED-RARE</span>
+</div>
+<div class="flex justify-between items-center">
+<span>1x Pan-Seared Chilean Seabass</span>
+<span class="text-outline text-label-sm">NO CAPERS</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm text-outline">Server: Julian B.</span>
+<button class="px-2.5 py-1 bg-surface-bright hover:bg-primary-container hover:text-on-primary-container rounded text-label-sm font-semibold transition-colors">Bump Ticket</button>
+</div>
+</div>
+<!-- Pastry & Dessert Station (Pacing: Yellow Warning) -->
+<div class="p-4 rounded-xl bg-surface-container border-l-4 border-tertiary border border-outline-variant/20">
+<div class="flex items-center justify-between mb-3">
+<span class="font-bold text-on-surface text-label-md">TICKET #043 — Suite 402 Room Service</span>
+<span class="text-tertiary font-mono text-label-sm font-bold bg-[#362E20] px-2 py-0.5 rounded">16m 40s (RUSH)</span>
+</div>
+<div class="space-y-2 text-body-sm text-on-surface-variant mb-4">
+<div class="flex justify-between items-center">
+<span>2x Grand Marnier Soufflé</span>
+<span class="text-primary text-label-sm font-semibold">FIRING NOW</span>
+</div>
+<div class="flex justify-between items-center">
+<span>1x Artisanal Fromage Plate</span>
+<span class="text-outline text-label-sm">READY</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm text-primary font-semibold">Post to Folio #402</span>
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded text-label-sm font-bold">Dispatch</button>
+</div>
+</div>
+</div>
+<!-- Hardware Health Ribbon -->
+<div class="mt-6 p-3 rounded-lg bg-surface-container-high/60 border border-outline-variant/30 flex flex-wrap items-center justify-between text-body-sm text-outline">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-400"></span>Epson TM-T88VI (Kitchen): OK</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-400"></span>Star Micronics (Bar): OK</span>
+</div>
+<span class="text-primary font-semibold">Sync Buffer: 0 Pending Chits</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 6. 3-STEP STREAMLINED WORKFLOW ("Getting Started") -->
+<!-- ========================================================================= -->
+<section class="py-24 bg-surface border-b border-outline-variant/20">
+<div class="max-w-[1360px] mx-auto px-6 md:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-label-sm font-label-sm tracking-widest text-primary uppercase font-bold">EFFORTLESS ONBOARDING</span>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-on-surface mt-2 mb-4">
+          Up &amp; Running in Under 72 Hours
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+          Our dedicated hospitality engineers handle legacy database extraction, room inventory imports, and table mapping without taking your property offline.
+        </p>
+</div>
+<!-- Step Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Step 01 -->
+<div class="p-8 rounded-xl bg-surface-container border border-primary/20 hover:border-primary transition-all duration-300 relative group">
+<div class="text-primary font-headline-xl text-[36px] font-bold mb-4 flex items-center justify-between">
+<span>01</span>
+<span class="material-symbols-outlined text-[32px] text-primary/40 group-hover:text-primary transition-colors">cloud_sync</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Connect Your Property</h3>
+<p class="text-body-md font-body-md text-outline leading-relaxed">
+            Import existing guest histories, reservations, and POS menu catalogs from Opera, Cloudbeds, Toast, or Micros with zero downtime.
+          </p>
+</div>
+<!-- Step 02 -->
+<div class="p-8 rounded-xl bg-surface-container border border-primary/20 hover:border-primary transition-all duration-300 relative group">
+<div class="text-primary font-headline-xl text-[36px] font-bold mb-4 flex items-center justify-between">
+<span>02</span>
+<span class="material-symbols-outlined text-[32px] text-primary/40 group-hover:text-primary transition-colors">tune</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Configure Your Modules</h3>
+<p class="text-body-md font-body-md text-outline leading-relaxed">
+            Activate the exact modules your property requires: tape chart rooms, table floor plans, thermal kitchen stations, and OTA channel mappings.
+          </p>
+</div>
+<!-- Step 03 -->
+<div class="p-8 rounded-xl bg-surface-container border border-primary/20 hover:border-primary transition-all duration-300 relative group">
+<div class="text-primary font-headline-xl text-[36px] font-bold mb-4 flex items-center justify-between">
+<span>03</span>
+<span class="material-symbols-outlined text-[32px] text-primary/40 group-hover:text-primary transition-colors">rocket_launch</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Go Live With White-Glove Support</h3>
+<p class="text-body-md font-body-md text-outline leading-relaxed">
+            Our team trains front-desk and service staff on-site or via dedicated video concierges, ensuring seamless shift transitions.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 7. TRANSPARENT MODULAR PRICING MATRIX -->
+<!-- ========================================================================= -->
+<section class="py-24 bg-[#F7F4EE] text-[#181512] border-b border-outline-variant/30" id="pricing">
+<div class="max-w-[1360px] mx-auto px-6 md:px-12">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-label-sm font-label-sm tracking-widest text-[#C5984A] uppercase font-bold">
+          TAILORED OPERATIONAL PACKAGES
+        </span>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-[#181512] mt-2 mb-4">
+          Choose the Package Tailored to Your Property
+        </h2>
+<p class="text-body-lg font-body-lg text-[#5E574E] max-w-2xl mx-auto">
+          Built on a modular hub-and-spoke architecture. Only activate the modules your operation requires, or power your entire property with our all-in-one suite.
+        </p>
+<!-- Billing Toggle Pill -->
+<div class="mt-8 inline-flex items-center p-1.5 rounded-full bg-[#E5E1D8] border border-[#181512]/10">
+<button class="px-5 py-2 rounded-full text-label-md font-label-md font-semibold transition-all duration-200 bg-[#181512] text-[#F7F4EE] shadow-sm" id="monthlyBtn">
+            Monthly Billing
+          </button>
+<button class="px-5 py-2 rounded-full text-label-md font-label-md font-semibold text-[#181512] hover:text-[#C5984A] transition-all duration-200 flex items-center gap-1.5" id="annualBtn">
+<span>Annual (Save 20%)</span>
+<span class="px-2 py-0.5 rounded-full bg-[#C5984A] text-[#181512] text-[10px] font-bold">SAVE 20%</span>
+</button>
+</div>
+</div>
+<!-- 3 Plan Cards (Matching Image 4 Layout & Copy) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+<!-- Tier 1: F&B Package -->
+<div class="p-8 md:p-10 rounded-2xl bg-[#EFECE4] border border-[#181512]/10 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+<div>
+<div class="mb-6">
+<h3 class="text-headline-lg font-headline-lg text-[#181512] mb-2">The F&amp;B Package</h3>
+<p class="text-body-md font-body-md text-[#5E574E] min-h-[44px]">
+                For independent restaurants, bars, cafes, and multi-concept kitchens.
+              </p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-2xl font-headline-2xl text-[#181512] font-bold" id="fnbPrice">$199</span>
+<span class="text-body-md text-[#5E574E]">/month</span>
+</div>
+<span class="text-body-sm text-[#5E574E] block mt-1">Billed annually or $249 month-to-month</span>
+</div>
+<!-- Checklist -->
+<ul class="space-y-3.5 mb-8 text-body-md text-[#181512]">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Offline Tauri Desktop POS &amp; Hardware Drivers</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Interactive Table Reservations &amp; Floor Plans</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Guest QR Code &amp; Waiter Tablet Ordering</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Kitchen Display System (KDS) Station Pacing</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Stock Depletion &amp; Recipe Costing Audits</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3.5 px-6 rounded-lg border border-[#181512] text-[#181512] font-label-lg text-label-lg font-semibold text-center hover:bg-[#181512] hover:text-[#F7F4EE] transition-colors" href="#demo">
+            Get Started with F&amp;B
+          </a>
+</div>
+<!-- Tier 2: Accommodation Package -->
+<div class="p-8 md:p-10 rounded-2xl bg-[#EFECE4] border border-[#181512]/10 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+<div>
+<div class="mb-6">
+<h3 class="text-headline-lg font-headline-lg text-[#181512] mb-2">The Accommodation Package</h3>
+<p class="text-body-md font-body-md text-[#5E574E] min-h-[44px]">
+                For boutique hotels, lodges, motels, and luxury bed &amp; breakfasts.
+              </p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-2xl font-headline-2xl text-[#181512] font-bold" id="accomPrice">$299</span>
+<span class="text-body-md text-[#5E574E]">/month</span>
+</div>
+<span class="text-body-sm text-[#5E574E] block mt-1">Billed annually or $369 month-to-month</span>
+</div>
+<!-- Checklist -->
+<ul class="space-y-3.5 mb-8 text-body-md text-[#181512]">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Cloud Hotel PMS (Master Record &amp; Tape Chart)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Commission-Free Direct Booking Engine</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>2-Way OTA Channel Manager (Booking, Agoda, Airbnb)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Automated Housekeeping &amp; Maintenance Board</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#C5984A] text-[20px] shrink-0 mt-0.5">check</span>
+<span>Dynamic RMS Occupancy Surge Yield Pricing</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3.5 px-6 rounded-lg border border-[#181512] text-[#181512] font-label-lg text-label-lg font-semibold text-center hover:bg-[#181512] hover:text-[#F7F4EE] transition-colors" href="#demo">
+            Get Started with Lodging
+          </a>
+</div>
+<!-- Tier 3: All-in-One Resort Suite (Featured Signature Dark Card) -->
+<div class="p-8 md:p-10 rounded-2xl bg-[#221C16] text-[#F7F4EE] border-2 border-primary/60 shadow-[0_16px_48px_rgba(0,0,0,0.35)] relative flex flex-col justify-between spear-glow">
+<!-- Top Flag Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+<span class="px-4 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold tracking-widest uppercase shadow-md">
+              MOST POPULAR
+            </span>
+</div>
+<div>
+<div class="mb-6 mt-2">
+<h3 class="text-headline-lg font-headline-lg text-[#F7F4EE] mb-2">All-in-One Resort Suite</h3>
+<p class="text-body-md font-body-md text-on-surface-variant min-h-[44px]">
+                For full-service hotels, resorts, and properties with dining &amp; lodging.
+              </p>
+</div>
+<div class="mb-8">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-2xl font-headline-2xl text-primary font-bold" id="suitePrice">$499</span>
+<span class="text-body-md text-on-surface-variant">/month</span>
+</div>
+<span class="text-body-sm text-outline block mt-1">Billed annually or $599 month-to-month</span>
+</div>
+<!-- Checklist -->
+<ul class="space-y-3.5 mb-8 text-body-md text-on-surface">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check</span>
+<span class="font-semibold text-primary">Everything in F&amp;B and Accommodation packages</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check</span>
+<span>Unified Room Folio Dining Tab Billing</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check</span>
+<span>Sales &amp; Banqueting (BEO Event Management)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check</span>
+<span>Cross-Module Event Resource Locking</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check</span>
+<span>White-Glove Database Migration &amp; 24/7 Dedicated Concierge</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold text-center hover:bg-primary transition-all duration-150 shadow-[0_4px_20px_rgba(212,163,89,0.3)]" href="#demo">
+            Deploy Full Resort Suite
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 8. INTERACTIVE FREQUENTLY ASKED QUESTIONS (FAQ) -->
+<!-- ========================================================================= -->
+<section class="py-24 bg-surface max-w-[1360px] mx-auto px-6 md:px-12 border-b border-outline-variant/20" id="faq">
+<div class="max-w-3xl mx-auto">
+<!-- FAQ Header -->
+<div class="text-center mb-16">
+<span class="text-label-sm font-label-sm tracking-widest text-primary uppercase font-bold">FREQUENTLY ASKED QUESTIONS</span>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-on-surface mt-2 mb-4">
+          Everything You Need to Know
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+          Clear answers regarding hardware integrations, OTA synchronizations, offline guarantees, and switching from legacy systems.
+        </p>
+</div>
+<!-- FAQ Accordion List -->
+<div class="space-y-4" id="faq-accordion">
+<!-- Question 1 -->
+<div class="border border-outline-variant/30 rounded-xl bg-surface-container overflow-hidden transition-colors">
+<button class="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+<span>How does SPEAR connect hotel room bookings with the restaurant POS?</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-6 pb-5 text-body-md text-on-surface-variant leading-relaxed hidden">
+            SPEAR operates on a single unified relational core. When a guest dines at your restaurant or orders room service, the server taps "Room Folio Charge" on the POS, selects the guest's room number or surname from the live PMS roster, and the check is instantly appended to their main checkout statement with complete itemized receipts and tip breakdown.
+          </div>
+</div>
+<!-- Question 2 -->
+<div class="border border-outline-variant/30 rounded-xl bg-surface-container overflow-hidden transition-colors">
+<button class="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+<span>Does SPEAR include a channel manager for OTAs like Booking.com and Expedia?</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-6 pb-5 text-body-md text-on-surface-variant leading-relaxed hidden">
+            Yes. SPEAR includes a built-in 2-way native channel manager connecting to Booking.com, Expedia, Airbnb, Agoda, and 50+ global OTAs. Rates, availability, and minimum-night restrictions are pushed in real time, preventing double bookings and eliminating expensive third-party channel bridge software fees.
+          </div>
+</div>
+<!-- Question 3 -->
+<div class="border border-outline-variant/30 rounded-xl bg-surface-container overflow-hidden transition-colors">
+<button class="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+<span>Can I use SPEAR if I only run a hotel or only run a restaurant?</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-6 pb-5 text-body-md text-on-surface-variant leading-relaxed hidden">
+            Absolutely. SPEAR is modular. You can subscribe to our standalone "F&amp;B Package" ($199/mo) or our standalone "Accommodation Package" ($299/mo). If you decide to add dining, lodging, or event spaces in the future, you can activate additional modules seamlessly without switching platforms.
+          </div>
+</div>
+<!-- Question 4 -->
+<div class="border border-outline-variant/30 rounded-xl bg-surface-container overflow-hidden transition-colors">
+<button class="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+<span>What POS and kitchen hardware does SPEAR support?</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-6 pb-5 text-body-md text-on-surface-variant leading-relaxed hidden">
+            Our native Tauri desktop app runs cross-platform on Windows, macOS, and Linux hardware. We support standard industry ESC/POS receipt printers (Epson, Star Micronics), cash drawers, barcode scanners, and kitchen KDS tablets via local USB, Bluetooth, or LAN connectivity.
+          </div>
+</div>
+<!-- Question 5 -->
+<div class="border border-outline-variant/30 rounded-xl bg-surface-container overflow-hidden transition-colors">
+<button class="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+<span>How easy is it to migrate data from our existing PMS or POS?</span>
+<span class="material-symbols-outlined text-primary transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-6 pb-5 text-body-md text-on-surface-variant leading-relaxed hidden">
+            We provide automated import parsers for Opera, Cloudbeds, Mews, Toast, Square, and standard CSV guest registries. Our dedicated onboarding concierge conducts a test migration in a sandbox environment before coordinating a smooth cutover window with zero operational interruption.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 9. CONVERSION BANNER & CLOSING CTA -->
+<!-- ========================================================================= -->
+<section class="py-20 relative overflow-hidden bg-surface-container-low border-b border-outline-variant/20" id="demo">
+<div class="max-w-[1360px] mx-auto px-6 md:px-12 text-center relative z-10">
+<div class="max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-label-sm font-label-sm uppercase tracking-widest mb-6">
+          PRESTIGE ENTERPRISE ARCHITECTURE
+        </div>
+<h2 class="text-headline-xl md:text-headline-2xl font-headline-xl text-on-surface mb-6 leading-tight">
+          Ready to Unify Your Property’s Operations?
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 leading-relaxed">
+          Book a private 30-minute demonstration tailored to your exact property footprint. See live room folio posting, offline Tauri desktop speed, and custom OTA mapping.
+        </p>
+<!-- Form Inline Action -->
+<form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-6" onsubmit="event.preventDefault(); alert('Demo request submitted. Our executive team will reach out within 2 hours.');">
+<input class="flex-1 px-5 py-3.5 rounded-lg bg-surface-container border border-outline-variant/40 text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md font-body-md" placeholder="Enter your work email (e.g., gm@grandestate.com)" required="" type="email"/>
+<button class="px-8 py-3.5 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary transition-all duration-150 active:scale-95 shadow-[0_4px_16px_rgba(212,163,89,0.3)]" type="submit">
+            Book a Demo
+          </button>
+</form>
+<p class="text-body-sm text-outline">
+          No credit card required. SOC2 Type II Certified &amp; PCI-DSS Level 1 Compliant.
+        </p>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 10. FOOTER (Shared Components Exact Execution) -->
+<!-- ========================================================================= -->
+<footer class="docked full-width bottom bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20 flat no shadows">
+<div class="w-full px-6 md:px-12 py-16 max-w-[1360px] mx-auto flex flex-col gap-12">
+<!-- Top Row: Brand & Links Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<!-- Brand Info -->
+<div class="md:col-span-5 space-y-4">
+<div class="flex items-center gap-3">
+<svg class="h-6 w-auto text-primary" fill="none" viewbox="0 0 160 28" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#D4A359" stroke-linecap="round" stroke-width="1.2" x1="2" x2="158" y1="14" y2="14"></line>
+<path d="M142 9L158 14L142 19L146 14L142 9Z" fill="#D4A359"></path>
+<circle cx="8" cy="14" fill="#D4A359" r="2.5"></circle>
+</svg>
+<span class="text-headline-lg font-headline-lg tracking-widest uppercase text-on-surface dark:text-on-surface">
+              SPEAR
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-sm leading-relaxed">
+            The next-generation operating system engineered exclusively for prestigious estates, luxury boutique hotels, and Michelin dining groups.
+          </p>
+</div>
+<!-- Links Cluster (from Shared Components JSON) -->
+<div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
+<div>
+<span class="text-label-md font-label-md uppercase tracking-wider text-primary font-semibold block mb-3">Operating Pillars</span>
+<ul class="space-y-2 text-body-sm text-on-surface-variant dark:text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#pillars">Hotel PMS Tape Chart</a></li>
+<li><a class="hover:text-primary transition-colors" href="#spotlight">Tauri Offline POS</a></li>
+<li><a class="hover:text-primary transition-colors" href="#pillars">Channel Manager</a></li>
+<li><a class="hover:text-primary transition-colors" href="#pillars">Kitchen Display (KDS)</a></li>
+</ul>
+</div>
+<div>
+<span class="text-label-md font-label-md uppercase tracking-wider text-primary font-semibold block mb-3">Enterprise</span>
+<ul class="space-y-2 text-body-sm text-on-surface-variant dark:text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#pricing">Pricing Plans</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hardware Compatibility</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">System Status</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Concierge Support</a></li>
+</ul>
+</div>
+<div>
+<span class="text-label-md font-label-md uppercase tracking-wider text-primary font-semibold block mb-3">Trust &amp; Legal</span>
+<ul class="space-y-2 text-body-sm text-on-surface-variant dark:text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Security &amp; Compliance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">PCI-DSS Level 1</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Bottom Row Copyright (JSON Exact Match) -->
+<div class="pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center gap-4 text-body-sm font-body-sm text-outline">
+<p class="text-center sm:text-left">
+          © 2025 SPEAR Operating System Inc. All rights reserved. Crafted for prestigious estates, luxury boutique hotels, and Michelin dining groups.
+        </p>
+<div class="flex items-center gap-6">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            ALL SYSTEMS NORMAL (99.99%)
+          </span>
+</div>
+</div>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- Micro-Interactions Script: FAQ Accordion & Pricing Toggle -->
+<!-- ========================================================================= -->
+<script>
+    // FAQ Accordion Toggle
+    function toggleFaq(btn) {
+      const panel = btn.nextElementSibling;
+      const icon = btn.querySelector('.material-symbols-outlined');
+      const isHidden = panel.classList.contains('hidden');
+
+      // Close other panels
+      document.querySelectorAll('#faq-accordion > div > div').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('#faq-accordion button .material-symbols-outlined').forEach(i => i.classList.remove('rotate-180'));
+
+      if (isHidden) {
+        panel.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    }
+
+    // Pricing Billing Toggle
+    const monthlyBtn = document.getElementById('monthlyBtn');
+    const annualBtn = document.getElementById('annualBtn');
+    const fnbPrice = document.getElementById('fnbPrice');
+    const accomPrice = document.getElementById('accomPrice');
+    const suitePrice = document.getElementById('suitePrice');
+
+    annualBtn.addEventListener('click', () => {
+      annualBtn.classList.add('bg-[#181512]', 'text-[#F7F4EE]', 'shadow-sm');
+      annualBtn.classList.remove('text-[#181512]');
+      monthlyBtn.classList.remove('bg-[#181512]', 'text-[#F7F4EE]', 'shadow-sm');
+      monthlyBtn.classList.add('text-[#181512]');
+
+      // 20% Discounted annual rates
+      fnbPrice.textContent = '$159';
+      accomPrice.textContent = '$239';
+      suitePrice.textContent = '$399';
+    });
+
+    monthlyBtn.addEventListener('click', () => {
+      monthlyBtn.classList.add('bg-[#181512]', 'text-[#F7F4EE]', 'shadow-sm');
+      monthlyBtn.classList.remove('text-[#181512]');
+      annualBtn.classList.remove('bg-[#181512]', 'text-[#F7F4EE]', 'shadow-sm');
+      annualBtn.classList.add('text-[#181512]');
+
+      // Standard rates
+      fnbPrice.textContent = '$199';
+      accomPrice.textContent = '$299';
+      suitePrice.textContent = '$499';
+    });
+  </script>
+</body></html>

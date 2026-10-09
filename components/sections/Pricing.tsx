@@ -7,58 +7,62 @@ import { fadeUpVariant, staggerContainer } from "@/lib/motion-variants";
 
 const TIERS = [
   {
-    id: "starter",
-    name: "Starter",
+    id: "fnb",
+    name: "The F&B Package",
     price: "$199",
     period: "/month",
-    description: "Perfect for single-property operators just getting started.",
+    description: "For independent restaurants, bars, cafes, and multi-concept kitchens.",
     features: [
-      "Direct Booking Engine",
-      "Hotel PMS (up to 30 rooms)",
-      "Single restaurant floor plan",
-      "Basic reporting dashboard",
-      "Email support",
+      "Offline Tauri Desktop POS & Hardware Drivers",
+      "Interactive Table Reservations & Floor Plans",
+      "Guest QR Code & Waiter Tablet Ordering",
+      "Kitchen Display System (KDS) Station Routing",
+      "Kitchen Inventory & Recipe Blueprint Deductions",
+      "Guest CRM & Omnichannel Messaging",
+      "Staff Scheduling & Biometric Timeclock",
     ],
     ctaLabel: "Get Started",
     ctaHref: "#book-a-demo",
     highlighted: false,
   },
   {
-    id: "growth",
-    name: "Growth",
+    id: "accommodation",
+    name: "The Accommodation Package",
+    price: "$299",
+    period: "/month",
+    description: "For boutique hotels, lodges, motels, and luxury bed & breakfasts.",
+    features: [
+      "Cloud Hotel PMS (Master Record & Tape Chart)",
+      "Commission-Free Direct Booking Engine",
+      "2-Way OTA Channel Manager (Booking, Agoda, Airbnb)",
+      "Dynamic RMS Surge Pricing Oracle",
+      "Pre-Arrival Magic Links & Mobile Check-in",
+      "Apple & Google Wallet Smart Keys",
+      "Automated Housekeeping & Asset Auditing",
+      "Staff Scheduling & Timeclock",
+    ],
+    ctaLabel: "Get Started",
+    ctaHref: "#book-a-demo",
+    highlighted: false,
+  },
+  {
+    id: "all-in-one",
+    name: "All-in-One Resort Suite",
     price: "$499",
     period: "/month",
-    description:
-      "For growing properties with both hotel and restaurant operations.",
+    description: "For full-service hotels, resorts, and properties with dining & lodging.",
     features: [
-      "Everything in Starter",
-      "Full Hotel PMS (unlimited rooms)",
-      "Point of Sale",
-      "Kitchen Inventory",
-      "Channel Manager (up to 5 OTAs)",
-      "Priority support",
+      "Everything in F&B and Accommodation packages",
+      "Unified Room Folio Dining Tab Billing",
+      "Sales & Banqueting (BEO Event Management)",
+      "Cross-Module Event Resource Locking",
+      "Consolidated Multi-Department Financial Ledger",
+      "Unlimited OTA Channels & Rooms",
+      "Priority 24/7 Dedicated Support",
     ],
-    ctaLabel: "Get Started",
+    ctaLabel: "Schedule Walkthrough",
     ctaHref: "#book-a-demo",
     highlighted: true,
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    price: null,
-    period: null,
-    description:
-      "For multi-property groups, resorts, and complex operations with custom requirements.",
-    features: [
-      "Everything in Growth",
-      "Multi-property management",
-      "Unlimited OTA channels",
-      "Custom integrations & API access",
-      "Dedicated onboarding & account manager",
-    ],
-    ctaLabel: "Contact Us",
-    ctaHref: "#book-a-demo",
-    highlighted: false,
   },
 ];
 
@@ -94,13 +98,13 @@ export default function Pricing() {
               marginBottom: "0.75rem",
             }}
           >
-            Simple, Transparent Pricing
+            Tailored Operational Packages
           </motion.span>
           <motion.h2
             variants={fadeUpVariant}
             id="pricing-heading"
             style={{
-              fontFamily: "var(--font-fraunces), Georgia, serif",
+              fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
               color: "#221B16",
@@ -109,7 +113,7 @@ export default function Pricing() {
               marginBottom: "1rem",
             }}
           >
-            Transparent Pricing for Independent Hotels & Restaurants
+            Choose the Package <span className="italic font-normal gold-gradient-text">Tailored to Your Property</span>
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}
@@ -117,13 +121,13 @@ export default function Pricing() {
               fontFamily: "var(--font-manrope), system-ui, sans-serif",
               fontSize: "1rem",
               color: "#5C4F44",
-              maxWidth: "42ch",
+              maxWidth: "48ch",
               margin: "0 auto",
               lineHeight: 1.7,
             }}
           >
-            Early-access pricing — rates are indicative and subject to change
-            before general availability.
+            Built on a modular hub-and-spoke architecture. Only activate the modules
+            your operation requires, or power your entire property with our all-in-one suite.
           </motion.p>
         </motion.div>
 
@@ -185,14 +189,20 @@ export default function Pricing() {
               )}
 
               {/* Tier name */}
-              <div>
+              <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <h3
                   style={{
-                    fontFamily: "var(--font-fraunces), Georgia, serif",
-                    fontSize: "1.4rem",
+                    fontFamily: "var(--font-playfair), var(--font-fraunces), Georgia, serif",
+                    fontSize: "1.35rem",
                     fontWeight: 700,
                     color: tier.highlighted ? "#F3ECE0" : "#221B16",
                     marginBottom: "0.5rem",
+                    minHeight: "3.25rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    lineHeight: 1.2,
                   }}
                 >
                   {tier.name}
@@ -202,7 +212,12 @@ export default function Pricing() {
                     fontFamily: "var(--font-manrope), system-ui, sans-serif",
                     fontSize: "0.85rem",
                     color: tier.highlighted ? "#B5A99A" : "#5C4F44",
-                    lineHeight: 1.6,
+                    lineHeight: 1.55,
+                    minHeight: "2.75rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
                   }}
                 >
                   {tier.description}
@@ -210,7 +225,16 @@ export default function Pricing() {
               </div>
 
               {/* Price */}
-              <div style={{ display: "flex", alignItems: "baseline", gap: "0.25rem", justifyContent: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "0.25rem",
+                  justifyContent: "center",
+                  minHeight: "2.75rem",
+                  width: "100%",
+                }}
+              >
                 {tier.price ? (
                   <>
                     <span

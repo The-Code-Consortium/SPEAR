@@ -7,12 +7,12 @@ import { X, Globe, Share2 } from "lucide-react";
 
 const FOOTER_LINKS = {
   Product: [
-    { label: "Direct Booking Engine", href: "#direct-booking" },
-    { label: "Hotel PMS", href: "#hotel-pms" },
-    { label: "Restaurant Reservations", href: "#restaurant-floor" },
-    { label: "Point of Sale", href: "#point-of-sale" },
-    { label: "Kitchen Inventory", href: "#kitchen-inventory" },
-    { label: "Channel Manager", href: "#channel-manager" },
+    { label: "Hotel PMS Core", href: "#hotel-pms" },
+    { label: "Direct Bookings & OTAs", href: "#direct-booking" },
+    { label: "Hospitality POS & KDS", href: "#point-of-sale" },
+    { label: "Dining Floor & QR Ordering", href: "#restaurant-floor" },
+    { label: "Kitchen Inventory & COGS", href: "#kitchen-inventory" },
+    { label: "Digital Keys & Guest Journey", href: "#guest-experience" },
   ],
   Company: [
     { label: "About", href: "#about" },
@@ -41,8 +41,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "#1E1712",
-        borderTop: "1px solid rgba(199,154,69,0.15)",
+        background: "#161310",
+        borderTop: "1px solid rgba(212,163,89,0.15)",
         color: "#B5A99A",
         fontFamily: "var(--font-manrope), system-ui, sans-serif",
       }}

@@ -4,30 +4,78 @@ import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { fadeUpVariant, staggerContainer } from "@/lib/motion-variants";
 
-const MODULES = [
+const PILLARS = [
   {
-    title: "Direct Hotel Booking Engine",
-    description: "Commission-free, multi-currency, guest upsells",
+    numeral: "01",
+    title: "Hotel PMS & Room Operations",
+    description:
+      "Central master record controlling room assignments, tape chart scheduling, automated housekeeping task dispatch, and combined folio billing.",
+    chips: [
+      "Master Tape Chart",
+      "Consolidated Folio Billing",
+      "Housekeeping Dispatch",
+      "Biometric Staff Clock-In",
+    ],
   },
   {
-    title: "Cloud Hotel PMS",
-    description: "Tape chart, room management, housekeeping, guest folios",
+    numeral: "02",
+    title: "Direct Bookings & Channel Manager",
+    description:
+      "Commission-free website engine with deposit holds, real-time 2-way OTA synchronization, and occupancy-based dynamic RMS surge pricing.",
+    chips: [
+      "Direct Booking Engine",
+      "2-Way OTA Sync",
+      "Dynamic RMS Pricing",
+      "Branded Storefronts",
+    ],
   },
   {
-    title: "Restaurant Floor & Table Management",
-    description: "Interactive dining floor plan, live waitlists, guest sync",
+    numeral: "03",
+    title: "Offline Tauri POS & Kitchen Display",
+    description:
+      "Desktop application with local hardware printer drivers that operates 100% offline, paired with digital kitchen KDS station pacing.",
+    chips: [
+      "100% Offline Tauri POS",
+      "Kitchen Display (KDS)",
+      "Single-Tap Room Charge",
+      "Tamper-Proof Ledger",
+    ],
   },
   {
-    title: "Hospitality Point of Sale (POS)",
-    description: "Table order tickets, room folio charge integration",
+    numeral: "04",
+    title: "Dining Floor Plans & Digital Ordering",
+    description:
+      "Interactive restaurant floor plans, automated seating-to-POS ticket opening, guest QR code mobile ordering, and live digital menu catalogs.",
+    chips: [
+      "Visual Floor Designer",
+      "Seated-to-POS Auto Tab",
+      "Guest QR & Waiter Tablets",
+      "Live Menu Taxonomy",
+    ],
   },
   {
-    title: "Kitchen Inventory & Recipe Costing",
-    description: "Ingredient tracking, real-time stock alerts, margin analytics",
+    numeral: "05",
+    title: "Smart Inventory & Recipe Costing",
+    description:
+      "Automatic ingredient depletion based on recipe blueprints, instant 86 stockout protection, COGS accounting sync, and room asset tracking.",
+    chips: [
+      "Recipe Blueprints",
+      'Instant "86" Stockout Protocol',
+      "COGS Financial Sync",
+      "Housekeeping Asset Audits",
+    ],
   },
   {
-    title: "2-Way Channel Manager",
-    description: "Real-time OTA sync with Booking.com, Expedia, Airbnb, Agoda",
+    numeral: "06",
+    title: "Contactless Guest Journey & Digital Keys",
+    description:
+      "Pre-arrival WhatsApp magic links, contactless Apple & Google Wallet digital door keys, omnichannel guest messaging, and 360° CRM profiles.",
+    chips: [
+      "Pre-Arrival Magic Links",
+      "Apple & Google Wallet Keys",
+      "WhatsApp & SMS Inbox",
+      "360° Guest CRM Profile",
+    ],
   },
 ];
 
@@ -41,6 +89,59 @@ export default function PlatformModules() {
       style={{ padding: "6rem 2rem", background: "#F7F1E6" }}
     >
       <div style={{ maxWidth: 1152, margin: "0 auto", width: "100%" }}>
+        {/* Section Header */}
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={staggerContainer}
+          style={{ textAlign: "center", marginBottom: "3.5rem" }}
+        >
+          <motion.span
+            variants={fadeUpVariant}
+            style={{
+              display: "block",
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#C79A45",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Unified Operating System
+          </motion.span>
+          <motion.h2
+            variants={fadeUpVariant}
+            style={{
+              fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+              fontWeight: 700,
+              color: "#221B16",
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+              marginBottom: "1rem",
+            }}
+          >
+            The 6 Pillars of the <span className="italic font-normal gold-gradient-text">SPEAR Ecosystem</span>
+          </motion.h2>
+          <motion.p
+            variants={fadeUpVariant}
+            style={{
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: "1rem",
+              color: "#5C4F44",
+              maxWidth: "50ch",
+              margin: "0 auto",
+              lineHeight: 1.7,
+            }}
+          >
+            20 integrated modules organized into 6 master operating pillars.
+            Everything your accommodation and restaurant team needs to run in complete harmony.
+          </motion.p>
+        </motion.div>
+
+        {/* 6 Pillars Grid */}
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -52,7 +153,7 @@ export default function PlatformModules() {
             alignItems: "stretch",
           }}
         >
-          {MODULES.map((mod, i) => (
+          {PILLARS.map((mod, i) => (
             <motion.div
               key={i}
               variants={fadeUpVariant}
@@ -66,29 +167,88 @@ export default function PlatformModules() {
                 gap: "1rem",
               }}
             >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: "0.7rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "#C79A45",
+                  }}
+                >
+                  Pillar {mod.numeral}
+                </span>
+              </div>
+
               <h3
                 style={{
-                  fontFamily: "var(--font-fraunces), Georgia, serif",
-                  fontSize: "1.25rem",
+                  fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+                  fontSize: "1.28rem",
                   fontWeight: 700,
                   color: "#221B16",
                   margin: 0,
-                  lineHeight: 1.2,
+                  lineHeight: 1.25,
                 }}
               >
-                {mod.title}
+                {mod.title.includes(" & ") ? (
+                  <>
+                    {mod.title.split(" & ")[0]}{" "}
+                    <span className="italic font-normal text-[#C5984A]">
+                      &amp; {mod.title.split(" & ")[1]}
+                    </span>
+                  </>
+                ) : (
+                  mod.title
+                )}
               </h3>
               <p
                 style={{
                   fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "0.92rem",
                   color: "#5C4F44",
                   margin: 0,
-                  lineHeight: 1.6,
+                  lineHeight: 1.65,
                 }}
               >
                 {mod.description}
               </p>
+
+              {/* Nested Sub-Feature Chips */}
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "0.45rem",
+                  marginTop: "auto",
+                  paddingTop: "0.75rem",
+                }}
+              >
+                {mod.chips.map((chip, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: "0.72rem",
+                      fontWeight: 600,
+                      color: "#221B16",
+                      background: "rgba(199,154,69,0.12)",
+                      border: "1px solid rgba(199,154,69,0.25)",
+                      borderRadius: 4,
+                      padding: "0.25rem 0.55rem",
+                    }}
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </motion.div>

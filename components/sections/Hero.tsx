@@ -70,7 +70,7 @@ export default function Hero() {
       className="relative flex flex-col items-center justify-center text-center"
       style={{
         minHeight: "100svh",
-        background: "#1E1712",
+        background: "#161310",
         padding: "5rem 1.5rem 3rem",
       }}
     >
@@ -81,7 +81,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(199,154,69,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,163,89,0.08) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -93,7 +93,7 @@ export default function Hero() {
           The image already contains the full wordmark, spear-through-letters graphic,
           AND the "Smart Platform for Every Accommodation & Restaurant" tagline text,
           so those three separate elements have been removed.
-          Transparent background reads directly against the dark hero (#1E1712).
+          Transparent background reads directly against the dark hero (#161310).
         */}
         <div>
           <Image
@@ -111,12 +111,26 @@ export default function Hero() {
           />
         </div>
 
-        {/* The SEO-optimized H1 */}
+        {/* The SEO-optimized H1 — matching Stitch Redesign style from Image 1 */}
         <h1
-          style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
-          className="text-3xl md:text-5xl font-bold text-[#F3ECE0] max-w-3xl leading-tight"
+          style={{
+            fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+            letterSpacing: "-0.015em",
+          }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] lg:leading-[62px] font-bold text-[#F3ECE0] max-w-4xl text-center"
         >
-          All-in-One Hospitality Management Software: Hotel PMS & Restaurant POS
+          All-in-One Hospitality <br />
+          Management Software:{" "}
+          <span
+            className="italic font-normal gold-gradient-text"
+            style={{
+              fontStyle: "italic",
+              fontWeight: 400,
+            }}
+          >
+            Hotel PMS &amp; <br />
+            Restaurant POS
+          </span>
         </h1>
 
       </div>

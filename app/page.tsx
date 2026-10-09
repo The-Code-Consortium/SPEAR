@@ -41,7 +41,7 @@ const softwareAppSchema = {
   offers: [
     {
       "@type": "Offer",
-      name: "Starter",
+      name: "The F&B Package",
       price: "199",
       priceCurrency: "USD",
       priceSpecification: {
@@ -53,7 +53,19 @@ const softwareAppSchema = {
     },
     {
       "@type": "Offer",
-      name: "Growth",
+      name: "The Accommodation Package",
+      price: "299",
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "299",
+        priceCurrency: "USD",
+        unitCode: "MON",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "All-in-One Resort Suite",
       price: "499",
       priceCurrency: "USD",
       priceSpecification: {
@@ -62,11 +74,6 @@ const softwareAppSchema = {
         priceCurrency: "USD",
         unitCode: "MON",
       },
-    },
-    {
-      "@type": "Offer",
-      name: "Enterprise",
-      description: "Custom pricing — contact us",
     },
   ],
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://spearplatform.com",

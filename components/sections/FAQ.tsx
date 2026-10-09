@@ -55,28 +55,61 @@ export default function FAQ() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      
+
       <div style={{ maxWidth: 800, margin: "0 auto", width: "100%" }}>
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="flex flex-col gap-8"
+          style={{ textAlign: "center", marginBottom: "3rem" }}
         >
+          {/* Label */}
+          <motion.span
+            variants={fadeUpVariant}
+            style={{
+              display: "block",
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#C79A45",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Questions &amp; Answers
+          </motion.span>
+
+          {/* Heading */}
           <motion.h2
             variants={fadeUpVariant}
             style={{
-              fontFamily: "var(--font-fraunces), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 2.75rem)",
+              fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
               color: "#221B16",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
-              textAlign: "center",
+              marginBottom: "1rem",
             }}
           >
-            Frequently Asked Questions
+            Frequently Asked <span className="italic font-normal gold-gradient-text">Questions</span>
           </motion.h2>
+
+          {/* Subtitle Paragraph */}
+          <motion.p
+            variants={fadeUpVariant}
+            style={{
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: "1rem",
+              color: "#5C4F44",
+              maxWidth: "48ch",
+              margin: "0 auto",
+              lineHeight: 1.7,
+            }}
+          >
+            Everything you need to know about our modular architecture, migration from existing systems, and how SPEAR connects hotel lodging with restaurant dining.
+          </motion.p>
 
           {/* Divider — centred */}
           <motion.div
@@ -88,13 +121,18 @@ export default function FAQ() {
               borderRadius: 1,
               marginLeft: "auto",
               marginRight: "auto",
+              marginTop: "1.5rem",
             }}
           />
+        </motion.div>
 
-          <motion.div
-            variants={fadeUpVariant}
-            style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "1.5rem" }}
-          >
+        {/* Questions list */}
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={staggerContainer}
+          style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "1.5rem" }}
+        >
           {FAQS.map((faq, index) => (
             <motion.details
               key={index}
@@ -137,7 +175,6 @@ export default function FAQ() {
               </p>
             </motion.details>
           ))}
-          </motion.div>
         </motion.div>
       </div>
 

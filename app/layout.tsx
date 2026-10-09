@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 /* ============================================================
-   FONTS — loaded via next/font/google for optimal performance
+   FONTS — loaded via next/font/google from Stitch Redesign
+   Playfair Display for headings & editorial titles
+   Plus Jakarta Sans for UI, body, labels, and metadata
    ============================================================ */
-const fraunces = Fraunces({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-playfair",
   display: "swap",
-  weight: "variable",
+  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
 });
 
-const manrope = Manrope({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-plus-jakarta",
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800"],
 });
@@ -117,7 +118,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${manrope.variable}`}
+      className={`${playfair.variable} ${plusJakartaSans.variable}`}
     >
       <head>
         {/* Organization JSON-LD — present on every page */}

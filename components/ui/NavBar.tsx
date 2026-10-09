@@ -56,18 +56,18 @@ export default function NavBar() {
 
   const bgStyle: React.CSSProperties = inHorizontalSection
     ? {
-      background: "rgba(30,23,18,0.7)",
+      background: "rgba(22,19,16,0.75)",
       backdropFilter: "blur(12px)",
       WebkitBackdropFilter: "blur(12px)",
-      borderBottom: "1px solid rgba(199,154,69,0.12)",
+      borderBottom: "1px solid rgba(212,163,89,0.14)",
     }
     : isScrolled
       ? {
-        background: "rgba(30,23,18,0.96)",
+        background: "rgba(22,19,16,0.96)",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
-        borderBottom: "1px solid rgba(199,154,69,0.1)",
-        boxShadow: "0 2px 20px rgba(0,0,0,0.4)",
+        borderBottom: "1px solid rgba(212,163,89,0.12)",
+        boxShadow: "0 2px 20px rgba(0,0,0,0.45)",
       }
       : {
         background: "transparent",
@@ -89,17 +89,12 @@ export default function NavBar() {
     >
       <nav
         style={{
-          /*
-           * max-w-6xl (1152px) matches every other section's content width.
-           * px: 2rem (32px) each side — the site's standard gutter.
-           * height: 72px — comfortable, not cramped.
-           */
           maxWidth: 1152,
           margin: "0 auto",
           padding: "0 2rem",
           height: 72,
           display: "flex",
-          alignItems: "center",        // everything on the same vertical center line
+          alignItems: "center",
           justifyContent: "space-between",
         }}
         aria-label="Primary navigation"
@@ -129,7 +124,7 @@ export default function NavBar() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "2.5rem",   // consistent 40px between links
+            gap: "2.5rem",
             listStyle: "none",
             margin: 0,
             padding: 0,
@@ -165,16 +160,85 @@ export default function NavBar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="#book-a-demo"
-          className="btn-brass nav-cta"
-          id="nav-book-demo-cta"
-          aria-label="Book a demo with SPEAR"
-          style={{ flexShrink: 0 }}
-        >
-          Book a Demo
-        </a>
+        {/* Actions Cluster — perfectly aligned height and vertical centering */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
+          <a
+            href="https://app.spearplatform.com/login"
+            id="nav-client-login"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: 38,
+              padding: "0 1.15rem",
+              borderRadius: 4,
+              border: "1px solid rgba(212,163,89,0.35)",
+              background: "rgba(22,19,16,0.6)",
+              color: "#D3C4B3",
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: "0.78rem",
+              fontWeight: 700,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              lineHeight: 1,
+              whiteSpace: "nowrap",
+              transition: "all 0.2s ease",
+              boxSizing: "border-box",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#FFFFFF";
+              e.currentTarget.style.borderColor = "#D4A359";
+              e.currentTarget.style.background = "rgba(212,163,89,0.12)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#D3C4B3";
+              e.currentTarget.style.borderColor = "rgba(212,163,89,0.35)";
+              e.currentTarget.style.background = "rgba(22,19,16,0.6)";
+            }}
+            aria-label="Client Login"
+          >
+            Client Login
+          </a>
+
+          <a
+            href="#book-a-demo"
+            id="nav-book-demo-cta"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: 38,
+              padding: "0 1.35rem",
+              borderRadius: 4,
+              border: "none",
+              background: "#D4A359",
+              color: "#161310",
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: "0.78rem",
+              fontWeight: 700,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              lineHeight: 1,
+              whiteSpace: "nowrap",
+              transition: "all 0.2s ease",
+              boxShadow: "0 2px 10px rgba(212,163,89,0.22)",
+              boxSizing: "border-box",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#F2BE71";
+              e.currentTarget.style.boxShadow = "0 4px 16px rgba(212,163,89,0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#D4A359";
+              e.currentTarget.style.boxShadow = "0 2px 10px rgba(212,163,89,0.22)";
+            }}
+            aria-label="Book a demo with SPEAR"
+          >
+            Book a Demo
+          </a>
+        </div>
       </nav>
     </header>
   );

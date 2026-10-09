@@ -67,7 +67,7 @@ function DesktopPlaceholder() {
       style={{
         width: "100%",
         height: "100vh",
-        background: "#1E1712",
+        background: "#161310",
         position: "relative",
         overflow: "hidden",
       }}
@@ -289,8 +289,11 @@ function DesktopHorizontalScroll() {
                 id={mod.id}
                 numeral={mod.numeral}
                 title={mod.title}
+                titleAccent={mod.titleAccent}
                 tagline={mod.tagline}
                 body={mod.body}
+                chips={mod.chips}
+                actionLink={mod.actionLink}
                 layout={mod.layout}
                 isLast={mod.isLast}
               />
@@ -381,7 +384,7 @@ function MobileCarousel() {
       <div 
         ref={containerRef}
         id="module-story" 
-        style={{ position: "relative", overflow: "hidden", width: "100%", background: "#1E1712" }}
+        style={{ position: "relative", overflow: "hidden", width: "100%", background: "#161310" }}
       >
         <motion.div
           drag="x"
@@ -402,14 +405,15 @@ function MobileCarousel() {
         >
           {modules.map((mod) => {
             const gradients: Record<string, { from: string; to: string }> = {
-              "direct-booking":    { from: "#2A1E14", to: "#1E1712" },
-              "hotel-pms":         { from: "#1E2214", to: "#1A1E12" },
-              "restaurant-floor":  { from: "#221A14", to: "#1E1712" },
-              "point-of-sale":     { from: "#261C16", to: "#1E1712" },
-              "kitchen-inventory": { from: "#201C14", to: "#1C1A12" },
-              "channel-manager":   { from: "#241814", to: "#1E1712" },
+              "hotel-pms":         { from: "#1E2214", to: "#161310" },
+              "direct-booking":    { from: "#2A1E14", to: "#161310" },
+              "point-of-sale":     { from: "#261C16", to: "#161310" },
+              "restaurant-floor":  { from: "#221A14", to: "#161310" },
+              "kitchen-inventory": { from: "#201C14", to: "#161310" },
+              "guest-experience":  { from: "#2A1C1A", to: "#161310" },
+              "channel-manager":   { from: "#241814", to: "#161310" },
             };
-            const g = gradients[mod.id] || { from: "#2C2118", to: "#1E1712" };
+            const g = gradients[mod.id] || { from: "#2C2118", to: "#161310" };
 
             return (
               <div
@@ -446,26 +450,42 @@ function MobileCarousel() {
                 <h2
                   id={`mobile-module-${mod.id}-title`}
                   style={{
-                    fontFamily: "var(--font-fraunces), Georgia, serif",
-                    fontSize: "clamp(1.55rem, 6.5vw, 2rem)",
+                    fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(1.75rem, 7vw, 2.4rem)",
                     fontWeight: 700,
                     color: "#F3ECE0",
-                    lineHeight: 1.1,
+                    lineHeight: 1.15,
                     letterSpacing: "-0.02em",
                     marginBottom: "0.7rem",
                   }}
                 >
                   {mod.title}
+                  {mod.titleAccent && (
+                    <>
+                      <br />
+                      <span
+                        className="italic font-normal gold-gradient-text"
+                        style={{
+                          fontStyle: "italic",
+                          fontWeight: 400,
+                          display: "inline-block",
+                        }}
+                      >
+                        &amp;
+                        <br />
+                        {mod.titleAccent}
+                      </span>
+                    </>
+                  )}
                 </h2>
 
                 {/* Tagline */}
                 <p style={{
-                  fontFamily: "var(--font-fraunces), Georgia, serif",
-                  fontSize: "clamp(0.88rem, 3.5vw, 1rem)",
-                  fontWeight: 300,
+                  fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(0.95rem, 3.5vw, 1.15rem)",
                   fontStyle: "italic",
-                  color: "#C79A45",
-                  lineHeight: 1.55,
+                  color: "rgba(242, 190, 113, 0.95)",
+                  lineHeight: 1.5,
                   marginBottom: "0.7rem",
                 }}>
                   {mod.tagline}
@@ -474,13 +494,63 @@ function MobileCarousel() {
                 {/* Body */}
                 <p style={{
                   fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: "clamp(0.8rem, 3vw, 0.92rem)",
+                  fontSize: "clamp(0.82rem, 3vw, 0.92rem)",
                   color: "#B5A99A",
                   lineHeight: 1.75,
-                  marginBottom: "1.5rem",
+                  marginBottom: "1rem",
                 }}>
                   {mod.body}
                 </p>
+
+                {/* Chips — dark cards matching Image 2 */}
+                {mod.chips && mod.chips.length > 0 && (
+                  <div style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
+                    marginBottom: "1rem",
+                  }}>
+                    {mod.chips.map((chip, idx) => (
+                      <span
+                        key={idx}
+                        style={{
+                          fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                          fontSize: "0.74rem",
+                          fontWeight: 500,
+                          color: "#D3C4B3",
+                          background: "#221F1C",
+                          border: "1px solid rgba(156,143,127,0.28)",
+                          borderRadius: 6,
+                          padding: "0.35rem 0.7rem",
+                        }}
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Action Link */}
+                {mod.actionLink && (
+                  <div style={{ marginBottom: "1.5rem" }}>
+                    <a
+                      href="#book-a-demo"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        color: "#D4A359",
+                        fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                        fontSize: "0.82rem",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                      }}
+                    >
+                      <span>{mod.actionLink}</span>
+                      <span>→</span>
+                    </a>
+                  </div>
+                )}
 
                 {/* Device mockup — constrained width so it never overflows */}
                 <div
@@ -537,7 +607,7 @@ function MobileCarousel() {
           alignItems: "center",
           gap: "0.5rem",
           padding: "1.25rem 0 1.5rem",
-          background: "#1E1712",
+          background: "#161310",
         }}
         aria-label="Module carousel progress"
         role="tablist"
@@ -577,7 +647,7 @@ function ReducedMotionFallback() {
     <section
       id="module-story"
       aria-label="SPEAR module story"
-      style={{ background: "#1E1712" }}
+      style={{ background: "#161310" }}
     >
       {modules.map((mod) => (
         <div
@@ -596,18 +666,76 @@ function ReducedMotionFallback() {
             className="rm-panel-grid"
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <span style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C79A45" }}>
+              <span style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#D4A359" }}>
                 {mod.numeral} / 06
               </span>
-              <h2 id={`rm-module-${mod.id}-title`} style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 700, color: "#F3ECE0", lineHeight: 1.15 }}>
+              <h2 id={`rm-module-${mod.id}-title`} style={{ fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif", fontSize: "clamp(1.85rem, 3.2vw, 2.6rem)", fontWeight: 700, color: "#F3ECE0", lineHeight: 1.15 }}>
                 {mod.title}
+                {mod.titleAccent && (
+                  <>
+                    <br />
+                    <span
+                      className="italic font-normal gold-gradient-text"
+                      style={{
+                        fontStyle: "italic",
+                        fontWeight: 400,
+                        display: "inline-block",
+                      }}
+                    >
+                      &amp;
+                      <br />
+                      {mod.titleAccent}
+                    </span>
+                  </>
+                )}
               </h2>
-              <p style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: "1rem", fontStyle: "italic", color: "#C79A45", lineHeight: 1.5 }}>
+              <p style={{ fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif", fontSize: "1.1rem", fontStyle: "italic", color: "rgba(242, 190, 113, 0.95)", lineHeight: 1.5 }}>
                 {mod.tagline}
               </p>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: "0.95rem", color: "#B5A99A", lineHeight: 1.75 }}>
                 {mod.body}
               </p>
+              {mod.chips && mod.chips.length > 0 && (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.55rem" }}>
+                  {mod.chips.map((chip, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                        fontSize: "0.78rem",
+                        fontWeight: 500,
+                        color: "#D3C4B3",
+                        background: "#221F1C",
+                        border: "1px solid rgba(156,143,127,0.28)",
+                        borderRadius: 6,
+                        padding: "0.35rem 0.75rem",
+                      }}
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {mod.actionLink && (
+                <div style={{ marginTop: "0.5rem" }}>
+                  <a
+                    href="#book-a-demo"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.4rem",
+                      color: "#D4A359",
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: "0.85rem",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    <span>{mod.actionLink}</span>
+                    <span>→</span>
+                  </a>
+                </div>
+              )}
             </div>
             <div
               style={{ aspectRatio: "16/10", background: "#261E19", borderRadius: 8, border: "1px solid rgba(199,154,69,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}

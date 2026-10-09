@@ -38,7 +38,7 @@ export default function WhyWeBuilt() {
               textAlign: "center",
             }}
           >
-            Why We Built This
+            THE COST OF FRAGMENTATION
           </motion.span>
 
           {/* Heading */}
@@ -46,16 +46,19 @@ export default function WhyWeBuilt() {
             variants={fadeUpVariant}
             id="about-heading"
             style={{
-              fontFamily: "var(--font-fraunces), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 2.75rem)",
+              fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(2rem, 4vw, 2.85rem)",
               fontWeight: 700,
               color: "#221B16",
-              lineHeight: 1.15,
+              lineHeight: 1.2,
               letterSpacing: "-0.02em",
               textAlign: "center",
             }}
           >
-            The problem with hospitality software is that it&apos;s never really unified.
+            Why We Built SPEAR: <br />
+            <span className="italic font-normal gold-gradient-text">
+              Ending the 5-Vendor Operational Nightmare.
+            </span>
           </motion.h2>
 
           {/* Divider — centred */}

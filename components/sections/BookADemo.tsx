@@ -135,22 +135,22 @@ export default function BookADemo() {
               variants={fadeUpVariant}
               style={{
                 display: "block",
-                fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                fontFamily: "var(--font-plus-jakarta), var(--font-manrope), system-ui, sans-serif",
                 fontSize: "0.7rem",
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#C79A45",
+                color: "#C5984A",
                 marginBottom: "0.75rem",
               }}
             >
-              Let&apos;s Talk
+              PRESTIGE ENTERPRISE ARCHITECTURE
             </motion.span>
             <motion.h2
               variants={fadeUpVariant}
               id="book-demo-heading"
               style={{
-                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
                 fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                 fontWeight: 700,
                 color: "#221B16",
@@ -159,7 +159,7 @@ export default function BookADemo() {
                 marginBottom: "0.75rem",
               }}
             >
-              Schedule a Live Walkthrough & Interactive Demo
+              Ready to Unify Your <span className="italic font-normal gold-gradient-text">Property&apos;s Operations?</span>
             </motion.h2>
             <motion.p
               variants={fadeUpVariant}

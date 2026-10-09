@@ -1,65 +1,117 @@
 /**
- * SPEAR Module Story — Data definitions for all 6 horizontal panels.
+ * SPEAR Module Story — Data definitions for all 6 compacted master pillars.
+ * Styled matching the Stitch Redesign specification (Playfair Display + italic gold accents).
  */
 
 export interface ModuleData {
   id: string;
   numeral: string; // "01" through "06"
   title: string;
+  titleAccent?: string; // renders in italic font-normal gold-gradient-text
   tagline: string;
   body: string;
   layout: "text-left" | "text-right"; // alternates for visual rhythm
   isLast?: boolean; // marks the final panel
+  chips: string[]; // Nested sub-features
+  actionLink?: string;
 }
 
 export const modules: ModuleData[] = [
   {
-    id: "direct-booking",
-    numeral: "01",
-    title: "Direct Booking Engine",
-    tagline: "Own your reservations, not just your rooms.",
-    body: "Take direct hotel bookings without OTA commissions. Staff can place manual holds and phone reservations, guests can book online — all protected by real-time overbooking prevention.",
-    layout: "text-left",
-  },
-  {
     id: "hotel-pms",
-    numeral: "02",
-    title: "Hotel PMS & Room Management",
-    tagline: "One source of truth for every room, rate, and reservation.",
-    body: "Extend stays, change rooms, and manage your full property without double-booking risk, even under concurrent demand. Your entire inventory, always accurate.",
-    layout: "text-right",
+    numeral: "01",
+    title: "Hotel PMS",
+    titleAccent: "Room Operations",
+    tagline: "One master record for every room, rate, and guest folio.",
+    body: "Extend stays, reassign rooms, and manage your full property without double-booking risk. Controls the hotel master state, dispatches housekeeping work orders automatically on checkout, and consolidates room charges and restaurant tabs onto one unified folio.",
+    layout: "text-left",
+    actionLink: "Explore PMS Architecture",
+    chips: [
+      "Master Tape Chart",
+      "Consolidated Folio Billing",
+      "Auto-Housekeeping Dispatch",
+      "Biometric Staff Timeclock",
+    ],
   },
   {
-    id: "restaurant-floor",
-    numeral: "03",
-    title: "Restaurant Floor Plans & Reservations",
-    tagline: "Let guests pick their table, not just a time slot.",
-    body: "Design your actual dining room layout and let guests choose their table visually. Real-time table status, zone management, and conflict-free seating from one interactive floor plan.",
-    layout: "text-left",
+    id: "direct-booking",
+    numeral: "02",
+    title: "Direct Bookings",
+    titleAccent: "Channel Manager",
+    tagline: "Own your direct revenue and sync instantly across every OTA.",
+    body: "Drive commission-free direct hotel bookings with instant deposit hold processing. 2-way real-time distribution synchronizes Booking.com, Expedia, Airbnb, and Agoda, while dynamic RMS rules adjust rates automatically by occupancy thresholds.",
+    layout: "text-right",
+    actionLink: "Explore Channel Distribution",
+    chips: [
+      "Commission-Free Booking Engine",
+      "2-Way Global OTA Sync",
+      "Dynamic RMS Surge Pricing",
+      "Branded Web Storefronts",
+    ],
   },
   {
     id: "point-of-sale",
+    numeral: "03",
+    title: "Offline Tauri POS",
+    titleAccent: "Kitchen Display",
+    tagline: "High-speed, hardware-integrated POS that works even when WiFi drops.",
+    body: "Built as an offline-first Tauri desktop app with local printer drivers and tamper-proof ledger accounting. Automatically routes orders to kitchen KDS screens with Green/Yellow/Red pacing and posts dining tabs directly to hotel room folios.",
+    layout: "text-left",
+    actionLink: "View Hardware Compatibility Matrix",
+    chips: [
+      "100% Offline Desktop Tauri POS",
+      "Station KDS & Ticket Routing",
+      "One-Tap Room Folio Posting",
+      "Anti-Fraud Append-Only Ledger",
+    ],
+  },
+  {
+    id: "restaurant-floor",
     numeral: "04",
-    title: "Point of Sale",
-    tagline: "Fast, offline-capable POS built for the floor.",
-    body: "Orders sync automatically to the kitchen and inventory the moment a table is seated — no manual re-entry, ever. Works even when the WiFi doesn't.",
+    title: "Dining Floor Plans",
+    titleAccent: "Digital Ordering",
+    tagline: "Let guests pick their table and order seamlessly from any device.",
+    body: "Design interactive restaurant floor plans with real-time table statuses. Seating a guest automatically creates an active tab on the POS, while guest QR code ordering and waiter tablets funnel every order into a single kitchen pipeline.",
     layout: "text-right",
+    actionLink: "Explore Floor Management",
+    chips: [
+      "Interactive Floor Plan Designer",
+      "Seated-to-POS Auto Tab",
+      "Guest QR & Waiter Tablets",
+      "Live Digital Menu Taxonomy",
+    ],
   },
   {
     id: "kitchen-inventory",
     numeral: "05",
-    title: "Kitchen Inventory",
-    tagline: "Know what's running low before it hits the pass.",
-    body: "Recipe-level stock deduction happens automatically as orders are placed. Stop counting by hand — SPEAR tells you what you need before it becomes a problem on the floor.",
+    title: "Smart Inventory",
+    titleAccent: "Recipe Costing",
+    tagline: "Recipe-level stock deduction with automated 86 item protection.",
+    body: "Stop counting by hand. Raw materials deduct in real-time as meals are sold. When ingredients hit zero, the system instantly triggers 86 protocols across all menus, syncs COGS with accounting, and audits housekeeping consumables against cleans.",
     layout: "text-left",
+    actionLink: "Explore Inventory Control",
+    chips: [
+      "Real-Time Recipe Blueprints",
+      'Instant "86" Stockout Protocol',
+      "COGS & General Ledger Sync",
+      "Housekeeping Room Asset Audits",
+    ],
   },
   {
-    id: "channel-manager",
+    id: "guest-experience",
     numeral: "06",
-    title: "Channel Manager",
-    tagline: "That's SPEAR.",
-    body: "Sync availability and rates across every OTA you list on, from one dashboard — no more manually updating five different booking sites after every reservation. You're done here. Your entire operation, unified.",
+    title: "Contactless Guest Journey",
+    titleAccent: "Digital Keys",
+    tagline: "That's SPEAR: One unified hospitality ecosystem.",
+    body: "Eliminate front desk queues with 24-hour pre-arrival WhatsApp magic links, incidental payment holds, and contactless Apple & Google Wallet digital room keys. Omnichannel priority messaging and a 360° guest CRM complete the guest journey.",
     layout: "text-right",
     isLast: true,
+    actionLink: "Explore Contactless Experience",
+    chips: [
+      "Pre-Arrival Magic Links",
+      "Apple & Google Wallet Keys",
+      "WhatsApp & SMS Unified Inbox",
+      "360° Guest CRM Profile",
+    ],
   },
 ];

@@ -53,86 +53,86 @@ const staggerContainer = {
 const CORE_CAPABILITIES = [
   {
     icon: Calendar,
-    title: "Master Tape Chart Matrix",
-    tag: "Sub-100ms Live Grid",
+    title: "Live Room Booking Calendar",
+    tag: "Visual Timeline",
     description:
-      "A high-density visual timeline across all rooms, floors, and unit types. Drag, extend, or swap reservations seamlessly with zero double-booking lock contention.",
-    metrics: "Real-time room occupancy & turnover indexing",
+      "A clear, color-coded calendar of every room, floor, and guest stay. Drag to extend bookings, swap rooms in seconds, and eliminate double-booking mistakes.",
+    metrics: "Instant real-time room availability across your property",
   },
   {
     icon: Receipt,
-    title: "True Consolidated Folio",
-    tag: "Cross-Module Ledger",
+    title: "One Combined Guest Bill",
+    tag: "All-in-One Billing",
     description:
-      "Dining tabs from the Tauri POS, mini-bar consumption, banquet event orders (BEO), and room rates funnel automatically into one append-only guest master bill.",
-    metrics: "100% elimination of end-of-shift billing audits",
-  },
-  {
-    icon: Zap,
-    title: "Event-Driven Automation",
-    tag: "CloudEvents 1.0 Outbox",
-    description:
-      "Emits transactional lifecycle events (check-in, check-out, room swaps) across the Redis bus to instantly orchestrate smart locks, housekeeping, and revenue engines.",
-    metrics: "Under 50ms trigger response across modules",
-  },
-  {
-    icon: KeyRound,
-    title: "Instant Digital Key Sync",
-    tag: "Apple & Google Wallet",
-    description:
-      "Generates encrypted contactless door credentials upon pre-arrival check-in. Revokes keys automatically the millisecond checkout is finalized at reception.",
-    metrics: "Zero physical plastic keycard overhead",
+      "Restaurant meals, bar drinks, pool snacks, and room nights automatically roll into one simple invoice for the guest upon checkout.",
+    metrics: "Eliminates missing receipts and manual end-of-day billing checks",
   },
   {
     icon: Sparkles,
-    title: "Automated Housekeeping Dispatch",
-    tag: "Live Room State Engine",
+    title: "Instant Housekeeping Alerts",
+    tag: "Mobile Cleaning Dispatch",
     description:
-      "When a guest checks out, a CLEANING_REQUIRED order dispatches instantly to housekeeping staff mobile tablets. Logs consumable usage against room cleans to curb loss.",
-    metrics: "35% faster room turnover speed",
+      "The second a guest checks out at reception, housekeeping staff receive a phone alert so clean rooms are ready faster for incoming arrivals.",
+    metrics: "35% faster room turnover between guest stays",
+  },
+  {
+    icon: KeyRound,
+    title: "Digital Door Keys on Phone",
+    tag: "Apple & Google Wallet",
+    description:
+      "Guests can unlock their hotel room right from their smartphone wallet. Keys activate on arrival and expire automatically the moment they check out.",
+    metrics: "Eliminates lost plastic keycards and front desk waiting lines",
   },
   {
     icon: RefreshCw,
-    title: "2-Way Dynamic OTA Sync",
-    tag: "Channel Manager Bridge",
+    title: "Automatic OTA & Booking Sync",
+    tag: "Channel Manager Sync",
     description:
-      "Syncs availability and rates in both directions with Booking.com, Airbnb, Agoda, and Expedia. Automatically prompts RMS occupancy surge rate bumps at 80% capacity.",
-    metrics: "Sub-second cross-channel rate parity",
+      "Live 2-way sync with Booking.com, Airbnb, Agoda, and Expedia. When a room sells anywhere, your inventory updates everywhere automatically.",
+    metrics: "100% price and room availability sync across all channels",
+  },
+  {
+    icon: Server,
+    title: "Works 100% Offline When Wi-Fi Drops",
+    tag: "Always-On Reliability",
+    description:
+      "Your front desk, restaurant POS, and room keys keep running even during total internet outages. When connection returns, everything syncs automatically.",
+    metrics: "Zero guest delays or frozen front desk screens during outages",
   },
 ];
 
 const ARCHITECTURE_PIPELINE = [
   {
     step: "01",
-    phase: "Intake & Ingestion",
-    title: "Reservation Ingestion",
+    phase: "Guest Reserves",
+    title: "Direct or OTA Booking Intake",
     description:
-      "Bookings enter via the direct commission-free website engine or 2-way OTA bridge. The PMS validates rates, verifies inventory constraints, and assigns a pending reservation record.",
-    subsystem: "booking-engine & Channel Manager",
+      "The guest reserves a stay on your direct website or an OTA like Booking.com. The room is locked on your calendar instantly, deposits are processed, and dates are held.",
+    subsystem: "Direct Booking Engine & OTAs",
   },
   {
     step: "02",
-    phase: "Pre-Arrival Magic Link",
-    title: "Contactless Check-In",
+    phase: "Before Arrival",
+    title: "Easy Pre-Arrival & Mobile Key",
     description:
-      "24 hours prior to arrival, guest receives a WhatsApp/SMS Magic Link. Signs digital T&C, places incidental card pre-authorization, and downloads digital smart keys.",
-    subsystem: "mobile-checkin & smart-locks",
+      "The guest receives a welcome message on WhatsApp with reservation details, online check-in, and the option to save a digital door key to their smartphone.",
+    subsystem: "Contactless Check-In & Smart Keys",
   },
   {
     step: "03",
-    phase: "In-Stay Lifecycle",
-    title: "Unified Folio Orchestration",
+    phase: "During the Stay",
+    title: "Dining & Room Charges",
     description:
-      "Guest charges restaurant meals, pool drinks, or spa services. The offline-first POS fires room charges directly into the open PMS folio with room security verification.",
-    subsystem: "pos-system & guest-crm",
+      "Whenever the guest orders food at the restaurant, drinks at the bar, or enjoys room service, staff simply tap the room number to post the tab directly to their bill.",
+    subsystem: "Restaurant POS & Room Billing",
   },
   {
     step: "04",
-    phase: "Checkout Handoff",
-    title: "Settlement & Housekeeping Handoff",
+    phase: "Departure",
+    title: "Quick Checkout & Housekeeping Alert",
     description:
-      "Guest checks out. Digital keys are revoked instantly. The PMS dispatches a priority cleaning order to staff devices and updates the public booking matrix to 'cleaning hold'.",
-    subsystem: "property-inventory & staff-management",
+      "The guest settles their bill in seconds. Digital keys expire immediately, the room calendar turns to 'Ready to Clean', and housekeeping gets an instant phone alert.",
+    subsystem: "Housekeeping Dispatch & Front Desk",
   },
 ];
 
@@ -212,7 +212,7 @@ export default function HotelPmsModulePage() {
                     borderRadius: 20,
                   }}
                 >
-                  Pillar 01 • Master Operating Hub
+                  Pillar 01 • Hotel Property Management System
                 </span>
               </motion.div>
 
@@ -243,10 +243,9 @@ export default function HotelPmsModulePage() {
                   marginBottom: "2.5rem",
                 }}
               >
-                The central nervous system and absolute <strong>Master Record</strong> of the SPEAR
-                ecosystem. Ingests direct and OTA reservations, controls physical room inventory
-                without double-booking race conditions, and unifies dining tabs and room charges onto
-                one consolidated folio.
+                The complete operating heart of your hotel. Effortlessly manage bookings, eliminate
+                double-booking risks, speed up guest check-ins, and keep your front desk, housekeeping team,
+                and restaurant dining tabs in perfect harmony—whether you have internet or not.
               </motion.p>
 
               {/* CTAs */}
@@ -286,12 +285,12 @@ export default function HotelPmsModulePage() {
                     e.currentTarget.style.boxShadow = "0 4px 20px rgba(212,163,89,0.25)";
                   }}
                 >
-                  <span>Book PMS Architecture Walkthrough</span>
+                  <span>Book PMS Walkthrough</span>
                   <ArrowRight size={16} />
                 </a>
 
                 <a
-                  href="#architecture-specs"
+                  href="#how-it-works-preview"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -318,7 +317,7 @@ export default function HotelPmsModulePage() {
                     e.currentTarget.style.background = "rgba(22,19,16,0.6)";
                   }}
                 >
-                  <span>View Technical Architecture</span>
+                  <span>See How It Works</span>
                 </a>
               </motion.div>
             </motion.div>
@@ -326,7 +325,7 @@ export default function HotelPmsModulePage() {
         </section>
 
         {/* ============================================================
-            METRIC SPEC BAR
+            METRIC SPEC BAR (HOTEL OPERATOR VALUE)
             ============================================================ */}
         <section
           style={{
@@ -340,15 +339,16 @@ export default function HotelPmsModulePage() {
               maxWidth: 1152,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
               gap: "2rem",
             }}
           >
             {[
-              { label: "Architecture", val: "CloudEvents 1.0", detail: "Redis Transactional Outbox" },
-              { label: "Tape Chart Latency", val: "< 100ms", detail: "Optimistic visual updates" },
-              { label: "Data Integrity", val: "Append-Only", detail: "Strict General Ledger accounting" },
-              { label: "Concurrency", val: "Zero Collisions", detail: "Pessimistic room lock bounds" },
+              { label: "Double Bookings", val: "0% Risk", detail: "Real-time calendar synchronization" },
+              { label: "Check-In Speed", val: "< 60 Seconds", detail: "Fast front desk arrivals & key handoff" },
+              { label: "Guest Billing", val: "100% Unified", detail: "Rooms, restaurant & bar on one invoice" },
+              { label: "Offline Guarantee", val: "Always Working", detail: "Never freezes during internet cuts" },
+              { label: "Room Turnover", val: "35% Faster", detail: "Instant cleaning alerts for housekeeping" },
             ].map((stat, i) => (
               <div key={i} style={{ borderLeft: "2px solid #C79A45", paddingLeft: "1rem" }}>
                 <span
@@ -423,7 +423,8 @@ export default function HotelPmsModulePage() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Inside the <span className="italic font-normal gold-gradient-text">Master Record</span> Engine
+                Everything Your Team Needs,{" "}
+                <span className="italic font-normal gold-gradient-text">Made Simple to Run</span>
               </h2>
             </div>
 
@@ -438,9 +439,9 @@ export default function HotelPmsModulePage() {
               }}
             >
               {[
-                { id: "tape-chart", label: "01. Tape Chart & Room Matrix" },
-                { id: "folio", label: "02. True Consolidated Folio Ledger" },
-                { id: "events", label: "03. CloudEvents Lifecycle Bus" },
+                { id: "tape-chart", label: "01. Live Room Calendar (Tape Chart)" },
+                { id: "folio", label: "02. One Combined Guest Bill (Folio)" },
+                { id: "events", label: "03. Instant Staff & Cleaning Sync" },
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -478,10 +479,10 @@ export default function HotelPmsModulePage() {
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem", flexWrap: "wrap", gap: "1rem" }}>
                     <div>
                       <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.4rem", color: "#F7F4EE", margin: 0 }}>
-                        Master Tape Chart Visual Grid
+                        Live Room Calendar &amp; Booking Timeline
                       </h3>
                       <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: "0.88rem", color: "#A89C8F", margin: "0.35rem 0 0" }}>
-                        Instant room inventory state with optimistic multi-user editing
+                        See every room, reservation, and guest checkout at a glance with instant drag-and-drop flexibility
                       </p>
                     </div>
                     <div style={{ display: "flex", gap: "0.75rem", fontSize: "0.75rem", fontFamily: "var(--font-manrope), sans-serif" }}>
@@ -489,10 +490,10 @@ export default function HotelPmsModulePage() {
                         <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#C79A45" }} /> Occupied Stay
                       </span>
                       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", color: "#8AE0A0" }}>
-                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4CAF50" }} /> Vacant Clean
+                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4CAF50" }} /> Ready &amp; Clean
                       </span>
                       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", color: "#FFB4AB" }}>
-                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#FF5252" }} /> Cleaning Hold
+                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#FF5252" }} /> Cleaning in Progress
                       </span>
                     </div>
                   </div>
@@ -502,8 +503,8 @@ export default function HotelPmsModulePage() {
                     <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.82rem", fontFamily: "var(--font-manrope), sans-serif" }}>
                       <thead>
                         <tr style={{ background: "#26211D", borderBottom: "1px solid rgba(212,163,89,0.2)" }}>
-                          <th style={{ padding: "0.85rem 1rem", textAlign: "left", color: "#C79A45", width: 140 }}>Room / Type</th>
-                          <th style={{ padding: "0.85rem 1rem", textAlign: "center", color: "#D3C4B3" }}>Today (14:00)</th>
+                          <th style={{ padding: "0.85rem 1rem", textAlign: "left", color: "#C79A45", width: 160 }}>Room / Unit</th>
+                          <th style={{ padding: "0.85rem 1rem", textAlign: "center", color: "#D3C4B3" }}>Today (Arrivals)</th>
                           <th style={{ padding: "0.85rem 1rem", textAlign: "center", color: "#D3C4B3" }}>Tomorrow</th>
                           <th style={{ padding: "0.85rem 1rem", textAlign: "center", color: "#D3C4B3" }}>Day 3</th>
                           <th style={{ padding: "0.85rem 1rem", textAlign: "center", color: "#D3C4B3" }}>Day 4</th>
@@ -511,11 +512,11 @@ export default function HotelPmsModulePage() {
                       </thead>
                       <tbody>
                         {[
-                          { room: "101 Deluxe King", guest: "Alexander Vance", span: 3, status: "Occupied", bg: "rgba(199,154,69,0.25)", border: "#C79A45" },
-                          { room: "102 Superior Queen", guest: "Clean & Inspected", span: 1, status: "Vacant Clean", bg: "rgba(76,175,80,0.18)", border: "#4CAF50" },
-                          { room: "201 Ocean Suite", guest: "Sophia Lin (OTA VIP)", span: 4, status: "Occupied", bg: "rgba(199,154,69,0.25)", border: "#C79A45" },
-                          { room: "202 Garden Villa", guest: "Departed (Work Order #481)", span: 1, status: "Cleaning Hold", bg: "rgba(255,82,82,0.18)", border: "#FF5252" },
-                          { room: "301 Penthouse", guest: "Marcus Thorne (Direct)", span: 2, status: "Occupied", bg: "rgba(199,154,69,0.25)", border: "#C79A45" },
+                          { room: "101 Deluxe King", guest: "Elena Vance (Direct Booking)", span: 3, status: "Occupied", bg: "rgba(199,154,69,0.25)", border: "#C79A45" },
+                          { room: "102 Superior Queen", guest: "Inspected & Ready for Arrival", span: 1, status: "Ready & Clean", bg: "rgba(76,175,80,0.18)", border: "#4CAF50" },
+                          { room: "201 Ocean Suite", guest: "Sophia Lin (Booking.com VIP)", span: 4, status: "Occupied", bg: "rgba(199,154,69,0.25)", border: "#C79A45" },
+                          { room: "202 Garden Villa", guest: "Checked Out (Housekeeper Assigned)", span: 1, status: "Cleaning in Progress", bg: "rgba(255,82,82,0.18)", border: "#FF5252" },
+                          { room: "301 Penthouse Suite", guest: "Marcus Thorne (3 Nights)", span: 2, status: "Occupied", bg: "rgba(199,154,69,0.25)", border: "#C79A45" },
                         ].map((row, idx) => (
                           <tr key={idx} style={{ borderBottom: "1px solid rgba(212,163,89,0.1)" }}>
                             <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: "#F7F4EE", background: "#221D18" }}>
@@ -546,7 +547,7 @@ export default function HotelPmsModulePage() {
                                   background: "rgba(255,255,255,0.02)",
                                 }}
                               >
-                                Available for Booking
+                                Ready to Book
                               </td>
                             )}
                           </tr>
@@ -561,36 +562,36 @@ export default function HotelPmsModulePage() {
                 <div>
                   <div style={{ marginBottom: "1.5rem" }}>
                     <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.4rem", color: "#F7F4EE", margin: 0 }}>
-                      Unified Cross-Module Folio Architecture
+                      One Clean Guest Invoice for All Charges
                     </h3>
                     <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: "0.88rem", color: "#A89C8F", margin: "0.35rem 0 0" }}>
-                      Room 201 — Master Ledger with instant asynchronous F&amp;B POS tab aggregation
+                      Room 201 — Restaurant meals, bar drinks, and room rates merge automatically into one clear bill
                     </p>
                   </div>
 
                   <div style={{ border: "1px solid rgba(212,163,89,0.18)", borderRadius: 8, background: "#181512", padding: "1.25rem" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid rgba(212,163,89,0.15)", paddingBottom: "0.75rem", marginBottom: "1rem" }}>
                       <div>
-                        <span style={{ fontSize: "0.75rem", color: "#C79A45", textTransform: "uppercase", fontWeight: 700 }}>Guest Folio #FOL-88219</span>
+                        <span style={{ fontSize: "0.75rem", color: "#C79A45", textTransform: "uppercase", fontWeight: 700 }}>Guest Invoice #FOL-88219</span>
                         <div style={{ fontSize: "1rem", color: "#F7F4EE", fontWeight: 700 }}>Sophia Lin (Ocean Suite)</div>
                       </div>
                       <div style={{ textAlign: "right" }}>
                         <span style={{ fontSize: "0.75rem", color: "#9C8F7F" }}>Status</span>
-                        <div style={{ fontSize: "0.85rem", color: "#4CAF50", fontWeight: 600 }}>Active (Pre-Authorized $1,500.00)</div>
+                        <div style={{ fontSize: "0.85rem", color: "#4CAF50", fontWeight: 600 }}>Active Stay (Card Pre-Authorized)</div>
                       </div>
                     </div>
 
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", fontSize: "0.85rem", fontFamily: "var(--font-manrope), sans-serif" }}>
                       {[
-                        { item: "Room Rate: 3 Nights @ $320/night", source: "hotel-pms", time: "Oct 08, 14:00", amount: "$960.00" },
-                        { item: "Dining Tab #882: Filet Mignon, Barolo Reserve", source: "pos-system (Tauri App)", time: "Oct 08, 20:45", amount: "$184.50" },
-                        { item: "Pool Bar Cocktail Tab #104", source: "menu-ordering (Waiter Tablet)", time: "Oct 09, 13:15", amount: "$42.00" },
-                        { item: "Late Checkout Extension (to 14:00)", source: "hotel-pms", time: "Oct 09, 16:30", amount: "$50.00" },
+                        { item: "Room Stay: 3 Nights ($320 / night)", source: "Front Desk Booking", time: "Oct 08, 14:00", amount: "$960.00" },
+                        { item: "Hotel Restaurant: Filet Mignon, Barolo Wine", source: "Restaurant POS (Room Charge)", time: "Oct 08, 20:45", amount: "$184.50" },
+                        { item: "Poolside Bar: Fresh Cocktails & Snacks", source: "Waiter Tablet (Pool Bar)", time: "Oct 09, 13:15", amount: "$42.00" },
+                        { item: "Late Checkout Extension (to 2:00 PM)", source: "Front Desk Request", time: "Oct 09, 16:30", amount: "$50.00" },
                       ].map((entry, idx) => (
                         <div key={idx} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.6rem 0.85rem", background: "rgba(255,255,255,0.03)", borderRadius: 4 }}>
                           <div>
                             <span style={{ color: "#F7F4EE", fontWeight: 600 }}>{entry.item}</span>
-                            <span style={{ display: "block", fontSize: "0.72rem", color: "#9C8F7F" }}>Routed via {entry.source} • {entry.time}</span>
+                            <span style={{ display: "block", fontSize: "0.72rem", color: "#9C8F7F" }}>Added via {entry.source} • {entry.time}</span>
                           </div>
                           <span style={{ color: "#F2BE71", fontWeight: 700, fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1rem" }}>{entry.amount}</span>
                         </div>
@@ -598,7 +599,7 @@ export default function HotelPmsModulePage() {
                     </div>
 
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(212,163,89,0.2)", marginTop: "1.25rem", paddingTop: "1rem" }}>
-                      <span style={{ fontSize: "0.85rem", color: "#D3C4B3", fontWeight: 600 }}>Total Balance Pending Checkout:</span>
+                      <span style={{ fontSize: "0.85rem", color: "#D3C4B3", fontWeight: 600 }}>Total Balance Ready for Checkout:</span>
                       <span style={{ fontSize: "1.35rem", color: "#F7F4EE", fontWeight: 700, fontFamily: "var(--font-playfair), Georgia, serif" }}>$1,236.50</span>
                     </div>
                   </div>
@@ -609,52 +610,56 @@ export default function HotelPmsModulePage() {
                 <div>
                   <div style={{ marginBottom: "1.5rem" }}>
                     <h3 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.4rem", color: "#F7F4EE", margin: 0 }}>
-                      CloudEvents 1.0 Transactional Outbox Pipeline
+                      Automatic Staff &amp; Department Coordination
                     </h3>
                     <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: "0.88rem", color: "#A89C8F", margin: "0.35rem 0 0" }}>
-                      Asynchronous messaging ensures zero coupling between PMS, smart locks, and housekeeping
+                      When front desk checks a guest in or out, your entire hotel responds instantly without extra phone calls
                     </p>
                   </div>
 
-                  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1rem" }}>
                     {[
                       {
-                        event: "pms.guest_checked_in",
-                        payload: "{ reservationId: 'RES-991', roomId: '101', guestId: 'G-404' }",
-                        effects: [
-                          "smart-locks: Provisions Apple & Google Wallet NFC pass",
-                          "guest-crm: Appends VIP check-in log and guest lifetime spend metric",
-                          "rms: Recalculates remaining occupancy curve and updates OTA yield limits",
+                        action: "When a Guest Checks In",
+                        trigger: "Front desk confirms arrival for Elena Vance (Room 101)",
+                        steps: [
+                          "Digital Door Key delivered directly to guest phone (Apple/Google Wallet)",
+                          "Room calendar instantly switches to 'Occupied' on all team screens",
+                          "Welcome amenity task created for housekeeping and minibar team",
                         ],
+                        badgeColor: "#10B981",
+                        badgeText: "ARRIVAL WORKFLOW",
                       },
                       {
-                        event: "pms.guest_checked_out",
-                        payload: "{ reservationId: 'RES-991', folioState: 'SETTLED', checkoutTime: '11:02' }",
-                        effects: [
-                          "smart-locks: Instantly revokes door lock cryptographic tokens",
-                          "staff-management: Dispatches priority CLEANING_REQUIRED alert to mobile tablet",
-                          "property-inventory: Deducts guest replenishment pack from floor par level",
+                        action: "When a Guest Checks Out",
+                        trigger: "Guest settles their invoice and hands in room at reception",
+                        steps: [
+                          "Housekeeping maid's phone beeps: 'Room 101 ready for cleaning'",
+                          "Digital door key access expires automatically for security",
+                          "Room becomes available on booking engine and OTAs once inspected",
                         ],
+                        badgeColor: "#C79A45",
+                        badgeText: "DEPARTURE WORKFLOW",
                       },
                     ].map((item, idx) => (
                       <div key={idx} style={{ background: "#181512", border: "1px solid rgba(212,163,89,0.18)", borderRadius: 8, padding: "1.25rem" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem" }}>
-                          <span style={{ background: "rgba(199,154,69,0.2)", color: "#F2BE71", padding: "0.2rem 0.6rem", borderRadius: 4, fontSize: "0.72rem", fontFamily: "monospace", fontWeight: 700 }}>
-                            EVENT
-                          </span>
-                          <span style={{ fontFamily: "monospace", fontSize: "0.92rem", color: "#F7F4EE", fontWeight: 700 }}>
-                            {item.event}
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem" }}>
+                          <span style={{ background: "rgba(199,154,69,0.18)", color: item.badgeColor, padding: "0.25rem 0.6rem", borderRadius: 4, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.06em" }}>
+                            {item.badgeText}
                           </span>
                         </div>
-                        <div style={{ background: "#110E0B", padding: "0.5rem 0.75rem", borderRadius: 4, fontFamily: "monospace", fontSize: "0.78rem", color: "#9C8F7F", marginBottom: "0.75rem" }}>
-                          {item.payload}
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.15rem", color: "#F7F4EE", margin: "0 0 0.4rem" }}>
+                          {item.action}
+                        </h4>
+                        <div style={{ background: "#221D18", padding: "0.6rem 0.75rem", borderRadius: 4, fontSize: "0.82rem", color: "#D3C4B3", marginBottom: "1rem", borderLeft: `3px solid ${item.badgeColor}` }}>
+                          {item.trigger}
                         </div>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-                          <span style={{ fontSize: "0.72rem", color: "#C79A45", textTransform: "uppercase", fontWeight: 700 }}>Asynchronous Downstream Handlers:</span>
-                          {item.effects.map((eff, i) => (
-                            <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.82rem", color: "#D3C4B3" }}>
-                              <CheckCircle2 size={14} color="#C79A45" />
-                              <span>{eff}</span>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                          <span style={{ fontSize: "0.72rem", color: "#C79A45", textTransform: "uppercase", fontWeight: 700 }}>What happens automatically:</span>
+                          {item.steps.map((step, i) => (
+                            <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.82rem", color: "#D3C4B3" }}>
+                              <CheckCircle2 size={15} color="#C79A45" style={{ flexShrink: 0, marginTop: "0.15rem" }} />
+                              <span>{step}</span>
                             </div>
                           ))}
                         </div>
@@ -696,905 +701,506 @@ export default function HotelPmsModulePage() {
             }}
           />
 
-          <div style={{ maxWidth: 1152, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
-            {/* Header */}
-            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <span
-                style={{
-                  display: "inline-block",
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "#C79A45",
-                  background: "rgba(199,154,69,0.12)",
-                  border: "1px solid rgba(199,154,69,0.25)",
-                  padding: "0.35rem 0.9rem",
-                  borderRadius: 20,
-                  marginBottom: "1rem",
-                }}
-              >
-                Property-Wide Architectural Integrity
-              </span>
+          <div style={{ maxWidth: 1320, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* LEFT COLUMN: TITLE & VALUE PROPOSITION */}
+              <div className="lg:col-span-5 lg:sticky lg:top-24">
+                <span
+                  style={{
+                    display: "inline-block",
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    color: "#C79A45",
+                    background: "rgba(199,154,69,0.12)",
+                    border: "1px solid rgba(199,154,69,0.25)",
+                    padding: "0.35rem 0.9rem",
+                    borderRadius: 20,
+                    marginBottom: "1.25rem",
+                  }}
+                >
+                  Zero Downtime Guarantee
+                </span>
 
-              <h2
-                style={{
-                  fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
-                  fontWeight: 700,
-                  color: "#F7F4EE",
-                  lineHeight: 1.15,
-                  letterSpacing: "-0.02em",
-                  marginBottom: "1.25rem",
-                }}
-              >
-                Offline-First Resilience:{" "}
-                <span className="italic font-normal gold-gradient-text">Always Operable, Zero Downtime</span>
-              </h2>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-playfair), var(--font-fraunces), 'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(2rem, 3.2vw, 2.85rem)",
+                    fontWeight: 700,
+                    color: "#F7F4EE",
+                    lineHeight: 1.18,
+                    letterSpacing: "-0.02em",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  Offline-First Reliability:{" "}
+                  <span className="italic font-normal gold-gradient-text block mt-1">
+                    Your Front Desk Never Freezes
+                  </span>
+                </h2>
 
-              <p
-                style={{
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: "1.05rem",
-                  color: "#D3C4B3",
-                  maxWidth: "72ch",
-                  margin: "0 auto",
-                  lineHeight: 1.7,
-                }}
-              >
-                Unlike fragile web-only systems where front desk terminals freeze the moment internet drops,
-                SPEAR implements an enterprise local-first mesh across <strong>all 20 hotel modules</strong>.
-                Front desk check-ins, room key issuance, dining tabs, housekeeping dispatches, and night audits
-                execute with zero lag during complete ISP blackouts—then sync to the cloud instantaneously.
-              </p>
-            </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: "1.02rem",
+                    color: "#D3C4B3",
+                    lineHeight: 1.75,
+                    marginBottom: "2rem",
+                  }}
+                >
+                  When bad weather or construction cuts your property&apos;s internet, ordinary hotel software
+                  stops working and leaves guests waiting in the lobby. With SPEAR, your front desk can check in
+                  arrivals, create door keys, post restaurant tabs, and print bills 100% offline—and everything
+                  syncs back to the cloud automatically when Wi-Fi returns.
+                </p>
 
-            {/* ============================================================
-                THE SERPENTINE / S-CURVE FLOW (SCROLL-DRIVEN ARCHITECTURE)
-                Matching Hand-Drawn Reference Diagram:
-                [Card 1 (Left)] -> Swooping Arrow (↘) -> [Card 2 (Right)]
-                -> Swooping Arrow (↙) -> [Card 3 (Left)] -> Swooping Arrow (↘) -> [Card 4 (Right)]
-                ============================================================ */}
-            <div style={{ position: "relative", marginTop: "2rem" }}>
+                {/* 3 Quick Hotel Staff Pillars */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "2rem" }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>100% On-Site Independence</strong>
+                      <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
+                        Front desk computers, key encoders, and kitchen printers continue running without a hiccup.
+                      </span>
+                    </div>
+                  </div>
 
-              {/* ----------------------------------------------------------
-                  PHASE 01: TERMINAL VIEW (LEFT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: -25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "620px",
-                  marginRight: "auto",
-                  marginLeft: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>Zero Lobby Queues</strong>
+                      <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
+                        Check in arriving guests in under 60 seconds with active room keys—no loading spinners.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <div style={{ marginTop: "0.2rem", color: "#10B981" }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>Automatic Background Cloud Sync</strong>
+                      <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
+                        Once internet returns, all bills, room cleanings, and check-ins sync quietly in seconds.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
                 <div
                   style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(212,163,89,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(212,163,89,0.12)",
-                    padding: "2rem",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.6rem",
+                    padding: "0.55rem 0.95rem",
+                    borderRadius: 8,
+                    background: "rgba(199,154,69,0.08)",
+                    border: "1px solid rgba(199,154,69,0.2)",
+                    fontSize: "0.8rem",
+                    color: "#D4A359",
+                    fontWeight: 600,
+                  }}
+                >
+                  <ShieldCheck size={16} color="#D4A359" />
+                  <span>Tested for 72+ continuous offline operating hours</span>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: FRAMED ARCHITECTURE SVG CANVAS */}
+              <div className="lg:col-span-7">
+                <div
+                  style={{
+                    background: "linear-gradient(180deg, #1A1512 0%, #14110E 100%)",
+                    borderRadius: 18,
+                    border: "1.5px solid rgba(212,163,89,0.3)",
+                    boxShadow: "0 24px 60px rgba(0,0,0,0.65), 0 0 35px rgba(212,163,89,0.08)",
+                    padding: "2rem 1.75rem",
                     position: "relative",
                   }}
                 >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
-                      style={{
-                        background: "rgba(199,154,69,0.18)",
-                        color: "#F2BE71",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 01 // CLIENT WORKSTATION
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#10B981",
-                      }}
-                    >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                      REALTIME LOCAL CAPTURE
+                  {/* Top Canvas Bar */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      borderBottom: "1px solid rgba(212,163,89,0.15)",
+                      paddingBottom: "0.85rem",
+                      marginBottom: "1.75rem",
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 8px #10B981" }} />
+                      <span style={{ fontFamily: "monospace", fontSize: "0.75rem", color: "#F2BE71", fontWeight: 700, letterSpacing: "0.08em" }}>
+                        EDGE ARCHITECTURE FLOW
+                      </span>
+                    </div>
+                    <span style={{ fontSize: "0.72rem", color: "#A89C8F", fontFamily: "var(--font-manrope), sans-serif" }}>
+                      Continuous Offline Resilience
                     </span>
                   </div>
 
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    Terminal Execution (Front Desk / POS / Housekeeping)
-                  </h3>
+                  {/* Serpentine 4-Phase SVG Flow */}
+                  <div style={{ position: "relative" }}>
 
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    Staff workstations run high-performance native client runtimes with an embedded SQLite WAL database.
-                    Every check-in, keycard issuance, and dining charge commits instantly to local disk within <strong>0.4 milliseconds</strong>—never waiting on cloud latency.
-                  </p>
-
-                  {/* HIGH-FIDELITY TERMINAL SVG VIEW */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(212,163,89,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      fontFamily: "monospace",
-                    }}
-                  >
-                    {/* Terminal Window Header Bar */}
-                    <div
+                    {/* --------------------------------------------------------
+                        BOX 01: FRONT DESK & POS TERMINAL (TOP-LEFT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                       style={{
-                        background: "#161310",
-                        padding: "0.5rem 0.75rem",
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginRight: "auto",
+                        marginLeft: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(212,163,89,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "space-between",
-                        borderBottom: "1px solid rgba(255,255,255,0.06)",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
                       }}
                     >
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                        <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#EF4444", display: "inline-block" }} />
-                        <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#F59E0B", display: "inline-block" }} />
-                        <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#10B981", display: "inline-block" }} />
-                        <span style={{ color: "#9C8F7F", fontSize: "0.72rem", marginLeft: "0.5rem" }}>
-                          terminal://reception-desk-01 (192.168.1.42)
+                      {/* POS Screen & Card Reader SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <rect x="6" y="4" width="38" height="26" rx="3" fill="#15120F" stroke="#D4A359" strokeWidth="1.5" />
+                          <rect x="10" y="8" width="30" height="18" rx="1.5" fill="#25201A" />
+                          <line x1="14" y1="13" x2="26" y2="13" stroke="#D4A359" strokeWidth="1.5" strokeLinecap="round" />
+                          <line x1="14" y1="17" x2="34" y2="17" stroke="#10B981" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="14" y1="21" x2="22" y2="21" stroke="#F2BE71" strokeWidth="1.2" strokeLinecap="round" />
+                          <path d="M25 30 L25 37 M18 37 L32 37" stroke="#D4A359" strokeWidth="1.5" strokeLinecap="round" />
+                          <rect x="47" y="14" width="13" height="22" rx="2" fill="#15120F" stroke="#10B981" strokeWidth="1.5" />
+                          <rect x="50" y="17" width="7" height="4" rx="0.5" fill="#10B981" opacity="0.6" />
+                          <line x1="49" y1="25" x2="58" y2="25" stroke="#D4A359" strokeWidth="1" />
+                          <circle cx="53.5" cy="31" r="1.5" fill="#10B981" />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#C79A45", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          01 • POS &amp; TERMINALS
                         </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          Front Desk Stations
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Check-in, guest folios &amp; key encoding execute locally on device with zero lag.
+                        </p>
                       </div>
-                      <span style={{ fontSize: "0.68rem", color: "#10B981", fontWeight: 700 }}>
-                        ● WAL WRITES LIVE
-                      </span>
-                    </div>
+                    </motion.div>
 
-                    {/* Terminal Console Body */}
-                    <div style={{ padding: "1rem", fontSize: "0.78rem", lineHeight: 1.6 }}>
-                      <div style={{ color: "#D4A359" }}>
-                        [reception@spear-pms ~]$ spear-terminal dispatch-checkin --room 402 --guest &quot;Elena Vance&quot;
-                      </div>
-                      <div style={{ color: "#10B981", marginTop: "0.25rem" }}>
-                        ✔ Guest Folio #F-40291 created in local WAL cache (0.38ms)
-                      </div>
-                      <div style={{ color: "#10B981" }}>
-                        ✔ Door Key encoded over local NFC hardware (0.12ms)
-                      </div>
-                      <div style={{ color: "#F2BE71" }}>
-                        ➜ Dispatched to On-Premise Mesh Bus [outbox_seq: 88192]
-                      </div>
-                      <div style={{ color: "#7A6E62", marginTop: "0.25rem" }}>
-                        Status: Transaction Committed Locally • Zero Cloud Latency
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Universal Workstation Immunity:</strong> Front desk terminals, dining POS iPads, and housekeeping units operate 100% locally.</span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Local Key Hardware Interface:</strong> Keycard encoders connect over local USB/LAN—guests get keys instantly even if internet is severed.</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ----------------------------------------------------------
-                  CURVED ARROW 1: DESKTOP SWOOPING DOWN-RIGHT (↘)
-                  Connecting Left Card 1 to Right Card 2
-                  ---------------------------------------------------------- */}
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: false }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  width: "100%",
-                  height: "100px",
-                  position: "relative",
-                  margin: "0.5rem 0",
-                }}
-              >
-                <svg
-                  viewBox="0 0 1000 100"
-                  fill="none"
-                  style={{ width: "100%", height: "100%", overflow: "visible" }}
-                >
-                  <defs>
-                    <linearGradient id="goldCurveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#C79A45" />
-                      <stop offset="50%" stopColor="#F2BE71" />
-                      <stop offset="100%" stopColor="#C79A45" />
-                    </linearGradient>
-                    <marker id="arrowhead-down-right" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L0,6 L8,3 z" fill="#F2BE71" />
-                    </marker>
-                  </defs>
-
-                  {/* Ambient Glow Trail */}
-                  <path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="rgba(242,190,113,0.22)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Animated Dashed Vector Line on Scroll */}
-                  <motion.path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="url(#goldCurveGrad1)"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 6"
-                    initial={{ pathLength: 0.15, opacity: 0.35 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ amount: 0.3, once: false }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    markerEnd="url(#arrowhead-down-right)"
-                  />
-                </svg>
-
-                {/* Floating Badge in Middle of Swoop */}
-                <motion.div
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ amount: 0.4, once: false }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  style={{
-                    position: "absolute",
-                    top: "40%",
-                    left: "52%",
-                    transform: "translate(-50%, -50%)",
-                    background: "#161310",
-                    border: "1px solid rgba(212,163,89,0.4)",
-                    borderRadius: 20,
-                    padding: "0.3rem 0.9rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    color: "#F2BE71",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981" }} />
-                  <span>Buffered Local LAN Dispatch (Sub-1ms)</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Mobile Vertical Fallback Connector */}
-              <div
-                className="flex md:hidden items-center justify-center my-3"
-                style={{ gap: "0.5rem", color: "#F2BE71", fontSize: "0.75rem", fontWeight: 700 }}
-              >
-                <div style={{ width: 2, height: 26, background: "linear-gradient(to bottom, #C79A45, #F2BE71)" }} />
-                <span>LAN Broadcast ↘</span>
-              </div>
-
-              {/* ----------------------------------------------------------
-                  PHASE 02: SERVER RUNNING STATUS (RIGHT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: 25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "620px",
-                  marginLeft: "auto",
-                  marginRight: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(212,163,89,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(212,163,89,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
-                      style={{
-                        background: "rgba(199,154,69,0.18)",
-                        color: "#F2BE71",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 02 // ON-PREMISE EDGE GATEWAY
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#10B981",
-                      }}
-                    >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                      ON-PREM EDGE ACTIVE
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    On-Premise Server Running &amp; Outbox Mesh
-                  </h3>
-
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    An on-site physical edge micro-server acts as the local property hub. If a guest charges champagne at the pool bar, the charge posts to the front desk folio immediately across the local property Wi-Fi without leaving the premises.
-                  </p>
-
-                  {/* HIGH-FIDELITY SERVER RUNNING STATUS SVG */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(212,163,89,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      padding: "1rem",
-                    }}
-                  >
-                    {/* Visual Server Chassis with Flashing LEDs */}
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <Server size={18} color="#D4A359" />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.82rem", fontWeight: 700, color: "#F7F4EE" }}>
-                          SPEAR-EDGE-NODE-01
-                        </span>
-                      </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#10B981", fontWeight: 700 }}>
-                          DAEMON RUNNING (PID 4920)
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Server Metrics Visual Grid */}
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem", fontFamily: "monospace", fontSize: "0.72rem", marginBottom: "0.75rem" }}>
-                      <div style={{ background: "#161310", padding: "0.45rem", borderRadius: 4, border: "1px solid rgba(255,255,255,0.04)" }}>
-                        <div style={{ color: "#7A6E62" }}>LAN BUS</div>
-                        <div style={{ color: "#10B981", fontWeight: 700 }}>1000 Mbps Active</div>
-                      </div>
-                      <div style={{ background: "#161310", padding: "0.45rem", borderRadius: 4, border: "1px solid rgba(255,255,255,0.04)" }}>
-                        <div style={{ color: "#7A6E62" }}>MUTEX LOCK</div>
-                        <div style={{ color: "#F2BE71", fontWeight: 700 }}>Room 402 ACQUIRED</div>
-                      </div>
-                      <div style={{ background: "#161310", padding: "0.45rem", borderRadius: 4, border: "1px solid rgba(255,255,255,0.04)" }}>
-                        <div style={{ color: "#7A6E62" }}>OUTBOX QUEUE</div>
-                        <div style={{ color: "#D4A359", fontWeight: 700 }}>1 Transaction Buffered</div>
-                      </div>
-                    </div>
-
-                    <div style={{ fontFamily: "monospace", fontSize: "0.75rem", color: "#9C8F7F" }}>
-                      ➜ Local Redis bus guarantees cross-department instant sync with 0 dropped packets.
-                    </div>
-                  </div>
-
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Zero Double-Booking Mutex:</strong> Distributed local locks ensure two receptionists or booking agents can never double-assign the same room.</span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Instant Cross-Department Folio:</strong> Bar drinks, spa sessions, and restaurant tabs land on guest master bills via local LAN mesh in milliseconds.</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ----------------------------------------------------------
-                  CURVED ARROW 2: DESKTOP SWOOPING DOWN-LEFT (↙)
-                  Connecting Right Card 2 back to Left Card 3
-                  ---------------------------------------------------------- */}
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: false }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  width: "100%",
-                  height: "100px",
-                  position: "relative",
-                  margin: "0.5rem 0",
-                }}
-              >
-                <svg
-                  viewBox="0 0 1000 100"
-                  fill="none"
-                  style={{ width: "100%", height: "100%", overflow: "visible" }}
-                >
-                  <defs>
-                    <linearGradient id="goldCurveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#C79A45" />
-                      <stop offset="50%" stopColor="#F59E0B" />
-                      <stop offset="100%" stopColor="#EF4444" />
-                    </linearGradient>
-                    <marker id="arrowhead-down-left" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B" />
-                    </marker>
-                  </defs>
-
-                  {/* Ambient Glow Trail */}
-                  <path
-                    d="M 750,10 C 750,75 280,25 280,90"
-                    stroke="rgba(245,158,11,0.22)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Animated Dashed Vector Line on Scroll */}
-                  <motion.path
-                    d="M 750,10 C 750,75 280,25 280,90"
-                    stroke="url(#goldCurveGrad2)"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 6"
-                    initial={{ pathLength: 0.15, opacity: 0.35 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ amount: 0.3, once: false }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    markerEnd="url(#arrowhead-down-left)"
-                  />
-                </svg>
-
-                {/* Floating Badge in Middle of Swoop */}
-                <motion.div
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ amount: 0.4, once: false }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  style={{
-                    position: "absolute",
-                    top: "40%",
-                    left: "48%",
-                    transform: "translate(-50%, -50%)",
-                    background: "#161310",
-                    border: "1px solid rgba(239,68,68,0.4)",
-                    borderRadius: 20,
-                    padding: "0.3rem 0.9rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    color: "#F59E0B",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444" }} />
-                  <span>WAN Internet Severed (Autonomous Mode Engaged)</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Mobile Vertical Fallback Connector */}
-              <div
-                className="flex md:hidden items-center justify-center my-3"
-                style={{ gap: "0.5rem", color: "#F59E0B", fontSize: "0.75rem", fontWeight: 700 }}
-              >
-                <div style={{ width: 2, height: 26, background: "linear-gradient(to bottom, #F2BE71, #EF4444)" }} />
-                <span>Cloud Link Cut ↙</span>
-              </div>
-
-              {/* ----------------------------------------------------------
-                  PHASE 03: CLOUD LINK DOWN (LEFT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: -25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "620px",
-                  marginRight: "auto",
-                  marginLeft: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(245,158,11,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(245,158,11,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
-                      style={{
-                        background: "rgba(239,68,68,0.18)",
-                        color: "#F59E0B",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 03 // WAN LINK DOWN
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#F59E0B",
-                      }}
-                    >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#F59E0B", boxShadow: "0 0 6px #F59E0B" }} />
-                      AUTONOMOUS EDGE ENGAGED
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    Cloud Link Down: Continuous Offline Immunity
-                  </h3>
-
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    When construction cuts property fiber or regional ISP towers fail, traditional cloud PMS software crashes. With SPEAR, <strong>zero staff workflows halt</strong>. Transactions buffer into durable encrypted outbox queues.
-                  </p>
-
-                  {/* HIGH-FIDELITY CLOUD LINK DOWN STATUS SVG */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(245,158,11,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      padding: "1rem",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <WifiOff size={18} color="#EF4444" />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.82rem", fontWeight: 700, color: "#EF4444" }}>
-                          WAN UPLINK: DISCONNECTED (0 kbps)
-                        </span>
-                      </div>
-                      <span
+                    {/* --------------------------------------------------------
+                        SWOOPING ARROW 1 (↘ DOWN-RIGHT TO SERVER)
+                        -------------------------------------------------------- */}
+                    <div style={{ width: "100%", height: "65px", position: "relative", margin: "0.25rem 0" }}>
+                      <svg viewBox="0 0 500 65" fill="none" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                          <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#C79A45" />
+                            <stop offset="100%" stopColor="#F2BE71" />
+                          </linearGradient>
+                          <marker id="arrowHead1" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L8,3 z" fill="#F2BE71" />
+                          </marker>
+                        </defs>
+                        <path d="M 155,10 C 155,50 345,15 345,55" stroke="rgba(242,190,113,0.18)" strokeWidth="6" strokeLinecap="round" />
+                        <motion.path
+                          d="M 155,10 C 155,50 345,15 345,55"
+                          stroke="url(#flowGrad1)"
+                          strokeWidth="2.5"
+                          strokeDasharray="5 5"
+                          initial={{ pathLength: 0.2, opacity: 0.4 }}
+                          whileInView={{ pathLength: 1, opacity: 1 }}
+                          viewport={{ amount: 0.3, once: false }}
+                          transition={{ duration: 0.8 }}
+                          markerEnd="url(#arrowHead1)"
+                        />
+                      </svg>
+                      <div
                         style={{
-                          background: "rgba(16,185,129,0.15)",
-                          border: "1px solid rgba(16,185,129,0.3)",
-                          color: "#10B981",
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: 4,
-                          fontSize: "0.7rem",
-                          fontFamily: "monospace",
+                          position: "absolute",
+                          top: "45%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          background: "#161310",
+                          border: "1px solid rgba(212,163,89,0.35)",
+                          borderRadius: 14,
+                          padding: "0.2rem 0.65rem",
+                          fontSize: "0.68rem",
                           fontWeight: 700,
+                          color: "#F2BE71",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        OFFLINE SHIELD ACTIVE
-                      </span>
-                    </div>
-
-                    <div style={{ fontFamily: "monospace", fontSize: "0.78rem", lineHeight: 1.6 }}>
-                      <div style={{ color: "#EF4444" }}>
-                        [ALERT] Public Cloud Cluster unreachable. Autonomous edge protocol engaged.
-                      </div>
-                      <div style={{ color: "#10B981", marginTop: "0.25rem" }}>
-                        ✔ 20 Modules Operational: Check-in, Door Locks, Tape Chart, POS, Housekeeping
-                      </div>
-                      <div style={{ color: "#F2BE71" }}>
-                        ➜ Outbox Buffer: 48 local transactions queued &amp; cryptographically signed
-                      </div>
-                      <div style={{ color: "#7A6E62", marginTop: "0.25rem" }}>
-                        Front Desk &amp; Guest Disruption: EXACTLY 0%
+                        Internal Wi-Fi Network ↘
                       </div>
                     </div>
-                  </div>
 
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>No Loading Spinners:</strong> Front desk receptionists never get frozen modals, page timeouts, or reconnect popups.</span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>Complete Night Audit Capability:</strong> Night audits, shift reconciliations, and daily reporting execute on time regardless of WAN status.</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ----------------------------------------------------------
-                  CURVED ARROW 3: DESKTOP SWOOPING DOWN-RIGHT (↘)
-                  Connecting Left Card 3 to Right Card 4
-                  ---------------------------------------------------------- */}
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.3, once: false }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  width: "100%",
-                  height: "100px",
-                  position: "relative",
-                  margin: "0.5rem 0",
-                }}
-              >
-                <svg
-                  viewBox="0 0 1000 100"
-                  fill="none"
-                  style={{ width: "100%", height: "100%", overflow: "visible" }}
-                >
-                  <defs>
-                    <linearGradient id="goldCurveGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#F59E0B" />
-                      <stop offset="50%" stopColor="#10B981" />
-                      <stop offset="100%" stopColor="#F2BE71" />
-                    </linearGradient>
-                    <marker id="arrowhead-down-right-sync" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L0,6 L8,3 z" fill="#10B981" />
-                    </marker>
-                  </defs>
-
-                  {/* Ambient Glow Trail */}
-                  <path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="rgba(16,185,129,0.22)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Animated Dashed Vector Line on Scroll */}
-                  <motion.path
-                    d="M 280,10 C 280,75 750,25 750,90"
-                    stroke="url(#goldCurveGrad3)"
-                    strokeWidth="3.5"
-                    strokeDasharray="6 6"
-                    initial={{ pathLength: 0.15, opacity: 0.35 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ amount: 0.3, once: false }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    markerEnd="url(#arrowhead-down-right-sync)"
-                  />
-                </svg>
-
-                {/* Floating Badge in Middle of Swoop */}
-                <motion.div
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ amount: 0.4, once: false }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  style={{
-                    position: "absolute",
-                    top: "40%",
-                    left: "52%",
-                    transform: "translate(-50%, -50%)",
-                    background: "#161310",
-                    border: "1px solid rgba(16,185,129,0.4)",
-                    borderRadius: 20,
-                    padding: "0.3rem 0.9rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    color: "#10B981",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981" }} />
-                  <span>Cloud Up Detected: Rapid Delta Burst Replay</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Mobile Vertical Fallback Connector */}
-              <div
-                className="flex md:hidden items-center justify-center my-3"
-                style={{ gap: "0.5rem", color: "#10B981", fontSize: "0.75rem", fontWeight: 700 }}
-              >
-                <div style={{ width: 2, height: 26, background: "linear-gradient(to bottom, #EF4444, #10B981)" }} />
-                <span>Cloud Restored ↘</span>
-              </div>
-
-              {/* ----------------------------------------------------------
-                  PHASE 04: CLOUD UP & RAPID DELTA SYNC (RIGHT BOX)
-                  ---------------------------------------------------------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 40, x: 25 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ amount: 0.25, once: false }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                style={{
-                  width: "100%",
-                  maxWidth: "620px",
-                  marginLeft: "auto",
-                  marginRight: 0,
-                  transition: "box-shadow 0.3s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "linear-gradient(180deg, #1F1A15 0%, #171411 100%)",
-                    borderRadius: 14,
-                    border: "1.5px solid rgba(16,185,129,0.35)",
-                    boxShadow: "0 12px 36px rgba(0,0,0,0.6), 0 0 25px rgba(16,185,129,0.12)",
-                    padding: "2rem",
-                    position: "relative",
-                  }}
-                >
-                  {/* Phase Marker Badge */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                    <span
+                    {/* --------------------------------------------------------
+                        BOX 02: ON-SITE LOCAL HOTEL HUB (MIDDLE-RIGHT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                       style={{
-                        background: "rgba(16,185,129,0.18)",
-                        color: "#10B981",
-                        fontSize: "0.72rem",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        padding: "0.25rem 0.65rem",
-                        borderRadius: 4,
-                        letterSpacing: "0.08em",
-                      }}
-                    >
-                      PHASE 04 // CLOUD RECONNECTED &amp; FAST SYNC
-                    </span>
-
-                    <span
-                      style={{
-                        display: "inline-flex",
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginLeft: "auto",
+                        marginRight: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(212,163,89,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
+                        display: "flex",
                         alignItems: "center",
-                        gap: "0.35rem",
-                        fontSize: "0.72rem",
-                        fontWeight: 700,
-                        color: "#10B981",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
                       }}
                     >
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10B981", boxShadow: "0 0 6px #10B981" }} />
-                      DELTA STREAM RECONCILED
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-playfair), Georgia, serif",
-                      fontSize: "1.45rem",
-                      fontWeight: 700,
-                      color: "#F7F4EE",
-                      marginBottom: "0.6rem",
-                    }}
-                  >
-                    Cloud Up &amp; Rapid Delta Sync Replay
-                  </h3>
-
-                  <p style={{ fontSize: "0.9rem", color: "#D3C4B3", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-                    The millisecond the WAN link reconnects, SPEAR’s high-velocity sync engine bursts queued transactions to the global cloud cluster at over <strong>1,850 events per second</strong> with automated conflict resolution.
-                  </p>
-
-                  {/* HIGH-FIDELITY CLOUD UP & SYNC REPLAY SVG */}
-                  <div
-                    style={{
-                      background: "#0D0A08",
-                      borderRadius: 8,
-                      border: "1px solid rgba(16,185,129,0.3)",
-                      overflow: "hidden",
-                      marginBottom: "1.5rem",
-                      padding: "1rem",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <Wifi size={18} color="#10B981" />
-                        <span style={{ fontFamily: "monospace", fontSize: "0.82rem", fontWeight: 700, color: "#10B981" }}>
-                          WAN UPLINK: RESTORED (1 Gbps FIBER)
-                        </span>
+                      {/* Server Rack & Wi-Fi SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <rect x="8" y="6" width="34" height="34" rx="3" fill="#15120F" stroke="#D4A359" strokeWidth="1.5" />
+                          <rect x="12" y="10" width="26" height="7" rx="1.5" fill="#25201A" stroke="rgba(212,163,89,0.3)" strokeWidth="1" />
+                          <circle cx="16" cy="13.5" r="1.5" fill="#10B981" />
+                          <circle cx="21" cy="13.5" r="1.5" fill="#10B981" />
+                          <line x1="26" y1="13.5" x2="34" y2="13.5" stroke="#C79A45" strokeWidth="1" strokeLinecap="round" />
+                          <rect x="12" y="19" width="26" height="7" rx="1.5" fill="#25201A" stroke="rgba(212,163,89,0.3)" strokeWidth="1" />
+                          <circle cx="16" cy="22.5" r="1.5" fill="#10B981" />
+                          <circle cx="21" cy="22.5" r="1.5" fill="#F59E0B" />
+                          <line x1="26" y1="22.5" x2="34" y2="22.5" stroke="#C79A45" strokeWidth="1" strokeLinecap="round" />
+                          <rect x="12" y="28" width="26" height="7" rx="1.5" fill="#25201A" stroke="rgba(212,163,89,0.3)" strokeWidth="1" />
+                          <circle cx="16" cy="31.5" r="1.5" fill="#10B981" />
+                          <circle cx="21" cy="31.5" r="1.5" fill="#10B981" />
+                          <path d="M47 18 A12 12 0 0 1 57 28" stroke="#D4A359" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                          <path d="M47 23 A6 6 0 0 1 52 28" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                          <circle cx="47" cy="28" r="2" fill="#F2BE71" />
+                        </svg>
                       </div>
-                      <span
+
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#C79A45", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          02 • ON-SITE HUB
+                        </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          On-Site Hotel Server
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Syncs restaurant dining bills and housekeeping updates across property over internal Wi-Fi.
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    {/* --------------------------------------------------------
+                        SWOOPING ARROW 2 (↙ DOWN-LEFT TO INTERNET CUT)
+                        -------------------------------------------------------- */}
+                    <div style={{ width: "100%", height: "65px", position: "relative", margin: "0.25rem 0" }}>
+                      <svg viewBox="0 0 500 65" fill="none" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                          <linearGradient id="flowGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#F2BE71" />
+                            <stop offset="100%" stopColor="#EF4444" />
+                          </linearGradient>
+                          <marker id="arrowHead2" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L8,3 z" fill="#EF4444" />
+                          </marker>
+                        </defs>
+                        <path d="M 345,10 C 345,50 155,15 155,55" stroke="rgba(239,68,68,0.18)" strokeWidth="6" strokeLinecap="round" />
+                        <motion.path
+                          d="M 345,10 C 345,50 155,15 155,55"
+                          stroke="url(#flowGrad2)"
+                          strokeWidth="2.5"
+                          strokeDasharray="5 5"
+                          initial={{ pathLength: 0.2, opacity: 0.4 }}
+                          whileInView={{ pathLength: 1, opacity: 1 }}
+                          viewport={{ amount: 0.3, once: false }}
+                          transition={{ duration: 0.8 }}
+                          markerEnd="url(#arrowHead2)"
+                        />
+                      </svg>
+                      <div
                         style={{
-                          background: "rgba(16,185,129,0.18)",
-                          color: "#10B981",
-                          fontSize: "0.7rem",
-                          fontFamily: "monospace",
+                          position: "absolute",
+                          top: "45%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          background: "#161310",
+                          border: "1px solid rgba(239,68,68,0.4)",
+                          borderRadius: 14,
+                          padding: "0.2rem 0.65rem",
+                          fontSize: "0.68rem",
                           fontWeight: 700,
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: 4,
+                          color: "#EF4444",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        100% RECONCILED
-                      </span>
+                        Internet Drops (Link Down) ↙
+                      </div>
                     </div>
 
-                    <div style={{ fontFamily: "monospace", fontSize: "0.78rem", lineHeight: 1.6 }}>
-                      <div style={{ color: "#F2BE71" }}>
-                        ➜ AWS Master Cluster handshake completed (18ms)
+                    {/* --------------------------------------------------------
+                        BOX 03: CLOUD LINK DOWN / OFFLINE SAFEGUARD (MIDDLE-LEFT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                      style={{
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginRight: "auto",
+                        marginLeft: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(239,68,68,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                      }}
+                    >
+                      {/* Cloud Cut & Glowing Shield SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <path d="M12 28a7 7 0 0 1 2-13.7A11 11 0 0 1 35 17a6 6 0 0 1 5 11z" fill="#15120F" stroke="#EF4444" strokeWidth="1.5" />
+                          <line x1="10" y1="12" x2="38" y2="34" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
+                          <path d="M42 16 L54 12 L54 26 C54 32 48 37 42 39 C36 37 30 32 30 26 L30 12 Z" fill="#18271E" stroke="#10B981" strokeWidth="1.5" />
+                          <path d="M37 25 L40 28 L47 20" stroke="#10B981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        </svg>
                       </div>
-                      <div style={{ color: "#10B981", marginTop: "0.25rem" }}>
-                        ✔ 48 buffered transactions streamed in 148ms (1,850 ops/sec)
-                      </div>
-                      <div style={{ color: "#10B981" }}>
-                        ✔ CRDT Conflict Resolution: 0 Contention, 0 Overwritten Bills
-                      </div>
-                      <div style={{ color: "#D4A359", marginTop: "0.25rem" }}>
-                        ✔ 2-Way OTA Channel Manager (Booking.com, Airbnb) Re-aligned
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Bullet Details */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>High-Velocity Burst Sync:</strong> Hours of offline check-ins and charges reconcile to the cloud in fractions of a second.</span>
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#F59E0B", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          03 • OFFLINE SAFEGUARD
+                        </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          Zero Internet Needed
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Zero frozen screens. All new check-ins and payments buffer safely on hotel storage.
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    {/* --------------------------------------------------------
+                        SWOOPING ARROW 3 (↘ DOWN-RIGHT TO CLOUD RESTORED)
+                        -------------------------------------------------------- */}
+                    <div style={{ width: "100%", height: "65px", position: "relative", margin: "0.25rem 0" }}>
+                      <svg viewBox="0 0 500 65" fill="none" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                          <linearGradient id="flowGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#EF4444" />
+                            <stop offset="50%" stopColor="#10B981" />
+                            <stop offset="100%" stopColor="#10B981" />
+                          </linearGradient>
+                          <marker id="arrowHead3" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L8,3 z" fill="#10B981" />
+                          </marker>
+                        </defs>
+                        <path d="M 155,10 C 155,50 345,15 345,55" stroke="rgba(16,185,129,0.18)" strokeWidth="6" strokeLinecap="round" />
+                        <motion.path
+                          d="M 155,10 C 155,50 345,15 345,55"
+                          stroke="url(#flowGrad3)"
+                          strokeWidth="2.5"
+                          strokeDasharray="5 5"
+                          initial={{ pathLength: 0.2, opacity: 0.4 }}
+                          whileInView={{ pathLength: 1, opacity: 1 }}
+                          viewport={{ amount: 0.3, once: false }}
+                          transition={{ duration: 0.8 }}
+                          markerEnd="url(#arrowHead3)"
+                        />
+                      </svg>
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "45%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          background: "#161310",
+                          border: "1px solid rgba(16,185,129,0.4)",
+                          borderRadius: 14,
+                          padding: "0.2rem 0.65rem",
+                          fontSize: "0.68rem",
+                          fontWeight: 700,
+                          color: "#10B981",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Internet Restored &amp; Sync ↘
+                      </div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#D3C4B3" }}>
-                      <CheckCircle2 size={16} color="#C79A45" />
-                      <span><strong>OTA Inventory Re-Alignment:</strong> The channel manager pushes updated room inventories to external OTAs immediately upon reconnection.</span>
-                    </div>
+
+                    {/* --------------------------------------------------------
+                        BOX 04: CLOUD RESTORED & RAPID SYNC (BOTTOM-RIGHT)
+                        -------------------------------------------------------- */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ amount: 0.3, once: false }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                      style={{
+                        width: "100%",
+                        maxWidth: "320px",
+                        marginLeft: "auto",
+                        marginRight: 0,
+                        background: "#221D18",
+                        border: "1px solid rgba(16,185,129,0.35)",
+                        borderRadius: 12,
+                        padding: "1rem 1.15rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                      }}
+                    >
+                      {/* Cloud Sync Replay SVG */}
+                      <div style={{ flexShrink: 0 }}>
+                        <svg width="56" height="42" viewBox="0 0 64 48" fill="none">
+                          <path d="M10 30a7 7 0 0 1 2-13.7A11 11 0 0 1 33 19a6 6 0 0 1 5 11z" fill="#15120F" stroke="#10B981" strokeWidth="1.5" />
+                          <path d="M23 27 L23 17 M19 21 L23 17 L27 21" stroke="#10B981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                          <circle cx="48" cy="24" r="11" fill="#15120F" stroke="#D4A359" strokeWidth="1.5" />
+                          <path d="M44 24 L47 27 L53 20" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <span style={{ fontSize: "0.66rem", color: "#10B981", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.06em", display: "block" }}>
+                          04 • CLOUD UP &amp; SYNC
+                        </span>
+                        <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
+                          Instant Cloud Re-Sync
+                        </h4>
+                        <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
+                          Queued data uploads in seconds. Live room availability refreshes on Booking.com &amp; Airbnb.
+                        </p>
+                      </div>
+                    </motion.div>
+
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -1620,7 +1226,7 @@ export default function HotelPmsModulePage() {
                   marginBottom: "0.75rem",
                 }}
               >
-                Comprehensive Feature Set
+                Core Hotel Features
               </span>
               <h2
                 style={{
@@ -1633,7 +1239,7 @@ export default function HotelPmsModulePage() {
                   marginBottom: "1rem",
                 }}
               >
-                Engineered for <span className="italic font-normal gold-gradient-text">Zero Operational Friction</span>
+                Built for <span className="italic font-normal gold-gradient-text">Stress-Free Daily Hotel Operations</span>
               </h2>
               <p
                 style={{
@@ -1645,8 +1251,7 @@ export default function HotelPmsModulePage() {
                   lineHeight: 1.7,
                 }}
               >
-                Organized into 6 core operational competencies. Every capability integrates
-                natively with the broader SPEAR hub without third-party middleware.
+                Everything your team needs to run a smooth, profitable property. Front desk, housekeeping, and management stay aligned without complicated software.
               </p>
             </div>
 
@@ -1764,7 +1369,7 @@ export default function HotelPmsModulePage() {
                   marginBottom: "0.75rem",
                 }}
               >
-                Lifecycle Pipeline
+                Guest Experience Workflow
               </span>
               <h2
                 style={{
@@ -1777,7 +1382,7 @@ export default function HotelPmsModulePage() {
                   marginBottom: "1rem",
                 }}
               >
-                The Complete Guest Journey Through the <span className="italic font-normal gold-gradient-text">PMS State Machine</span>
+                The Complete Guest Journey: From First Booking to <span className="italic font-normal gold-gradient-text">Smooth Departure</span>
               </h2>
             </div>
 
@@ -1837,21 +1442,21 @@ export default function HotelPmsModulePage() {
           <div style={{ maxWidth: 1152, margin: "0 auto", width: "100%" }}>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
               <span style={{ fontSize: "0.7rem", color: "#C79A45", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                Ecosystem Integration Grid
+                Connected Property Hub
               </span>
               <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "2rem", color: "#F7F4EE", marginTop: "0.5rem" }}>
-                Modules Interconnected with the PMS
+                Connect Every Corner of Your Hotel
               </h2>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.25rem" }}>
               {[
-                { name: "pos-system", desc: "Tauri offline desktop POS pushes meal tabs to open room folios instantly.", icon: Receipt },
-                { name: "booking-engine", desc: "Direct website widget checks tape chart availability and locks rooms.", icon: BedDouble },
-                { name: "smart-locks", desc: "Issues and revokes Apple/Google Wallet digital NFC keys via cloud API.", icon: KeyRound },
-                { name: "rms", desc: "Monitors PMS occupancy curves to calculate yield rate multipliers.", icon: Zap },
-                { name: "property-inventory", desc: "Receives checkout events to trigger linen and consumable restocks.", icon: Layers },
-                { name: "staff-management", desc: "Syncs room cleaning tasks with biometric staff shift records.", icon: UserCheck },
+                { name: "Restaurant & Bar POS", desc: "Restaurant and room service charges post directly to the guest's room bill in real time.", icon: Receipt },
+                { name: "Direct Website Bookings", desc: "Guests book directly on your website with live room calendar availability, saving you high OTA commissions.", icon: BedDouble },
+                { name: "Mobile Digital Keys", desc: "Send contactless phone room keys upon check-in so VIP guests can walk straight to their rooms.", icon: KeyRound },
+                { name: "Smart Rate Optimization", desc: "Automatically adjusts room pricing for weekends, holidays, and peak seasons to maximize your revenue.", icon: Zap },
+                { name: "Housekeeping & Linen Supply", desc: "Tracks cleaning supplies, minibar refills, and fresh linens so every room is perfectly prepped.", icon: Layers },
+                { name: "Staff Shifts & Checklists", desc: "Assigns daily cleaning checklists and manages front desk shifts so the whole team stays coordinated.", icon: UserCheck },
               ].map((m, i) => (
                 <div
                   key={i}
@@ -1869,7 +1474,7 @@ export default function HotelPmsModulePage() {
                     <m.icon size={20} />
                   </div>
                   <div>
-                    <span style={{ fontFamily: "monospace", fontSize: "0.85rem", color: "#F2BE71", fontWeight: 700 }}>
+                    <span style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "0.88rem", color: "#F2BE71", fontWeight: 700 }}>
                       {m.name}
                     </span>
                     <p style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "0.8rem", color: "#A89C8F", margin: "0.35rem 0 0", lineHeight: 1.5 }}>
@@ -1906,7 +1511,7 @@ export default function HotelPmsModulePage() {
                 marginBottom: "1rem",
               }}
             >
-              Enterprise Hospitality Engineering
+              Simple Setup &amp; 24/7 Support
             </span>
             <h2
               style={{
@@ -1918,7 +1523,7 @@ export default function HotelPmsModulePage() {
                 marginBottom: "1.25rem",
               }}
             >
-              Ready to Deploy the <span className="italic font-normal gold-gradient-text">SPEAR PMS</span>?
+              Ready to Upgrade Your <span className="italic font-normal gold-gradient-text">Hotel Operations</span>?
             </h2>
             <p
               style={{
@@ -1929,8 +1534,8 @@ export default function HotelPmsModulePage() {
                 marginBottom: "2.5rem",
               }}
             >
-              Our dedicated hospitality engineers handle legacy database extraction, room inventory imports,
-              and tape chart mapping without taking your hotel offline. Live in under 72 hours.
+              Our hospitality onboarding specialists set up your rooms, import your past guest history,
+              and train your staff without interrupting your daily business. Get running in days.
             </p>
             <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
               <a
@@ -1961,7 +1566,7 @@ export default function HotelPmsModulePage() {
                   e.currentTarget.style.background = "#D4A359";
                 }}
               >
-                <span>Schedule 1-on-1 Walkthrough</span>
+                <span>Book a Free Hotel Walkthrough</span>
                 <ArrowRight size={16} />
               </a>
 

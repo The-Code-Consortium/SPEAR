@@ -245,7 +245,7 @@ export default function HotelPmsModulePage() {
               >
                 The complete operating heart of your hotel. Effortlessly manage bookings, eliminate
                 double-booking risks, speed up guest check-ins, and keep your front desk, housekeeping team,
-                and restaurant dining tabs in perfect harmony—whether you have internet or not.
+                and restaurant dining tabs in perfect harmony—with continuous offline reliability even during network outages.
               </motion.p>
 
               {/* CTAs */}
@@ -347,7 +347,7 @@ export default function HotelPmsModulePage() {
               { label: "Double Bookings", val: "0% Risk", detail: "Real-time calendar synchronization" },
               { label: "Check-In Speed", val: "< 60 Seconds", detail: "Fast front desk arrivals & key handoff" },
               { label: "Guest Billing", val: "100% Unified", detail: "Rooms, restaurant & bar on one invoice" },
-              { label: "Offline Guarantee", val: "Always Working", detail: "Never freezes during internet cuts" },
+              { label: "Offline Resilience", val: "100% Uptime", detail: "Front desk stays fully operational during network outages" },
               { label: "Room Turnover", val: "35% Faster", detail: "Instant cleaning alerts for housekeeping" },
             ].map((stat, i) => (
               <div key={i} style={{ borderLeft: "2px solid #C79A45", paddingLeft: "1rem" }}>
@@ -787,9 +787,9 @@ export default function HotelPmsModulePage() {
                       <CheckCircle2 size={18} />
                     </div>
                     <div>
-                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>Automatic Background Cloud Sync</strong>
+                      <strong style={{ color: "#F7F4EE", fontSize: "0.92rem", display: "block" }}>Automated Background Cloud Sync</strong>
                       <span style={{ color: "#A89C8F", fontSize: "0.84rem", lineHeight: 1.5 }}>
-                        Once internet returns, all bills, room cleanings, and check-ins sync quietly in seconds.
+                        When connection restores, all guest folios, room cleanings, and check-ins reconcile seamlessly in seconds.
                       </span>
                     </div>
                   </div>
@@ -1052,7 +1052,7 @@ export default function HotelPmsModulePage() {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        Internet Drops (Link Down) ↙
+                        Network Disconnected (Link Down) ↙
                       </div>
                     </div>
 
@@ -1095,10 +1095,10 @@ export default function HotelPmsModulePage() {
                           03 • OFFLINE SAFEGUARD
                         </span>
                         <h4 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "1.05rem", color: "#F7F4EE", margin: "0.15rem 0 0.2rem" }}>
-                          Zero Internet Needed
+                          Autonomous Local Mode
                         </h4>
                         <p style={{ fontSize: "0.75rem", color: "#A89C8F", margin: 0, lineHeight: 1.4 }}>
-                          Zero frozen screens. All new check-ins and payments buffer safely on hotel storage.
+                          Zero front desk downtime. All arrivals, payments, and key cards buffer safely in local storage.
                         </p>
                       </div>
                     </motion.div>
@@ -1147,7 +1147,7 @@ export default function HotelPmsModulePage() {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        Internet Restored &amp; Sync ↘
+                        Connection Restored &amp; Cloud Sync ↘
                       </div>
                     </div>
 
